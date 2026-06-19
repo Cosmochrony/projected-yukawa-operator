@@ -1,0 +1,271 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{doi}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\JPi}{J_{\Pi}}
+\newcommand{\Jthree}{J_{3}}
+\newcommand{\Cgen}{\mathbb{C}^{3}_{\mathrm{gen}}}
+\newcommand{\Epi}{E_{\Pi}}
+\newcommand{\Sbundle}{\mathcal{S}_{\Pi}}
+\newcommand{\SL}{\mathcal{S}_{L,\Pi}}
+\newcommand{\SR}{\mathcal{S}_{R,\Pi}}
+\newcommand{\LY}{L_{Y}}
+\newcommand{\Ypi}{Y_{\Pi}}
+\newcommand{\Hpi}{H_{\Pi}}
+\newcommand{\Upi}{U_{\Pi}}
+\newcommand{\lamY}{\lambda_{Y}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\UU}{\mathrm{U}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\rank}{\operatorname{rank}}
+
+\title{
+  Projected Yukawa Operator and Chiral Polar Factor
+  \\[1ex]
+  \large The Squared Observable $\Hpi = \Ypi^{\dagger}\Ypi$ and the Undetermined Chiral Polar Map $\Upi$
+}
+
+\author{J. Beau\\
+Independent Researcher, France\\
+\texttt{jerome.beau@cosmochrony.org}}
+
+\date{2026}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    This note takes the second step of the mass-sector frontier of the fermionic-matter sub-programme of
+    Cosmochrony, and draws a sharp negative conclusion at its entry.
+    The companion line note fixed the determinant line $\LY = \wedge^{2}(\Sbundle)$ as the Yukawa coupling
+    line and the generation-level assignment from $\Epi^{2}|_{\Cgen} = \diag(1, \tfrac12 + u, \tfrac12 -
+    u)$~\cite{Beau2026pyl}.
+    We ask whether the squared projective residue determines the Yukawa morphism itself, and show that it
+    does not.
+    The generation-level observable produced by the Schur-residue sector is the positive hermitian square
+    $\Hpi := \Ypi^{\dagger}\Ypi$, whose spectrum on $\Cgen$ is fixed up to the overall Yukawa norm by
+    $\Hpi|_{\Cgen} = \lamY^{2}\,\diag(1, \tfrac12 + u, \tfrac12 - u)$.
+    The morphism $\Ypi$ is then determined only up to a chiral polar factor, $\Ypi = \Upi\,\Hpi^{1/2}$, with
+    $\Upi$ a unitary chiral map on the support of $\Hpi$.
+    Hence the squared residue fixes the squared Yukawa levels but not the morphism: the norm branch, the
+    sign of $u$, and the complex mixing phase all reside in $\Upi$, which $\Epi^{2}$ cannot see.
+    Front~3b is therefore closed as a squared-Yukawa-levels result, not a mixing result; fixing $\Upi$ is
+    deferred to a distinct front.
+    All operator identities are verified by exact symbolic computation, with no sampling.
+  \end{abstract}
+
+  \noindent\textbf{Keywords:}
+  projected Yukawa operator; hermitian square; polar decomposition; chiral polar factor; generation levels;
+  mixing phase; partial no-go; Schur residue; CP-real branch; non-injective projection.
+
+  \newpage
+
+  \tableofcontents
+
+  \newpage
+
+  \section{Position and purpose}
+    \label{sec:position}
+
+    The line note~\cite{Beau2026pyl} closed the first stage of the projected Yukawa sector.
+    It identified the determinant line $\LY = \wedge^{2}(\Sbundle)$ as the unique functorial coupling line,
+    invisible to the $\SU(2)_{L}$ adjoint sector and carrying the abelian weight, and it read the generation
+    levels off the squared projective residue $\Epi^{2}|_{\Cgen} = \diag(1, \tfrac12 + u, \tfrac12 - u)$.
+    It also stated, but did not analyse, that the mass matrix is a distinct object: the projected Yukawa
+    morphism $\Ypi : \SL \otimes \LY \to \SR$, whose norm, the sign of $u$, and the mixing phase remained
+    open.
+
+    This note analyses that morphism, and the analysis begins with a negative result.
+    The squared projective residue is a hermitian object on a single chirality, while $\Ypi$ ties the two
+    chiralities; the chiral connecting datum is therefore not visible to $\Epi^{2}$.
+    Concretely, $\Epi^{2}|_{\Cgen}$ determines the hermitian square $\Hpi = \Ypi^{\dagger}\Ypi$, hence the
+    squared Yukawa levels, but leaves $\Ypi$ free up to a unitary chiral polar factor.
+    The purpose of the note is to make this precise, to extract exactly what is nonetheless fixed --- the
+    spectrum of $\Ypi^{\dagger}\Ypi$ --- and to delimit what is not.
+    The discipline of the projective-residue reduction is kept throughout: $\Epi = -\Pi_{S} D (1 - P) D
+    \Pi_{S}^{*} = -M^{\dagger} M$ is negative semi-definite, with the split $u$ carried by the transported
+    chiral defect~\cite{Beau2026prs}, so a semi-definite operator must not be promoted by hand to an
+    oriented chiral morphism.
+
+  \section{The Yukawa operator as a chiral morphism}
+    \label{sec:morphism}
+
+    The projected Yukawa coupling is a morphism of the admissible spinor sectors twisted by the coupling
+    line,
+    \begin{equation}
+      \label{eq:yukawa-morphism}
+      \Ypi : \SL \otimes \LY \longrightarrow \SR ,
+    \end{equation}
+    from the left chiral generation carrier, twisted by the determinant line $\LY$, to the right chiral
+    carrier.
+    The mass matrix is the value of $\Ypi$ on the locked configuration, and the two physically invariant
+    hermitian objects are the left and right squares $\Ypi^{\dagger}\Ypi$ on $\SL \otimes \LY$ and
+    $\Ypi\,\Ypi^{\dagger}$ on $\SR$.
+    The squared projective residue $\Epi^{2}$ is a hermitian operator on a single chirality; it can coincide
+    with one of these squares, but it cannot by itself carry the chiral connecting map between them.
+    This is the structural origin of the polar ambiguity below.
+
+  \section{The squared Yukawa observable}
+    \label{sec:squared}
+
+    \begin{proposition}[Squared Yukawa observable]
+      \label{prop:squared-yukawa}
+      Let $\Ypi : \SL \otimes \LY \to \SR$ be the projected Yukawa morphism.
+      Then the generation-level observable determined by the Schur-residue sector is the positive hermitian
+      operator
+      \[
+        \Hpi := \Ypi^{\dagger}\Ypi
+      \]
+      on the left chiral generation carrier.
+      On the gauge-singlet triplet $\Cgen$, its dimensionless spectral part is fixed, up to the overall
+      Yukawa norm $\lamY$, by
+      \[
+        \Hpi\big|_{\Cgen} = \lamY^{2}\,\diag\!\left(1,\ \tfrac12 + u,\ \tfrac12 - u\right) ,
+      \]
+      so that $\Spec\big(\Ypi^{\dagger}\Ypi\big) = \lamY^{2}\,\{1,\ \tfrac12 + u,\ \tfrac12 - u\}$.
+      Thus $\Epi^{2}|_{\Cgen}$ determines the squared Yukawa levels, not the Yukawa morphism itself.
+    \end{proposition}
+
+    \begin{proof}
+      The Schur reduction gives $\Epi = -M^{\dagger} M$ negative semi-definite, so $\Epi^{2}$ is a positive
+      hermitian operator and equals the square of $-\Epi$; on the triplet, $\Epi^{2}|_{\Cgen} = \diag(1,
+      \tfrac12 + u, \tfrac12 - u)$ by the normal form of~\cite{Beau2026prs} with the even sector closed by
+      Born--Infeld parity~\cite{Beau2026a34}, and the level reading of~\cite{Beau2026pyl}.
+      Identifying the Schur-residue generation observable with the left Yukawa square, $\Hpi = \Ypi^{\dagger}
+      \Ypi = \lamY^{2}\,(-\Epi/|\Epi|)$-normalised, gives $\Hpi|_{\Cgen} = \lamY^{2}\,\diag(1, \tfrac12 + u,
+      \tfrac12 - u)$ with $\lamY$ the undetermined overall norm.
+      The eigenvalues are the diagonal entries, so the spectrum is as stated, and a hermitian square fixes a
+      hermitian operator, not the underlying morphism, which is the content of Section~\ref{sec:polar}.
+    \end{proof}
+
+    The positive square root is the projective residue itself up to sign: since $\Epi|_{\Cgen}$ is negative
+    semi-definite, $\big(-\Epi|_{\Cgen}\big)^{2} = \Epi^{2}|_{\Cgen}$, so $-\Epi|_{\Cgen}$ is the positive
+    root $\Hpi^{1/2}/\lamY$.
+    No oriented chiral information has been used, in keeping with the reduction discipline.
+
+  \section{Polar decomposition and the undetermined chiral phase}
+    \label{sec:polar}
+
+    \begin{proposition}[Chiral polar ambiguity]
+      \label{prop:polar-ambiguity}
+      The operator $\Hpi = \Ypi^{\dagger}\Ypi$ determines $\Ypi$ only up to a polar factor:
+      \[
+        \Ypi = \Upi\,\Hpi^{1/2} ,
+      \]
+      where
+      \[
+        \Upi : \SL \otimes \LY \longrightarrow \SR
+      \]
+      is a unitary chiral polar map on the support of $\Hpi$.
+      Consequently the squared residue fixes the generation levels but not the complex mixing phase, nor the
+      full Yukawa operator.
+    \end{proposition}
+
+    \begin{proof}
+      For a positive hermitian $\Hpi$ with $\Hpi^{1/2}$ its positive square root, any $\Ypi$ with
+      $\Ypi^{\dagger}\Ypi = \Hpi$ satisfies $\Ypi = \Upi\,\Hpi^{1/2}$ with $\Upi := \Ypi\,\Hpi^{-1/2}$ a
+      partial isometry, unitary on the support of $\Hpi$, since $\Upi^{\dagger}\Upi = \Hpi^{-1/2}
+      \Ypi^{\dagger}\Ypi\,\Hpi^{-1/2} = \Hpi^{-1/2}\Hpi\,\Hpi^{-1/2} = \mathbf{1}$ on that support.
+      Conversely, for any such $\Upi$ the product $\Upi\,\Hpi^{1/2}$ has square $\Hpi^{1/2}\Upi^{\dagger}
+      \Upi\,\Hpi^{1/2} = \Hpi$, so the solution set is exactly $\{\Upi\,\Hpi^{1/2}\}$.
+      The map $\Upi$ acts on the right carrier $\SR$, and $\Hpi$ is invariant under $\Ypi \mapsto V\,\Ypi$
+      for every unitary $V$ on $\SR$, $(V\Ypi)^{\dagger}(V\Ypi) = \Ypi^{\dagger} V^{\dagger} V\,\Ypi =
+      \Ypi^{\dagger}\Ypi$, so distinct $\Upi$ give distinct $\Ypi$ with identical $\Hpi$.
+      Hence $\Hpi$, equivalently $\Epi^{2}|_{\Cgen}$, does not determine $\Ypi$: the generation-mixing
+      content and the relative phases reside in $\Upi$, on which $\Epi^{2}$ has no hold.
+    \end{proof}
+
+    \begin{remark}[The partial no-go, sharply]
+      \label{rem:no-go}
+      Proposition~\ref{prop:polar-ambiguity} is a partial no-go: $\Epi^{2}$ does not fix $\Ypi$.
+      What survives is exactly the spectral datum of Proposition~\ref{prop:squared-yukawa},
+      $\Spec(\Ypi^{\dagger}\Ypi) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$.
+      The undetermined factor is not a numerical residue but a unitary chiral map, the carrier of the norm
+      branch, the orientation $\operatorname{sign}(u)$, and the generation mixing.
+    \end{remark}
+
+  \section{Diagonal CP-real branch}
+    \label{sec:cp-real}
+
+    The reduction~\cite{Beau2026prs} imposes $v = 0$ on the CP-even real sector, the off-diagonal mixing
+    $R_{\mathrm{mix}}$ vanishing for phase-free data, with a non-zero $v$ requiring a complex metaplectic
+    phase.
+    In the present language this is the branch $\Upi = \mathbf{1}$.
+    There the Yukawa operator is the positive root itself,
+    \begin{equation}
+      \label{eq:cp-real}
+      \Ypi^{\mathrm{CP}} = \Hpi^{1/2} = \lamY\,\diag\!\left(1,\ \sqrt{\tfrac12 + u},\ \sqrt{\tfrac12 - u}\right),
+    \end{equation}
+    real, diagonal in the generation basis, with no mixing.
+    This is a choice of branch, not a derived fact: a non-trivial $\Upi$ --- a generation rotation or a
+    relative phase --- leaves $\Hpi$ and the levels untouched while injecting off-diagonal and complex
+    structure that $\Epi^{2}$ cannot register.
+    The mixing and the CP phase therefore live entirely in $\Upi$, and their first-principles origin is the
+    complex metaplectic phase of the Lorentzian completion, the same datum that governs the chiral-frontier
+    normalisation~\cite{Beau2026aar} and the residual orientation~\cite{Beau2026bim}; none of it is supplied
+    here.
+
+  \section{Status of results}
+    \label{sec:status}
+
+    \paragraph{Derived (this note).}
+      The generation-level observable of the Schur-residue sector is the positive hermitian square $\Hpi =
+      \Ypi^{\dagger}\Ypi$, with $\Spec(\Hpi)|_{\Cgen} = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$
+      (Proposition~\ref{prop:squared-yukawa}).
+      The Yukawa morphism is determined by this square only up to a unitary chiral polar factor, $\Ypi =
+      \Upi\,\Hpi^{1/2}$ (Proposition~\ref{prop:polar-ambiguity}).
+      Both are structural and unconditional given the carrier identifications of~\cite{Beau2026prs,
+      Beau2026a34, Beau2026pyl}.
+
+    \paragraph{Open.}
+      The chiral polar factor $\Upi$ --- and with it the overall Yukawa norm $\lamY$, the orientation
+      $\operatorname{sign}(u)$, and the complex mixing phase --- is not fixed here.
+      Hence the absolute masses, the generation mixing, and the CP structure remain downstream open data, in
+      agreement with~\cite{Beau2026fmnote}.
+
+    \paragraph{Summary.}
+      Front~3b is closed as a squared-Yukawa-levels result, not a mixing result.
+      The squared residue $\Epi^{2}|_{\Cgen}$ can close $\Hpi = \Ypi^{\dagger}\Ypi$; it cannot close $\Ypi$
+      unless $\Upi$ is fixed.
+      Deriving or constraining $\Upi$ from the complex metaplectic phase is the next, distinct front.
+
+  \section{Reproducibility}
+    \label{sec:repro}
+
+    All operator identities are verified by exact symbolic computation, with no floating-point sampling, in
+    \texttt{simulation/fermionic-matter/front3b\_yukawa\_operator.py}.
+    The level identification and spectrum of Proposition~\ref{prop:squared-yukawa}, the PRS sign consistency
+    $(-\Epi|_{\Cgen})^{2} = \Epi^{2}|_{\Cgen}$, the polar non-uniqueness of
+    Proposition~\ref{prop:polar-ambiguity} (for a generic positive $\Hpi$ and an arbitrary unitary, both a
+    generation rotation and a diagonal phase leave $\Ypi^{\dagger}\Ypi$ invariant while changing $\Ypi$),
+    the invariance of $\Hpi$ under right-carrier unitaries, and the diagonal no-mixing CP-real branch of
+    Section~\ref{sec:cp-real} are all checked symbolically.
+
+  \newpage
+
+  \bibliographystyle{plain}
+  \bibliography{cosmochrony-bibliography}
+
+\end{document}

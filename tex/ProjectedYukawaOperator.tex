@@ -69,8 +69,10 @@ Independent Researcher, France\\
     $\Hpi|_{\Cgen} = \lamY^{2}\,\diag(1, \tfrac12 + u, \tfrac12 - u)$.
     The morphism $\Ypi$ is then determined only up to a chiral polar factor, $\Ypi = \Upi\,\Hpi^{1/2}$, with
     $\Upi$ a unitary chiral map on the support of $\Hpi$.
-    Hence the squared residue fixes the squared Yukawa levels but not the morphism: the norm branch, the
-    sign of $u$, and the complex mixing phase all reside in $\Upi$, which $\Epi^{2}$ cannot see.
+    Hence the squared residue fixes the squared Yukawa levels but not the morphism: $\Upi$ carries the chiral
+    orientation, the relative generation phases, and the mixing, while the positive scale $\lamY$ is a
+    separate normalisation of $\Hpi$ --- none of it visible to the dimensionless level operator
+    $\Epi^{2}|_{\Cgen}$.
     Front~3b is therefore closed as a squared-Yukawa-levels result, not a mixing result; fixing $\Upi$ is
     deferred to a distinct front.
     All operator identities are verified by exact symbolic computation, with no sampling.
@@ -202,8 +204,21 @@ Independent Researcher, France\\
       Proposition~\ref{prop:polar-ambiguity} is a partial no-go: $\Epi^{2}$ does not fix $\Ypi$.
       What survives is exactly the spectral datum of Proposition~\ref{prop:squared-yukawa},
       $\Spec(\Ypi^{\dagger}\Ypi) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$.
-      The undetermined factor is not a numerical residue but a unitary chiral map, the carrier of the norm
-      branch, the orientation $\operatorname{sign}(u)$, and the generation mixing.
+      The undetermined factor is not a numerical residue but a unitary chiral map, the carrier of the chiral
+      orientation, the relative generation phases, and the mixing.
+      The positive scale $\lamY$ is a separate normalisation of the hermitian square $\Hpi$, invisible to the
+      dimensionless level operator $\Epi^{2}|_{\Cgen}$, and it is not carried by the unitary $\Upi$.
+    \end{remark}
+
+    \begin{remark}[The open datum in $u$ is the orientation branch, not the scalar sign]
+      \label{rem:orientation}
+      In an oriented $\Jthree$-labelled generation basis $(e_0, e_+, e_-)$ the level operator
+      $\diag(1, \tfrac12 + u, \tfrac12 - u)$ already sees the relative sign of $u$.
+      The operator $\Hpi$ therefore fixes the sign of $u$ only after such an oriented basis has been chosen.
+      Without that chiral-orientation choice the exchange $e_+ \leftrightarrow e_-$ sends $u \mapsto -u$ and
+      leaves the unordered squared spectrum unchanged.
+      Thus the remaining datum is the physical orientation branch of the split, not an additional scalar
+      visible to $\Epi^{2}$ alone.
     \end{remark}
 
   \section{Diagonal CP-real branch}
@@ -240,8 +255,9 @@ Independent Researcher, France\\
       Beau2026a34, Beau2026pyl}.
 
     \paragraph{Open.}
-      The chiral polar factor $\Upi$ --- and with it the overall Yukawa norm $\lamY$, the orientation
-      $\operatorname{sign}(u)$, and the complex mixing phase --- is not fixed here.
+      The positive Yukawa norm $\lamY$, the chiral polar factor $\Upi$, the orientation branch of $u$, and
+      the complex metaplectic mixing phase are not fixed here.
+      The norm $\lamY$ scales $\Hpi$, whereas $\Upi$ carries the unitary chiral and mixing information.
       Hence the absolute masses, the generation mixing, and the CP structure remain downstream open data, in
       agreement with~\cite{Beau2026fmnote}.
 

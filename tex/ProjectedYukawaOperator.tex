@@ -80,7 +80,7 @@ Independent Researcher, France\\
     $[\Upi] \neq [I]$ is controlled exactly by the transverse component of the metaplectic generator.
     On the derived real cascade that transverse component is absent, so $[\Upi] = [I]$ and no physical mixing
     is produced at this stratum; the only route left open to a non-trivial class is a genuine complex
-    metaplectic phase, not derived here, observable only relative to a second fermionic sector.
+    non-central metaplectic phase, not derived here, observable only relative to a second fermionic sector.
     All operator identities are verified by exact symbolic computation, with no sampling.
   \end{abstract}
 
@@ -342,6 +342,31 @@ Independent Researcher, France\\
       sharing a generation carrier.
     \end{corollary}
 
+    \begin{remark}[Two transverse blocks]
+      \label{rem:two-transverse-blocks}
+      The transverse obstruction has two distinct components.
+      On the generation triplet $\Cgen = \langle e_{0}, e_{+}, e_{-}\rangle$ the polar tangent transverse to the
+      diagonal-rephasing orbit decomposes into the internal block $e_{0} \leftrightarrow e_{\pm}$ and the
+      external block $e_{+} \leftrightarrow e_{-}$, the latter denoted $R_{\mathrm{mix}}$.
+      For a single metaplectic $\mathfrak{sl}_{2}$ cascade lifted to $\Sym^{2}$, the correct unitary chiral
+      generator is the anti-hermitian part of the $\JPi$-odd component,
+      \[
+        A_{\Pi} = \Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-odd}}\big(\dot{\Upi}\big) .
+      \]
+      On real cascade data this generator vanishes, recovering Corollary~\ref{cor:real-cascade-collapse}.
+      If the $\mathfrak{sl}_{2}$ coefficients acquire a genuinely complex non-central part, the internal block
+      $e_{0} \leftrightarrow e_{\pm}$ is sourced.
+      By contrast the external block $e_{+} \leftrightarrow e_{-}$ is never sourced by the
+      $\Sym^{2}(\mathfrak{sl}_{2})$ lift alone; it lies outside the single-cascade metaplectic image and would
+      require an additional tower datum.
+      The chiral-frontier normalisation channel and the polar-mixing channel therefore separate: the oriented
+      area $N_{A}$ belongs to the real Cartan / $\Jthree$ channel~\cite{Beau2026aar} and can normalise the
+      diagonal split without predicting a CKM/PMNS polar class.
+      A non-trivial polar class in the present carrier first requires a complex non-central metaplectic
+      component, and the external $R_{\mathrm{mix}}$ block requires still more: a generator beyond the single
+      $\mathfrak{sl}_{2}$ metaplectic cascade.
+    \end{remark}
+
     \begin{remark}[Two delimitations]
       \label{rem:precautions}
       First, the spin-stratum type-rigidity of~\cite{Beau2026aog} closes the orientation caveat
@@ -372,6 +397,12 @@ Independent Researcher, France\\
     \paragraph{Conditional.}
       On the derived real cascade the off-diagonal channel is absent, $v = 0$, so $[\Upi] = [I]$ and no
       physical mixing is produced at this stratum (Corollary~\ref{cor:real-cascade-collapse}).
+      The transverse datum further splits into two blocks (Remark~\ref{rem:two-transverse-blocks}): the internal
+      block $e_{0} \leftrightarrow e_{\pm}$ is sourcable by a genuinely complex non-central
+      $\mathfrak{sl}_{2}$ metaplectic coefficient, while the external block $e_{+} \leftrightarrow e_{-}$ is not
+      in the image of the single-cascade $\Sym^{2}(\mathfrak{sl}_{2})$ lift.
+      Consequently $N_{A}$ may fix the diagonal oriented-area normalisation without fixing the polar mixing
+      class.
 
     \paragraph{Open.}
       The positive Yukawa norm $\lamY$ and a non-trivial polar class $[\Upi] \neq [I]$ are not fixed here.
@@ -406,6 +437,12 @@ Independent Researcher, France\\
     real-cascade collapse (Corollary~\ref{cor:real-cascade-collapse}) ---
     are checked in \texttt{front3c\_polar\_class\_audit.py} and
     \texttt{front3c\_polar\_class\_nontriviality.py}.
+    The two-block decomposition of Remark~\ref{rem:two-transverse-blocks} ---
+    the vanishing of the chiral generator $A_{\Pi}$ on real cascade data, the sourcing of the internal block
+    $e_{0} \leftrightarrow e_{\pm}$ by a complex non-central coefficient, the identical vanishing of the
+    external block $R_{\mathrm{mix}}$ in the $\Sym^{2}(\mathfrak{sl}_{2})$ lift, and the independence of the
+    mixing datum from the real oriented area $N_{A}$ ---
+    is checked in \texttt{front3d\_transverse\_route.py}.
 
   \newpage
 

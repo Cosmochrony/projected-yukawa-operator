@@ -367,6 +367,45 @@ Independent Researcher, France\\
       $\mathfrak{sl}_{2}$ metaplectic cascade.
     \end{remark}
 
+    \begin{proposition}[Reality structure of the polar generator]
+      \label{prop:reality-structure}
+      Write the non-central metaplectic step as $M = p\,E + q\,F + r\,H$ in the real $\mathfrak{sl}_{2}$ basis,
+      and let $\sigma(M) = \overline{M}$ be the entrywise conjugation whose fixed real form is
+      $\mathfrak{sl}_{2}(\mathbb{R}) = \mathrm{span}_{\mathbb{R}}\{E, F, H\}$, so $\sigma(M) = M$ iff
+      $p, q, r \in \mathbb{R}$.
+      The chiral polar generator $A_{\Pi} = \Pi_{\mathrm{antiherm}}\Pi_{\JPi\text{-odd}}(\dot{\Upi})$ depends only
+      on the $\sigma$-anti-real part $\tfrac12(M - \sigma M) = i\,(\Im p\,E + \Im q\,F + \Im r\,H)$, and splits as
+      the polar class does.
+      Its transverse (off-diagonal) part is non-zero iff $\Im p \neq 0$ or $\Im q \neq 0$, while its diagonal part
+      is the pure $\Jthree$ rephasing $i\,\Im r\,\diag(0, 2, -2)$, which lies in the $\UU(1)^{3}$ double-coset
+      quotient defining $[\Upi]$ and is therefore class-trivial.
+      Hence
+      \[
+        [\Upi] = [I] \quad\Longleftrightarrow\quad \Im p = \Im q = 0 ,
+      \]
+      independently of $\Im r$.
+      In particular a complex representation matrix obtained from a complex spinorial frame $W$ leaves the class
+      unchanged, $A_{\Pi} \mapsto W A_{\Pi} W^{\dagger}$, so the mixing is controlled by the reality of the
+      \emph{coefficients} $p, q$, not by that of the matrix entries.
+    \end{proposition}
+
+    \begin{corollary}[Negative closure at the present stratum]
+      \label{cor:negative-closure-present-stratum}
+      At the present full-tower stratum the non-central step has real coefficients.
+      The cascade step is $g = \exp(tE)\exp(sF)$ with $t, s \in \mathbb{R}$, its per-step $\JPi$-odd $\Jthree$
+      component being the real oriented area $\alpha = ts$~\cite{Beau2026prs, Beau2026aar}; and the inherited lift
+      carries only the central cyclotomic phase $\zeta_{q}^{\Delta A_{c}}$, with no Fourier or Weyl generator and
+      hence no metaplectic Gauss phase~\cite{Beau2026cho}, a central datum that is projectively trivial for the
+      polar factor.
+      Thus $\Im p = \Im q = 0$ is forced and, by Proposition~\ref{prop:reality-structure}, $A_{\Pi} = 0$ and
+      $[\Upi] = [I]$.
+      The diagonal split nevertheless stands: $N_{A} \neq 0$~\cite{Beau2026cho} and $u \neq 0$~\cite{Beau2026prs}.
+      The present stratum therefore derives the diagonal generation split but not the mixing.
+      A non-trivial internal block requires a genuinely complex non-central metaplectic phase, a Weil generator
+      absent from the present pipeline and available only in a new tower stratum, gated by the same full-tower
+      type-rigidity~\cite{Beau2026aog} as the capacity normalisation.
+    \end{corollary}
+
     \begin{remark}[Two delimitations]
       \label{rem:precautions}
       First, the spin-stratum type-rigidity of~\cite{Beau2026aog} closes the orientation caveat
@@ -403,12 +442,18 @@ Independent Researcher, France\\
       in the image of the single-cascade $\Sym^{2}(\mathfrak{sl}_{2})$ lift.
       Consequently $N_{A}$ may fix the diagonal oriented-area normalisation without fixing the polar mixing
       class.
+      At the present full-tower stratum these non-central coefficients are moreover forced real --- the cascade
+      step is real~\cite{Beau2026prs, Beau2026aar} and the inherited lift carries only the central
+      phase~\cite{Beau2026cho} --- so $\Im p = \Im q = 0$, $A_{\Pi} = 0$ and $[\Upi] = [I]$: the stratum derives
+      the diagonal split but not the mixing (Proposition~\ref{prop:reality-structure},
+      Corollary~\ref{cor:negative-closure-present-stratum}).
 
     \paragraph{Open.}
       The positive Yukawa norm $\lamY$ and a non-trivial polar class $[\Upi] \neq [I]$ are not fixed here.
-      The norm $\lamY$ scales $\Hpi$, whereas a non-trivial $[\Upi]$ requires a genuine complex metaplectic
-      phase, conditional on an unprescribed phase and ordering~\cite{Beau2026bim}, and observable as a mixing
-      matrix only relative to a second fermionic sector.
+      The norm $\lamY$ scales $\Hpi$, whereas a non-trivial $[\Upi]$ requires a genuinely complex non-central
+      metaplectic phase, absent from the present pipeline and available only through a new tower
+      stratum~\cite{Beau2026aog}.
+      It is observable as a mixing matrix only relative to a second fermionic sector.
       Hence the absolute masses, the generation mixing, and the CP structure remain downstream open data, in
       agreement with~\cite{Beau2026fmnote}.
 
@@ -443,6 +488,13 @@ Independent Researcher, France\\
     external block $R_{\mathrm{mix}}$ in the $\Sym^{2}(\mathfrak{sl}_{2})$ lift, and the independence of the
     mixing datum from the real oriented area $N_{A}$ ---
     is checked in \texttt{front3d\_transverse\_route.py}.
+    The reality-structure results of Section~\ref{sec:polar-class} ---
+    the dependence of $A_{\Pi}$ on the $\sigma$-anti-real part alone, the equivalence
+    $[\Upi] = [I] \Leftrightarrow \Im p = \Im q = 0$, the class-triviality of the imaginary $\Jthree$ rephasing,
+    the projective triviality of the central scalar, and the spinorial-frame covariance distinguishing matrix
+    complexity from coefficient complexity (Proposition~\ref{prop:reality-structure},
+    Corollary~\ref{cor:negative-closure-present-stratum}) ---
+    are checked in \texttt{front3e\_reality\_structure.py}.
 
   \newpage
 

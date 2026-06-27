@@ -618,6 +618,43 @@ Independent Researcher, France\\
         is a separate, later front.
       \end{remark}
 
+    \paragraph{Linear-growth depths do not supply the generation stabilisation scale.}
+      We record the negative resolution of the depth front, established by exact computation on the corpus
+      growth law with no fit and no mass input (Section~\ref{sec:repro}).
+      The required inter-generation depth gap of the exponential law,
+      \(\Delta n_{\mathrm{req}} = \log(m_\tau/m_e)/\beta^{\ast} \simeq 64\) at \(\beta^{\ast}\simeq 0.127\),
+      is bracketed on both sides by the two natural depths of the linear growth law
+      \(N(\lambda;n)\sim F_{\mathrm{KM}}(\lambda)\,n\)~\cite{Beau2026a5}, and neither side reaches it.
+      First, the level-crossing depth gives the lower end:
+      the amplified ratio collapses to \(\lambda_i/\lambda_j\le 3/2\)
+      (Lemma~\ref{lem:level-crossing-cancellation}), a gap of order \(3\).
+      Second, the cumulative-capacity cell-entry depth, read on the projected-capacity profiles
+      \(\sigma_{\mathrm{pair}}(n),\sigma_c(n)\) of the relaxation cascade, is intrinsic and stable in the
+      cascade parameter \(q\) but stays \(\le 10\) and does not split by generation:
+      the three blocks of a co-admissible triplet share one capacity profile, hence one cell depth.
+      Third, the full saturation rank \(n_{\mathrm{sat},g} = k\dim\rho_g/c_g(p)\), with
+      \(c_g(p)=F_{\mathrm{KM}}(\lambda_g)\)~\cite{Beau2026a5}, gives the upper end but fails on stability and
+      order:
+      the gap \(\Delta n_{\mathrm{sat}}(p)\) diverges with the cascade degree \(p\)
+      (from \(83\) at \(p=5\) to \(354\) at \(p=53\)) through the band-edge vanishing \(c_1\to 0\), so
+      \(\Delta n_{\mathrm{req}}\) is attained only at a tuned sub-saturation fraction and a single \(p\);
+      and the symmetry pin \(c_2=\tfrac12\) fixes \(n_{\mathrm{sat},2}=2k\dim\rho_2\) while
+      \(n_{\mathrm{sat},3}=k\dim\rho_3/c_3(p)\) crosses it, so the \(n_2,n_3\) generation order swaps with
+      \(p\).
+      The structural lock is uniform:
+      every depth extracted from the linear law --- crossing, saturation, or any intermediate fraction --- is
+      a function of the same coefficients \(c_g(p)\), and therefore inherits both the band-edge divergence
+      \(c_1\to 0\) and the symmetry pin \(c_2=\tfrac12\); this holds for the inter-block partition and for the
+      stratigraphic inter-level partition \(\{20,24,30\}\) alike.
+      A \(q\)-stable, correctly ordered stabilisation depth thus cannot be a depth of
+      \(N(\lambda;n)\sim F_{\mathrm{KM}}(\lambda)\,n\):
+      the positive law, if it exists, must be a decaying capacity-controlled per-level profile
+      \(\sigma_{\lambda_g}(n)\) transported onto the cascade, a distinct object not extracted from the linear
+      count.
+      This is an honest reduction, not a derivation:
+      the depth triplet remains the open carrier (Remark~\ref{rem:depths-scope}), now with the linear-law
+      route closed.
+
     \paragraph{Summary.}
       Front~3b is closed as a squared-Yukawa-levels result, not a mixing result, and Front~3c characterises
       the chiral polar factor as a rephasing class whose non-triviality is the transverse metaplectic datum.
@@ -663,6 +700,13 @@ Independent Researcher, France\\
     (Lemma~\ref{lem:level-crossing-cancellation}), and the unreachability of the required depth gaps from the
     static data (Corollary~\ref{cor:intrinsic-branching-depths}) ---
     are checked in \texttt{front\_depths\_ng\_reconciliation.py}.
+    The bracketing of the required depth gap and the closure of the linear-growth route of
+    Section~\ref{sec:status} ---
+    the over-amplification and band-edge divergence of the saturation rank in the exponential reading, the
+    intrinsic but \(\le 10\) and non-splitting cumulative-capacity cell depth on the relaxation profiles, and
+    the \(q\)-instability of both the inter-level gap and the \(n_2,n_3\) order ---
+    are checked in \texttt{front\_saturation\_rank\_amplification.py},
+    \texttt{front\_capacity\_cell\_depth.py}, and \texttt{front\_interlevel\_cell\_depth.py}.
 
   \newpage
 

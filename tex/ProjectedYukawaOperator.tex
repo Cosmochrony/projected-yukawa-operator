@@ -81,6 +81,11 @@ Independent Researcher, France\\
     On the derived real cascade that transverse component is absent, so $[\Upi] = [I]$ and no physical mixing
     is produced at this stratum; the only route left open to a non-trivial class is a genuine complex
     non-central metaplectic phase, not derived here, observable only relative to a second fermionic sector.
+    Beyond the mixing question, the same stratum settles the generation-scale question negatively:
+    every depth read from the static admissibility spectrum --- crossing, saturation, capacity cell,
+    quantised count, and quantised resolution density --- yields only order-one ratios or re-introduces the
+    target scale through an unforced normalisation, so the static spectral stratum fixes the generation
+    structure and the order-one level split, but not the charged-fermion hierarchy.
     All operator identities are verified by exact symbolic computation, with no sampling.
   \end{abstract}
 
@@ -629,7 +634,7 @@ Independent Researcher, France\\
       the amplified ratio collapses to \(\lambda_i/\lambda_j\le 3/2\)
       (Lemma~\ref{lem:level-crossing-cancellation}), a gap of order \(3\).
       Second, the cumulative-capacity cell-entry depth, read on the projected-capacity profiles
-      \(\sigma_{\mathrm{pair}}(n),\sigma_c(n)\) of the relaxation cascade, is intrinsic and stable in the
+      \(\sigma_{\mathrm{pair}}(n),\sigma_c(n)\) of the admissibility cascade, is intrinsic and stable in the
       cascade parameter \(q\) but stays \(\le 10\) and does not split by generation:
       the three blocks of a co-admissible triplet share one capacity profile, hence one cell depth.
       Third, the full saturation rank \(n_{\mathrm{sat},g} = k\dim\rho_g/c_g(p)\), with
@@ -738,8 +743,8 @@ Independent Researcher, France\\
     The bracketing of the required depth gap and the closure of the linear-growth route of
     Section~\ref{sec:status} ---
     the over-amplification and band-edge divergence of the saturation rank in the exponential reading, the
-    intrinsic but \(\le 10\) and non-splitting cumulative-capacity cell depth on the relaxation profiles, and
-    the \(q\)-instability of both the inter-level gap and the \(n_2,n_3\) order ---
+    intrinsic but \(\le 10\) and non-splitting cumulative-capacity cell depth on the admissibility-cascade
+    profiles, and the \(q\)-instability of both the inter-level gap and the \(n_2,n_3\) order ---
     are checked in \texttt{front\_saturation\_rank\_amplification.py},
     \texttt{front\_capacity\_cell\_depth.py}, and \texttt{front\_interlevel\_cell\_depth.py}.
     The hard-exit valency test closing the quantised resolution-density route is checked in

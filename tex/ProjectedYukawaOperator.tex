@@ -668,7 +668,7 @@ Independent Researcher, France\\
       since the resulting depth gap is flat in \(p\) rather than driven by \(c_1(p)\to 0\).
       This gain does not close the generation-scale problem.
       The quantisation acts on the normalised \(F_{\mathrm{KM}}\)-level, so the forced \(O(1)\) quanta fall in
-      the crossing regime rather than in the observed stabilisation window.
+      the crossing regime rather than in the required stabilisation window.
       The window \(\Delta n\in[50,80]\) is reached only by reintroducing the raw Cayley valency \(|S|=24\), or
       by using a quantum ratio of the same order as the target hierarchy itself.
       The resolution-density route therefore converts the previous obstruction into a sharper question, which
@@ -742,6 +742,14 @@ Independent Researcher, France\\
     the \(q\)-instability of both the inter-level gap and the \(n_2,n_3\) order ---
     are checked in \texttt{front\_saturation\_rank\_amplification.py},
     \texttt{front\_capacity\_cell\_depth.py}, and \texttt{front\_interlevel\_cell\_depth.py}.
+    The hard-exit valency test closing the quantised resolution-density route is checked in
+    \texttt{front\_valency\_forced\_hardexit.py}.
+    It verifies that the \(\mathrm{Sym}^2\) Schur-residue transport is scale-free, that the
+    \(F_{\mathrm{KM}}\) density is defined on the normalised Laplacian \(L=I-A/|S|\), and that the
+    factor \(|S|\) enters only as the count normalisation.
+    Consequently re-inserting \(|S|\) quantises the un-normalised count rather than the
+    resolution density, returning to the already closed depth law
+    \(n_g=\Delta I_g/c_g(p)\).
 
   \newpage
 

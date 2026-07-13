@@ -1,8 +1,8 @@
 # Projected Yukawa Operator and Chiral Polar Factor
 
 This repository contains the source of the Cosmochrony fermionic-matter paper
-[*Projected Yukawa Operator and Chiral Polar Factor — The Squared Observable
-$H_\Pi = Y_\Pi^{\dagger}Y_\Pi$ and the Undetermined Chiral Polar Map $U_\Pi$*](out/ProjectedYukawaOperator.pdf).
+*Projected Yukawa Operator and Chiral Polar Factor — The Squared Observable
+$H_\Pi = Y_\Pi^{\dagger}Y_\Pi$ and the Undetermined Chiral Polar Map $U_\Pi$*.
 
 This note takes the second step of the mass-sector frontier of the fermionic-matter
 sub-programme, and draws a **sharp negative conclusion** at its entry. The companion line note

@@ -36,7 +36,6 @@ projected-yukawa-operator/
 
 ## Links
 
-- 📄 [Paper PDF](out/ProjectedYukawaOperator.pdf)
 - 🔗 DOI: [10.5281/zenodo.20767498](https://doi.org/10.5281/zenodo.20767498)
 - 🌐 Website: https://cosmochrony.org/science/fermionic-matter/projected-yukawa-operator/
 

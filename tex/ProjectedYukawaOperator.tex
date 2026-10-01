@@ -24,6 +24,7 @@
 \newtheorem{corollary}{Corollary}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
+\newtheorem{hypothesis}{Hypothesis}
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
 
@@ -32,8 +33,9 @@
 \newcommand{\Cgen}{\mathbb{C}^{3}_{\mathrm{gen}}}
 \newcommand{\Epi}{E_{\Pi}}
 \newcommand{\Sbundle}{\mathcal{S}_{\Pi}}
-\newcommand{\SL}{\mathcal{S}_{L,\Pi}}
-\newcommand{\SR}{\mathcal{S}_{R,\Pi}}
+\newcommand{\Eweak}{E_{\mathrm{weak}}}
+\newcommand{\GL}{{\Cgen}^{(L)}}
+\newcommand{\GR}{{\Cgen}^{(R)}}
 \newcommand{\LY}{L_{Y}}
 \newcommand{\Ypi}{Y_{\Pi}}
 \newcommand{\Hpi}{H_{\Pi}}
@@ -63,36 +65,21 @@ Independent Researcher, France\\
   \maketitle
 
   \begin{abstract}
-    This note takes the second step of the mass-sector frontier of the fermionic-matter sub-programme of
-    Cosmochrony, and draws a sharp negative conclusion at its entry.
-    The companion line note fixed the determinant line $\LY = \wedge^{2}(\Sbundle)$ as the Yukawa coupling
-    line and the generation-level assignment from $\Epi^{2}|_{\Cgen} = \diag(1, \tfrac12 + u, \tfrac12 -
-    u)$~\cite{Beau2026pyl}.
-    We ask whether the squared projective residue determines the Yukawa morphism itself, and show that it
-    does not.
-    The generation-level observable produced by the Schur-residue sector is the positive hermitian square
-    $\Hpi := \Ypi^{\dagger}\Ypi$, whose spectrum on $\Cgen$ is fixed up to the overall Yukawa norm by
-    $\Hpi|_{\Cgen} = \lamY^{2}\,\diag(1, \tfrac12 + u, \tfrac12 - u)$.
-    The morphism $\Ypi$ is then determined only up to a chiral polar factor, $\Ypi = \Upi\,\Hpi^{1/2}$, with
-    $\Upi$ a unitary chiral map on the support of $\Hpi$.
-    Hence the squared residue fixes the squared Yukawa levels but not the morphism: $\Upi$ carries the chiral
-    orientation, the relative generation phases, and the mixing, while the positive scale $\lamY$ is a
-    separate normalisation of $\Hpi$ --- none of it visible to the dimensionless level operator
-    $\Epi^{2}|_{\Cgen}$.
-    Front~3b is therefore closed as a squared-Yukawa-levels result, not a mixing result.
-    A further analysis characterises $\Upi$ not as a canonical matrix but as a rephasing class, the double
-    quotient $[\Upi] \in \UU(1)^{3}_{R} \backslash \UU(3) / \UU(1)^{3}_{L}$, whose invariants are the moduli
-    $|(\Upi)_{ij}|$ and a Jarlskog phase --- three mixing angles and one CP phase --- and whose non-triviality
-    $[\Upi] \neq [I]$ is controlled exactly by the transverse component of the metaplectic generator.
-    On the derived real cascade that transverse component is absent, so $[\Upi] = [I]$ and no physical mixing
-    is produced at this stratum; the only route left open to a non-trivial class is a genuine complex
-    non-central metaplectic phase, not derived here, observable only relative to a second fermionic sector.
-    Beyond the mixing question, the same stratum settles the generation-scale question negatively:
-    every depth read from the static admissibility spectrum --- crossing, saturation, capacity cell,
-    quantised count, and quantised resolution density --- yields only order-one ratios or re-introduces the
-    target scale through an unforced normalisation, so the static spectral stratum fixes the generation
-    structure and the order-one level split, but not the charged-fermion hierarchy.
-    All operator identities are verified by exact symbolic computation, with no sampling.
+    This note takes the second step of the mass-sector frontier of the fermionic-matter sub-programme.
+    Under the hypotheses [H-Spin] and [H-Weak] of Q14, the companion line note types the Yukawa line as
+    $\LY = \wedge^{2}(\Eweak)$ and reads generation levels off $\Epi^{2}|_{\Cgen}$.
+    The squared projective residue does not determine the Yukawa morphism.
+    The algebraic consequences use only the generation factor $\Cgen$ and positive hermitian squares, the spinor,
+    weak and line factors being spectators; the one premise not supplied is the identification [H-Id]: the
+    operators on $\Cgen$ are restrictions of $\Epi^{2}$, the Yukawa square being the Schur-residue level operator.
+    Under it, $\Hpi := \Ypi^{\dagger}\Ypi = \lamY^{2}\,\Epi^{2}|_{\Cgen}$, whereas
+    $\Ypi = \Upi\,\Hpi^{1/2}$ with $\Upi$ a unitary polar factor is linear algebra, without [H-Id].
+    Hence $\Upi$, which carries the chiral orientation and the mixing, is invisible to the squared residue.
+    The polar factor is a rephasing class $[\Upi]$, non-trivial exactly when its generator has a transverse
+    component, which the real cascade of the model lacks: $[\Upi] = [I]$ and no mixing is produced, the real
+    diagonal split being read as the Lorentz-chirality imbalance on the orientation-compatible branch, an input.
+    Only a complex non-central metaplectic phase, not derived here, remains open.
+    The static spectrum fixes the order-one level split, not the charged-fermion hierarchy.
   \end{abstract}
 
   \noindent\textbf{Keywords:}
@@ -109,21 +96,32 @@ Independent Researcher, France\\
   \section{Position and purpose}
     \label{sec:position}
 
-    The line note~\cite{Beau2026pyl} closed the first stage of the projected Yukawa sector.
-    It identified the determinant line $\LY = \wedge^{2}(\Sbundle)$ as the unique functorial coupling line,
-    invisible to the $\SU(2)_{L}$ adjoint sector and carrying the abelian weight, and it read the generation
-    levels off the squared projective residue $\Epi^{2}|_{\Cgen} = \diag(1, \tfrac12 + u, \tfrac12 - u)$.
-    It also stated, but did not analyse, that the mass matrix is a distinct object: the projected Yukawa
-    morphism $\Ypi : \SL \otimes \LY \to \SR$, whose norm, the sign of $u$, and the mixing phase remained
-    open.
+    The line note~\cite{Beau2026pyl} closes the first stage of the projected Yukawa sector.
+    It types the coupling line as the determinant line $\LY = \wedge^{2}(\Eweak)$ of the distinct rank-two weak
+    factor $\Eweak$ of~\cite{Beau2026q14}, which carries the abelian weight only because the structure group of
+    $\Eweak$ is $\UU(2)$, and it reads the generation levels off the squared projective residue
+    $\Epi^{2}|_{\Cgen} = \diag(1, \tfrac12 + u, \tfrac12 - u)$.
+    The factor $\Eweak$ and the Lorentz reading of the spinor factor $\Sbundle$ are two hypotheses
+    of~\cite{Beau2026q14}, [H-Weak] and [H-Spin], supplied by no source; under them the left fermions lie in
+    $P_{L}\Sbundle \otimes \Eweak \otimes \LY^{k}$ and the right fermions in $P_{R}\Sbundle \otimes \LY^{m}$.
+    The mass matrix is a distinct object: the projected Yukawa morphism between these sectors, whose norm, the
+    sign of $u$, and the mixing phase remain open.
 
     This note analyses that morphism, and the analysis begins with a negative result.
-    The squared projective residue is a hermitian object on a single chirality, while $\Ypi$ ties the two
+    The squared projective residue is a hermitian object on a single Lorentz chirality, while $\Ypi$ ties the two
     chiralities; the chiral connecting datum is therefore not visible to $\Epi^{2}$.
-    Concretely, $\Epi^{2}|_{\Cgen}$ determines the hermitian square $\Hpi = \Ypi^{\dagger}\Ypi$, hence the
-    squared Yukawa levels, but leaves $\Ypi$ free up to a unitary chiral polar factor.
+    Concretely, under the identification of Hypothesis~\ref{hyp:identification}, $\Epi^{2}|_{\Cgen}$ determines the
+    hermitian square $\Hpi = \Ypi^{\dagger}\Ypi$, hence the squared Yukawa levels, but leaves $\Ypi$ free up to a
+    unitary chiral polar factor.
     The purpose of the note is to make this precise, to extract exactly what is nonetheless fixed --- the
     spectrum of $\Ypi^{\dagger}\Ypi$ --- and to delimit what is not.
+    Two kinds of statements are kept apart.
+    The algebraic consequences use only the generation factor $\Cgen$ and positive hermitian squares; the spinor,
+    weak and line factors are spectators, and no statement below needs the line $\LY$ or its typing.
+    The premises that are not algebraic are named: the identification of the operators on $\Cgen$ with restrictions
+    of $\Epi^{2}$ (Hypothesis~\ref{hyp:identification}), and the orientation-compatible branch of the Lorentz chirality
+    (Hypothesis~\ref{hyp:orientation-branch}).
+    Each statement is tagged below by the premises it uses.
     The discipline of the projective-residue reduction is kept throughout: $\Epi = -\Pi_{S} D (1 - P) D
     \Pi_{S}^{*} = -M^{\dagger} M$ is negative semi-definite, with the split $u$ carried by the transported
     chiral defect~\cite{Beau2026prs}, so a semi-definite operator must not be promoted by hand to an
@@ -132,33 +130,82 @@ Independent Researcher, France\\
   \section{The Yukawa operator as a chiral morphism}
     \label{sec:morphism}
 
-    The projected Yukawa coupling is a morphism of the admissible spinor sectors twisted by the coupling
-    line,
+    Under the hypotheses [H-Spin] and [H-Weak] of~\cite{Beau2026q14}, the left and right fermion sectors of the line
+    note~\cite{Beau2026pyl} are
+    \[
+      \mathcal{F}_{L} = P_{L}\Sbundle \otimes \Eweak \otimes \LY^{k},
+      \qquad
+      \mathcal{F}_{R} = P_{R}\Sbundle \otimes \LY^{m},
+      \qquad
+      \LY = \wedge^{2}(\Eweak),
+    \]
+    each tensored with the generation factor $\Cgen$.
+    The projected Yukawa coupling is a morphism between these sectors, and its component on the generation factor
+    is
     \begin{equation}
       \label{eq:yukawa-morphism}
-      \Ypi : \SL \otimes \LY \longrightarrow \SR ,
+      \Ypi : \GL \longrightarrow \GR ,
     \end{equation}
-    from the left chiral generation carrier, twisted by the determinant line $\LY$, to the right chiral
-    carrier.
+    from the left generation carrier $\GL$ to the right generation carrier $\GR$, both copies of $\Cgen$.
+    The spinor, weak and line components of the morphism are spectators of every statement below.
+    The coupling datum that would join $\mathcal{F}_{L}$ to $\mathcal{F}_{R}$ across the mismatch of weak charge and
+    of the exponents $k$, $m$ is not constructed here, and nothing below depends on it.
+
     The mass matrix is the value of $\Ypi$ on the locked configuration, and the two physically invariant
-    hermitian objects are the left and right squares $\Ypi^{\dagger}\Ypi$ on $\SL \otimes \LY$ and
-    $\Ypi\,\Ypi^{\dagger}$ on $\SR$.
-    The squared projective residue $\Epi^{2}$ is a hermitian operator on a single chirality; it can coincide
-    with one of these squares, but it cannot by itself carry the chiral connecting map between them.
+    hermitian objects are the left and right squares $\Ypi^{\dagger}\Ypi$ on $\GL$ and
+    $\Ypi\,\Ypi^{\dagger}$ on $\GR$.
+    The squared projective residue $\Epi^{2}$ is a hermitian operator on a single chirality.
+    Under Hypothesis~\ref{hyp:identification} it can coincide with one of these squares, but it cannot by itself carry
+    the chiral connecting map between them.
     This is the structural origin of the polar ambiguity below.
+
+    The chiralities in this paper are Lorentz chiralities of the spinor factor under [H-Spin].
+    They are not the electroweak chirality of $V{-}A$ selection, which is the representation content of [H-Weak] and
+    which this note neither uses nor derives.
+
+    In this paper $\JPi$ denotes the internal antilinear parity of the generation copy, an operator on $\Cgen$ built
+    from the Born--Infeld datum; it does not use [H-Spin].
+
+    \begin{hypothesis}[{[H-Id]}: generation operators as restrictions of $\Epi^{2}$; not supplied]
+      \label{hyp:identification}
+      The operators on $\Cgen = \Sym^{2}(V_{\mathrm{gen}})$ written $\Epi^{2}|_{\Cgen}$, with $V_{\mathrm{gen}}$ the
+      distinct supplied generation doublet of~\cite{Beau2026q14}, are restrictions of the square of the projective
+      residue $\Epi$ of the projected Dirac operator, and the left Yukawa square is the Schur-residue level operator,
+      $\Hpi = \Ypi^{\dagger}\Ypi = \lamY^{2}\,\Epi^{2}|_{\Cgen}$ with $\lamY$ a positive normalisation.
+    \end{hypothesis}
+
+    In~\cite{Beau2026q14} (Section~6) these operators are model operators on $\Cgen$, and their reading as
+    restrictions of $\Epi^{2}$ is an identification that is not supplied; the Schur reduction~\cite{Beau2026prs}
+    leaves it as an open front.
+    Every statement that equates $\Epi^{2}|_{\Cgen}$ with a Yukawa square is conditional on
+    Hypothesis~\ref{hyp:identification}.
+    The level operator itself, $\diag(1, \tfrac12 + u, \tfrac12 - u)$, and the linear algebra built on it do not
+    depend on it.
+
+    \begin{hypothesis}[{[H-LA]}: orientation-compatible branch]
+      \label{hyp:orientation-branch}
+      Under [H-Spin] and the Born--Infeld datum (H1)--(H2) of~\cite{Beau2026a34}, the projective residue is
+      left-admissible, $P_{R}\Epi P_{R} = 0$, on the orientation-compatible branch.
+      That branch is an input: it is not selected by the spinorial Born--Infeld lift~\cite{Beau2026q14}.
+    \end{hypothesis}
+
+    Left-admissibility is a statement about Lorentz chirality; it is compatible with, but does not select, the
+    left-handed weak assignment of [H-Weak] (the $V{-}A$ structure), and the two are not identified
+    here~\cite{Beau2026q14}.
 
   \section{The squared Yukawa observable}
     \label{sec:squared}
 
     \begin{proposition}[Squared Yukawa observable]
       \label{prop:squared-yukawa}
-      Let $\Ypi : \SL \otimes \LY \to \SR$ be the projected Yukawa morphism.
+      Let $\Ypi : \GL \to \GR$ be the generation block of the projected Yukawa morphism, and assume
+      Hypothesis~\ref{hyp:identification}.
       Then the generation-level observable determined by the Schur-residue sector is the positive hermitian
       operator
       \[
         \Hpi := \Ypi^{\dagger}\Ypi
       \]
-      on the left chiral generation carrier.
+      on the left generation carrier.
       On the gauge-singlet triplet $\Cgen$, its dimensionless spectral part is fixed, up to the overall
       Yukawa norm $\lamY$, by
       \[
@@ -174,11 +221,14 @@ Independent Researcher, France\\
       \tfrac12 + u, \tfrac12 - u)$ by the normal form of~\cite{Beau2026prs} with the even sector closed by
       Born--Infeld parity~\cite{Beau2026a34}, and the level reading of~\cite{Beau2026pyl}.
       Identifying the Schur-residue generation observable with the left Yukawa square, $\Hpi = \Ypi^{\dagger}
-      \Ypi = \lamY^{2}\,(-\Epi/|\Epi|)$-normalised, gives $\Hpi|_{\Cgen} = \lamY^{2}\,\diag(1, \tfrac12 + u,
-      \tfrac12 - u)$ with $\lamY$ the undetermined overall norm.
+      \Ypi = \lamY^{2}\,(-\Epi/|\Epi|)$-normalised, which is Hypothesis~\ref{hyp:identification}, gives
+      $\Hpi|_{\Cgen} = \lamY^{2}\,\diag(1, \tfrac12 + u, \tfrac12 - u)$ with $\lamY$ the undetermined overall norm.
       The eigenvalues are the diagonal entries, so the spectrum is as stated, and a hermitian square fixes a
       hermitian operator, not the underlying morphism, which is the content of Section~\ref{sec:polar}.
     \end{proof}
+
+    Premises: the generation factor, hermitian squares, and Hypothesis~\ref{hyp:identification}; the spinor, weak and
+    line factors are spectators.
 
     The positive square root is the projective residue itself up to sign: since $\Epi|_{\Cgen}$ is negative
     semi-definite, $\big(-\Epi|_{\Cgen}\big)^{2} = \Epi^{2}|_{\Cgen}$, so $-\Epi|_{\Cgen}$ is the positive
@@ -196,11 +246,11 @@ Independent Researcher, France\\
       \]
       where
       \[
-        \Upi : \SL \otimes \LY \longrightarrow \SR
+        \Upi : \GL \longrightarrow \GR
       \]
       is a unitary chiral polar map on the support of $\Hpi$.
-      Consequently the squared residue fixes the generation levels but not the complex mixing phase, nor the
-      full Yukawa operator.
+      Consequently, under Hypothesis~\ref{hyp:identification}, the squared residue fixes the generation levels but not
+      the complex mixing phase, nor the full Yukawa operator.
     \end{proposition}
 
     \begin{proof}
@@ -210,16 +260,21 @@ Independent Researcher, France\\
       \Ypi^{\dagger}\Ypi\,\Hpi^{-1/2} = \Hpi^{-1/2}\Hpi\,\Hpi^{-1/2} = \mathbf{1}$ on that support.
       Conversely, for any such $\Upi$ the product $\Upi\,\Hpi^{1/2}$ has square $\Hpi^{1/2}\Upi^{\dagger}
       \Upi\,\Hpi^{1/2} = \Hpi$, so the solution set is exactly $\{\Upi\,\Hpi^{1/2}\}$.
-      The map $\Upi$ acts on the right carrier $\SR$, and $\Hpi$ is invariant under $\Ypi \mapsto V\,\Ypi$
-      for every unitary $V$ on $\SR$, $(V\Ypi)^{\dagger}(V\Ypi) = \Ypi^{\dagger} V^{\dagger} V\,\Ypi =
+      The map $\Upi$ acts into the right carrier $\GR$, and $\Hpi$ is invariant under $\Ypi \mapsto V\,\Ypi$
+      for every unitary $V$ on $\GR$, $(V\Ypi)^{\dagger}(V\Ypi) = \Ypi^{\dagger} V^{\dagger} V\,\Ypi =
       \Ypi^{\dagger}\Ypi$, so distinct $\Upi$ give distinct $\Ypi$ with identical $\Hpi$.
-      Hence $\Hpi$, equivalently $\Epi^{2}|_{\Cgen}$, does not determine $\Ypi$: the generation-mixing
+      Hence $\Hpi$, equivalently (under Hypothesis~\ref{hyp:identification}) $\Epi^{2}|_{\Cgen}$, does not
+      determine $\Ypi$: the generation-mixing
       content and the relative phases reside in $\Upi$, on which $\Epi^{2}$ has no hold.
     \end{proof}
 
+    Premises: the generation factor and positive hermitian squares only; the first assertion is linear algebra and
+    does not use Hypothesis~\ref{hyp:identification}, which enters only the reading of $\Hpi$ as $\Epi^{2}|_{\Cgen}$.
+
     \begin{remark}[The partial no-go, sharply]
       \label{rem:no-go}
-      Proposition~\ref{prop:polar-ambiguity} is a partial no-go: $\Epi^{2}$ does not fix $\Ypi$.
+      Proposition~\ref{prop:polar-ambiguity} is a partial no-go: $\Epi^{2}$, read as $\Hpi$ under
+      Hypothesis~\ref{hyp:identification}, does not fix $\Ypi$.
       What survives is exactly the spectral datum of Proposition~\ref{prop:squared-yukawa},
       $\Spec(\Ypi^{\dagger}\Ypi) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$.
       The undetermined factor is not a numerical residue but a unitary chiral map, the carrier of the chiral
@@ -244,7 +299,8 @@ Independent Researcher, France\\
 
     The reduction~\cite{Beau2026prs} imposes $v = 0$ on the CP-even real sector, the off-diagonal mixing
     $R_{\mathrm{mix}}$ vanishing for phase-free data, with a non-zero $v$ requiring a complex metaplectic
-    phase.
+    phase; the metaplectic step model of~\cite{Beau2026q14} (Section~6) is the model in which this phase is
+    considered.
     In the present language this is the branch $\Upi = \mathbf{1}$.
     There the Yukawa operator is the positive root itself,
     \begin{equation}
@@ -266,15 +322,16 @@ Independent Researcher, France\\
     The polar factor $\Upi$ of Section~\ref{sec:polar} is not a canonical observable before one quotients by
     the admissible chiral rephasings.
     The generation-level operator $\Hpi|_{\Cgen} = \lamY^{2}\,\diag(1, \tfrac12 + u, \tfrac12 - u)$ has a
-    distinct spectrum for $0 < u < \tfrac12$, and by the antiunitary $\JPi$ exchange of chiralities the right
-    carrier carries the level operator $\Ypi\,\Ypi^{\dagger} = \Upi\,\Hpi\,\Upi^{\dagger}$ with the same
-    spectrum~\cite{Beau2026prs}.
+    distinct spectrum for $0 < u < \tfrac12$, and the right carrier carries the level operator
+    $\Ypi\,\Ypi^{\dagger} = \Upi\,\Hpi\,\Upi^{\dagger}$, which has the same spectrum as $\Hpi$ as for any square
+    matrix; the antiunitary exchange of the two carriers of~\cite{Beau2026prs} gives the same reading and is not
+    used.
     Distinctness pins each carrier to its $\Jthree$-labelled level eigenbasis up to a diagonal phase, so the
     residual admissible freedom is the diagonal rephasing of the generation states.
 
     \begin{proposition}[Polar class]
       \label{prop:polar-class}
-      Let $V_{L} \in \UU(1)^{3}$ act on $\SL \otimes \LY$ and $V_{R} \in \UU(1)^{3}$ on $\SR$ as diagonal
+      Let $V_{L} \in \UU(1)^{3}$ act on $\GL$ and $V_{R} \in \UU(1)^{3}$ on $\GR$ as diagonal
       rephasings of the level eigenbases.
       Then $\Ypi \mapsto V_{R}\,\Ypi\,V_{L}^{-1}$, $\Hpi \mapsto V_{L}\,\Hpi\,V_{L}^{-1}$, and
       \[
@@ -305,6 +362,10 @@ Independent Researcher, France\\
       rephasings remove $2\cdot 3 - 1 = 5$, and four physical parameters survive, three angles and one phase.
     \end{proof}
 
+    Premises: the generation factor and a hermitian square of distinct spectrum only.
+    The carriers $\GL$, $\GR$ are abstract three-dimensional spaces, and the spinor, weak and line factors are
+    spectators.
+
     The next obstruction is therefore not the existence of $\Upi$, but the non-triviality of its class: whether
     the complex metaplectic phase produces $[\Upi] \neq [I]$ or only a representative diagonal-rephasing
     equivalent to the identity.
@@ -312,7 +373,7 @@ Independent Researcher, France\\
     \begin{proposition}[Polar non-triviality]
       \label{prop:polar-nontriviality}
       Write $\Upi(\gamma) = \exp(\gamma A)$ for the chiral generator $A = \partial_{\gamma}\Upi|_{0}$ induced by
-      the complex metaplectic phase $\gamma$, with $A$ anti-hermitian.
+      the complex metaplectic phase $\gamma$ of the metaplectic step model, with $A$ anti-hermitian.
       The diagonal-rephasing orbit through the identity has tangent space the diagonal anti-hermitian
       matrices, so $[\Upi(\gamma)] \neq [I]$ at first order if and only if $A$ has a non-zero off-diagonal
       (transverse) part.
@@ -338,22 +399,38 @@ Independent Researcher, France\\
       dependence on the diagonal phases.
     \end{proof}
 
+    Premises: the generation factor only.
+    The statement holds for every smooth curve $\Upi(\gamma) = \exp(\gamma A)$ of unitaries with anti-hermitian $A$; its
+    reading in terms of a metaplectic phase is a modelling step of~\cite{Beau2026q14} (Section~6), not a premise of
+    the algebra.
+
     \begin{corollary}[Real-cascade collapse]
       \label{cor:real-cascade-collapse}
-      On the derived real cascade the off-diagonal mixing channel is absent, $v = 0$, the transported chiral
-      defect being the real $V\!-\!A$ diagonal split~\cite{Beau2026prs}, and the odd Lorentzian deformation does not
-      switch it on at first order, the first-order generation-mixing coefficient of $\Epi^{2}$ vanishing by antiunitary
-      parity in every covariant family, even orders not being excluded~\cite{Beau2026ebj}; hence $A$ is diagonal,
-      $\Upi(\gamma)$ stays diagonal, and $[\Upi] = [I]$, with $|(\Upi)_{ij}| = \delta_{ij}$ and $J_{\Pi} = 0$.
+      On the real cascade of the model the off-diagonal mixing channel is absent, $v = 0$, the transported chiral
+      defect being the real diagonal split~\cite{Beau2026prs}.
+      That split is read as the Lorentz-chirality (left-admissibility) imbalance $\pi_{LL} - \pi_{RR}$ under [H-Spin]
+      on the orientation-compatible branch of Hypothesis~\ref{hyp:orientation-branch}, and not as the $V{-}A$
+      structure of [H-Weak].
+      The odd Lorentzian deformation does not switch the mixing on at first order: the first-order
+      generation-mixing coefficient of $\Epi^{2}$ vanishes by antiunitary parity in every covariant family, under the
+      covariant moving spinorial embedding of the cited note, even orders not being excluded~\cite{Beau2026ebj}.
+      Hence $A$ is diagonal, $\Upi(\gamma)$ stays diagonal, and $[\Upi] = [I]$, with $|(\Upi)_{ij}| = \delta_{ij}$ and
+      $J_{\Pi} = 0$.
       No physical mixing is produced at this stratum.
       A non-trivial class $[\Upi] \neq [I]$, hence CKM/PMNS-type mixing, requires a transverse metaplectic
       component.
-      In the present corpus-derived real cascade this transverse component is absent; the only route left open
+      In the present real cascade of the model this transverse component is absent; the only route left open
       is therefore a genuine complex metaplectic phase, not derived here and still conditional on an
       unprescribed phase and ordering~\cite{Beau2026bim}.
       The resulting mixing matrix is physical only as a relative polar class between two fermionic sectors
       sharing a generation carrier.
     \end{corollary}
+
+    Premises: the generation factor and the algebra of Proposition~\ref{prop:polar-nontriviality}, together with the
+    real cascade data of~\cite{Beau2026prs}, whose diagonal split is read through
+    Hypothesis~\ref{hyp:orientation-branch};
+    the identification of Hypothesis~\ref{hyp:identification} is used where the real data are stated as data on
+    $\Epi^{2}|_{\Cgen}$.
 
     \begin{remark}[Two transverse blocks]
       \label{rem:two-transverse-blocks}
@@ -371,7 +448,8 @@ Independent Researcher, France\\
       $e_{0} \leftrightarrow e_{\pm}$ is sourced.
       By contrast the external block $e_{+} \leftrightarrow e_{-}$ is never sourced by the
       $\Sym^{2}(\mathfrak{sl}_{2})$ lift alone; it lies outside the single-cascade metaplectic image and would
-      require an additional tower datum.
+      require an additional tower datum, and a complex metaplectic phase is ruled out as a source of it within the
+      metaplectic step model of~\cite{Beau2026q14} (Section~6).
       The chiral-frontier normalisation channel and the polar-mixing channel therefore separate: the oriented
       area $N_{A}$ belongs to the real Cartan / $\Jthree$ channel~\cite{Beau2026aar} and can normalise the
       diagonal split without predicting a CKM/PMNS polar class.
@@ -402,6 +480,9 @@ Independent Researcher, France\\
       \emph{coefficients} $p, q$, not by that of the matrix entries.
     \end{proposition}
 
+    Premises: the generation factor and the $\Sym^{2}(\mathfrak{sl}_{2})$ lift on $V_{\mathrm{gen}}$ of the metaplectic
+    step model; the $\JPi$-odd projection uses the internal parity of the generation copy, not [H-Spin].
+
     \begin{corollary}[Negative closure at the present stratum]
       \label{cor:negative-closure-present-stratum}
       At the present full-tower stratum the non-central step has real coefficients.
@@ -419,6 +500,10 @@ Independent Researcher, France\\
       type-rigidity~\cite{Beau2026aog} as the capacity normalisation.
     \end{corollary}
 
+    Premises: the generation factor and Proposition~\ref{prop:reality-structure}, together with the real cascade
+    and central-phase data of~\cite{Beau2026prs, Beau2026aar, Beau2026cho}; neither the line $\LY$ nor the
+    Lorentz or weak typing enters.
+
     \begin{remark}[Two delimitations]
       \label{rem:precautions}
       First, the spin-stratum type-rigidity of~\cite{Beau2026aog} closes the orientation caveat
@@ -433,8 +518,9 @@ Independent Researcher, France\\
     \label{sec:status}
 
     \paragraph{Derived (this note).}
-      The generation-level observable of the Schur-residue sector is the positive hermitian square $\Hpi =
-      \Ypi^{\dagger}\Ypi$, with $\Spec(\Hpi)|_{\Cgen} = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$
+      Under Hypothesis~\ref{hyp:identification}, the generation-level observable of the Schur-residue sector is the
+      positive hermitian square $\Hpi = \Ypi^{\dagger}\Ypi$, with
+      $\Spec(\Hpi)|_{\Cgen} = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$
       (Proposition~\ref{prop:squared-yukawa}).
       The Yukawa morphism is determined by this square only up to a unitary chiral polar factor, $\Ypi =
       \Upi\,\Hpi^{1/2}$ (Proposition~\ref{prop:polar-ambiguity}).
@@ -443,12 +529,20 @@ Independent Researcher, France\\
       Jarlskog phase $J_{\Pi}$, four physical parameters in all (Proposition~\ref{prop:polar-class}).
       Its non-triviality is controlled by the transverse component of the metaplectic generator: $[\Upi] \neq
       [I]$ iff that generator has a non-zero off-diagonal component (Proposition~\ref{prop:polar-nontriviality}).
-      All of these are structural and unconditional given the carrier identifications of~\cite{Beau2026prs,
-      Beau2026a34, Beau2026pyl}.
+      The three propositions on the polar factor are algebraic consequences: they use only the generation factor and
+      positive hermitian squares, and hold whatever the typing of the spinor, weak and line factors, with no use of
+      the line $\LY$.
+      The level statement of Proposition~\ref{prop:squared-yukawa} is conditional on the identification of
+      Hypothesis~\ref{hyp:identification}, which is supplied by no source~\cite{Beau2026q14}.
+      The typing of the fermion sectors, $\LY = \wedge^{2}(\Eweak)$ with the left and right sectors above, is the
+      conditional typing of the line note~\cite{Beau2026pyl} under [H-Spin] and [H-Weak] and is carried here only as
+      the setting of the spectators.
 
     \paragraph{Conditional.}
-      On the derived real cascade the off-diagonal channel is absent, $v = 0$, so $[\Upi] = [I]$ and no
-      physical mixing is produced at this stratum (Corollary~\ref{cor:real-cascade-collapse}).
+      On the real cascade of the model the off-diagonal channel is absent, $v = 0$, so $[\Upi] = [I]$ and no
+      physical mixing is produced at this stratum (Corollary~\ref{cor:real-cascade-collapse}); the diagonal split is
+      read as the Lorentz-chirality (left-admissibility) imbalance on the orientation-compatible branch, an input
+      (Hypothesis~\ref{hyp:orientation-branch}), and not as $V{-}A$ selection.
       The transverse datum further splits into two blocks (Remark~\ref{rem:two-transverse-blocks}): the internal
       block $e_{0} \leftrightarrow e_{\pm}$ is sourcable by a genuinely complex non-central
       $\mathfrak{sl}_{2}$ metaplectic coefficient, while the external block $e_{+} \leftrightarrow e_{-}$ is not
@@ -742,11 +836,22 @@ Independent Researcher, France\\
       The hierarchy is not carried by any forced static or first-order dynamic quantity of the
       cascade.
 
+    \paragraph{Premises of the level and depth statements.}
+      The statements of this section that read the levels $\lamY^{2}\{1, \tfrac35, \tfrac25\}$ as squared Yukawa
+      levels, and the Schur-residue weights $w_g$ of Lemma~\ref{lem:separation-label-weight} as the
+      $\Jthree$-triplet of $\Hpi$, use Hypothesis~\ref{hyp:identification}; the arithmetic of the level ratios does not.
+      Lemma~\ref{lem:level-crossing-cancellation} and Corollary~\ref{cor:intrinsic-branching-depths} concern the
+      depth amplification of the exponential law and the static spectral data $\{\lambda_g, \dim\rho_g, \beta^{\ast}\}$;
+      they use neither the Yukawa morphism, nor the line $\LY$, nor the Lorentz or weak typing, nor
+      Hypothesis~\ref{hyp:identification}.
+      None of the depth statements uses Hypothesis~\ref{hyp:orientation-branch}.
+
     \paragraph{Summary.}
       Front~3b is closed as a squared-Yukawa-levels result, not a mixing result, and Front~3c characterises
       the chiral polar factor as a rephasing class whose non-triviality is the transverse metaplectic datum.
-      The squared residue $\Epi^{2}|_{\Cgen}$ can close $\Hpi = \Ypi^{\dagger}\Ypi$; it cannot close $\Ypi$
-      unless the class $[\Upi]$ is fixed, and that class collapses to the identity on the derived real cascade.
+      The squared residue $\Epi^{2}|_{\Cgen}$ can close $\Hpi = \Ypi^{\dagger}\Ypi$ under
+      Hypothesis~\ref{hyp:identification}; it cannot close $\Ypi$ unless the class $[\Upi]$ is fixed, and that class
+      collapses to the identity on the real cascade of the model.
 
   \section{Reproducibility}
     \label{sec:repro}

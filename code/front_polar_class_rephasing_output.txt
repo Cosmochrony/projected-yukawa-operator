@@ -1,0 +1,39 @@
+Polar class of the generation block: exact checks over Q(i) and a 60-digit rank computation
+================================================================================================
+  [PASS]  1_commutant_of_J3_is_diagonal
+  [PASS]  2a_unitary
+  [PASS]  2a_levels
+  [PASS]  2a_Y_dag_Y_is_H
+  [PASS]  2a_U_recovered
+  [PASS]  2a_U_not_diagonal
+  [PASS]  2a_U_not_monomial
+  [PASS]  2b_phases_unit
+  [PASS]  2b_Hprime_equals_H
+  [PASS]  2b_H_commutes_with_VL
+  [PASS]  2b_U_transforms
+  [PASS]  2b_right_square_transforms
+  [PASS]  2c_moduli_invariant
+  [PASS]  2c_quartet_invariant
+  [PASS]  2c_quartet_nonzero
+  [PASS]  2c_phases_actually_change_U
+  [PASS]  2d_right_square_is_UHUdag
+  [PASS]  2d_right_square_not_J3_diagonal
+  [PASS]  2d_projector_diagonals_are_moduli
+  [PASS]  2e_circular_pinning_trivialises_U
+  [PASS]  3_H_is_u0_level_operator
+  [PASS]  3_J3_groups_still_act
+  [PASS]  3_V_in_commutant_of_H
+  [PASS]  3_V_not_diagonal
+  [PASS]  3_H_invariant_under_V
+  [PASS]  3_moduli_not_invariant_under_V
+  [PASS]  4_H_is_u_half_operator
+  [PASS]  4_same_Y_two_unitaries
+  [PASS]  4_ambiguity_is_a_J3_rephasing
+  [PASS]  4_class_unchanged
+  [PASS]  5_rank_is_four_at_all_points
+  ranks of d(moduli, J) at the random points: [4, 4, 4, 4, 4, 4]
+================================================================================================
+The rephasing groups are the J3-commutants of the two carriers, defined independently of Y Y^dag.
+Restriction flagged: distinct spectrum of H (u not in {0, +-1/2}) for the J3 class to coincide with the
+class under the commutant of H; the statement is made for 0 < u < 1/2.
+ALL CHECKS PASS

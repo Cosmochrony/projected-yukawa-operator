@@ -1,0 +1,34 @@
+Front 3b - squared Yukawa observable and chiral polar ambiguity (exact symbolic, no sampling)
+============================================================================================
+  Y_Pi : C^3_gen(L) -> C^3_gen(R) (generation block);   H_Pi := Y_Pi^dag Y_Pi  on the left carrier
+  Reading H_Pi as E_Pi^2|gen needs [H-Res] and [H-Sq]; (A)-(F) are linear algebra on the model operator,
+  with no use of [H-Res], [H-Sq], [H-Fac] or of L_Y
+  (A) substitution a^2:b^2:c^2 = 1:(1/2+u):(1/2-u),  H = lambda^2 diag(1, 1/2+u, 1/2-u)  (an identity)
+  (B) Spec(Y^dag Y) = {1, 1/2+u, 1/2-u} at u = 7/50 for an explicit non-monomial unitary U
+  (C) NO-GO: Y = U H^{1/2} gives Y^dag Y = H for ANY unitary U => H does not fix Y
+  (D) H is blind to the R-side / chiral polar unitary U_Pi: (U Y)^dag (U Y) = Y^dag Y
+  (E) CP-real branch U=I: Y real diagonal, NO mixing; mixing/phase live only in U_Pi != I
+  (F) H invariant under the rotation family U(theta) while Y(theta) sweeps a 1-param family
+--------------------------------------------------------------------------------------------
+  [PASS]  A_levels_substitution
+  [PASS]  A_spectrum_distinct
+  [PASS]  B_unitary_is_unitary
+  [PASS]  B_unitary_not_diagonal
+  [PASS]  B_spectrum_is_levels
+  [PASS]  C_rot_same_H
+  [PASS]  C_ph_same_H
+  [PASS]  C_Y_differs_rot
+  [PASS]  C_Y_differs_ph
+  [PASS]  D_rot_unitary
+  [PASS]  D_ph_unitary
+  [PASS]  D_H_blind
+  [PASS]  E_cp_no_mixing
+  [PASS]  E_H_blind_offdiagonal
+  [PASS]  E_Y_offdiagonal_nonzero
+  [PASS]  F_H_theta_invariant
+  [PASS]  F_Y_theta_varies
+============================================================================================
+RESULT: under [H-Res] and [H-Sq], E_Pi^2|gen gives the squared Yukawa LEVELS, not the morphism. The chiral
+        polar factor U_Pi (chiral orientation + mixing phase) is free; norm lambda_Y is a separate scale of
+        H_Pi. Y_Pi is not fixed unless U_Pi is fixed (Front 3c).
+ALL CHECKS PASS

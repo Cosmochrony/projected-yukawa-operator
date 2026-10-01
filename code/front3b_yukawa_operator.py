@@ -8,25 +8,26 @@ positive scale of H_Pi (a unitary cannot carry it). The sign of u is seen by the
 oriented J3-labelled basis is chosen; what is open is the physical orientation branch (e_+ <-> e_-).
 
 Setup. Only the generation block of the projected Yukawa morphism is used: Y_Pi : C^3_gen(L) -> C^3_gen(R),
-the component on the generation factor of the coupling between the left and right fermion sectors. The spinor,
+the component on the generation factor of the coupling between the left and right fermion sectors (the full
+coupling only under the factorisation premise [H-Fac]). The spinor,
 weak and line factors (the typing of PYL, Beau2026pyl, under the hypotheses [H-Spin] and [H-Weak] of Q14) are
 spectators: nothing below uses L_Y. Its left hermitian square H_Pi := Y_Pi^dag Y_Pi acts on the LEFT
-generation carrier. Under the identification [H-Id] (the operators on C^3_gen are restrictions of E_Pi^2 and
-H_Pi is the Schur-residue level operator; not supplied, Q14 Section 6), the dimensionless spectral part on the
-gauge-singlet triplet C^3_gen is
-    H_Pi|gen = lambda_Y^2 diag(1, 1/2+u, 1/2-u)        (~ E_Pi^2|gen, PRS Beau2026prs / PYL Beau2026pyl),
-with lambda_Y the overall (undetermined) Yukawa norm. PRS gives E_Pi = -M^dag M (negative semi-definite),
-so the positive square root is -E_Pi|gen.
+generation carrier. Under the premises [H-Res] (the model operator diag(1, 1/2+u, 1/2-u) on C^3_gen is the
+restriction of E_Pi^2; not supplied, Q14 Section 6) and [H-Sq] (the dictionary H_Pi = lambda_Y^2 E_Pi^2|gen),
+the dimensionless spectral part on the gauge-singlet triplet C^3_gen is
+    H_Pi|gen = lambda_Y^2 diag(1, 1/2+u, 1/2-u),
+with lambda_Y the overall (undetermined) Yukawa norm. The script does not test [H-Res], [H-Sq] or [H-Fac]: it checks the
+algebra on the model operator.
 
 The polar no-go is proved for a GENERIC positive H with singular values (a, b, c) > 0 (so it does not depend
-on the particular level values), and the level identification a^2 : b^2 : c^2 = 1 : (1/2+u) : (1/2-u) is
-checked separately.
+on the particular level values), and the substitution a^2 : b^2 : c^2 = 1 : (1/2+u) : (1/2-u) is checked
+separately.
 
 Results (all exact symbolic).
-  (A) Level identification: with singular values (a,b,c) = (lambda, lambda sqrt(1/2+u), lambda sqrt(1/2-u)),
-      H = diag(a^2,b^2,c^2) = lambda^2 diag(1, 1/2+u, 1/2-u), so Spec(Y^dag Y) = lambda^2 {1,1/2+u,1/2-u}.
-  (B) PRS consistency: E_Pi = -M^dag M negative s.d. and (-E_Pi|gen)^2 = E_Pi^2|gen = diag(1,1/2+u,1/2-u),
-      so the positive root H^{1/2}/lambda = -E_Pi|gen.
+  (A) Level substitution (an identity, not evidence): with singular values (a,b,c) = (lambda, lambda sqrt(1/2+u),
+      lambda sqrt(1/2-u)), H = diag(a^2,b^2,c^2) = lambda^2 diag(1, 1/2+u, 1/2-u).
+  (B) Spectrum of Y^dag Y for an explicit non-monomial unitary (exact eigenvalue computation at u = 7/50):
+      Spec(Y^dag Y) = {1, 16/25, 9/25} = {1, 1/2+u, 1/2-u}, whatever the unitary.
   (C) Polar non-uniqueness (NO-GO): for a generic positive H = diag(a^2,b^2,c^2) and ANY unitary U,
       Y = U H^{1/2} satisfies Y^dag Y = H. Distinct U give distinct Y with identical H, so H does not fix Y.
   (D) The free factor is the R-side / chiral polar unitary: under Y -> U Y, (U Y)^dag (U Y) = Y^dag Y, so
@@ -36,10 +37,9 @@ Results (all exact symbolic).
   (F) Mixing invisibility: the rotation family U(theta) leaves H invariant for all theta while Y(theta)
       sweeps a one-parameter family -- the mixing lives entirely in U_Pi.
 
-Conclusion (printed): under [H-Id], E_Pi^2|gen fixes the squared Yukawa levels, but the chiral polar factor U_Pi -- the
-chiral orientation and the mixing phase -- is free (the norm lambda_Y is a separate scale of H_Pi). Front 3b
-can close H_Pi = Y_Pi^dag Y_Pi; it cannot close Y_Pi unless U_Pi is fixed (Front 3c). No mass value is
-produced. No figures. English.
+Conclusion (printed): under [H-Res] and [H-Sq], E_Pi^2|gen gives the squared Yukawa levels, but the chiral polar factor
+U_Pi -- the chiral orientation and the mixing phase -- is free (the norm lambda_Y is a separate scale of H_Pi).
+Y_Pi is not fixed unless U_Pi is fixed (Front 3c). No mass value is produced. No figures. English.
 """
 
 import sympy as sp
@@ -78,17 +78,23 @@ def main():
     target = lam**2 * sp.diag(1, sp.Rational(1, 2) + u, sp.Rational(1, 2) - u)
     # compare on the assumption 0 < u < 1/2 so that the sqrt-squares resolve
     asm = sp.Q.positive(sp.Rational(1, 2) + u) & sp.Q.positive(sp.Rational(1, 2) - u)
-    checks["A_levels"] = all(sp.refine(sp.simplify(H_levels[i, i] - target[i, i]), asm) == 0
+    checks["A_levels_substitution"] = all(sp.refine(sp.simplify(H_levels[i, i] - target[i, i]), asm) == 0
                              for i in range(3))
     checks["A_spectrum_distinct"] = sp.simplify((sp.Rational(1, 2) + u) - (sp.Rational(1, 2) - u)) == 2 * u
 
-    # ---- (B) PRS consistency: (-E_Pi|gen)^2 = E_Pi^2|gen ----------------------------------------
-    Epi_gen = -sp.diag(1, sp.sqrt(sp.Rational(1, 2) + u), sp.sqrt(sp.Rational(1, 2) - u))  # negative s.d.
-    checks["B_Epi_sq"] = all(sp.refine(sp.simplify((Epi_gen * Epi_gen)[i, i]
-                             - sp.diag(1, sp.Rational(1, 2) + u, sp.Rational(1, 2) - u)[i, i]), asm) == 0
-                             for i in range(3))
-    checks["B_posroot"] = _zero((-Epi_gen) - sp.diag(1, sp.sqrt(sp.Rational(1, 2) + u),
-                                                     sp.sqrt(sp.Rational(1, 2) - u)))
+    # ---- (B) spectrum of Y^dag Y for an explicit non-monomial unitary, computed by eigenvalue solve ----
+    Kc = sp.Matrix([[0, 1 + sp.I, 2], [1 - sp.I, 1, -sp.I], [2, sp.I, -1]])               # Hermitian
+    Uc = ((sp.eye(3) - sp.I * Kc) * (sp.eye(3) + sp.I * Kc).inv())
+    Uc = Uc.applyfunc(lambda e: sp.simplify(sp.expand_complex(e)))
+    uq = sp.Rational(7, 50)
+    Hh_q = sp.diag(1, sp.Rational(4, 5), sp.Rational(3, 5))                                  # sqrt of the levels
+    Yq = Uc * Hh_q
+    ev = sp.Matrix(dag(Yq) * Yq).applyfunc(sp.simplify).eigenvals()
+    checks["B_unitary_is_unitary"] = _zero(dag(Uc) * Uc - I3)
+    checks["B_unitary_not_diagonal"] = any(sp.simplify(Uc[i, j]) != 0 for i in range(3) for j in range(3) if i != j)
+    checks["B_spectrum_is_levels"] = (sorted(ev.keys(), key=lambda x: float(x))
+                                      == sorted([sp.Integer(1), sp.Rational(1, 2) + uq, sp.Rational(1, 2) - uq],
+                                                key=lambda x: float(x)))
 
     # ---- (C) polar non-uniqueness (the NO-GO) ---------------------------------------------------
     Y0, Y_rot, Y_ph = Hhalf, U_rot * Hhalf, U_ph * Hhalf
@@ -105,7 +111,9 @@ def main():
     # ---- (E) CP-real diagonal branch vs mixing in U ---------------------------------------------
     Y_cp = I3 * Hhalf
     checks["E_cp_no_mixing"] = _zero(Y_cp - sp.diag(a, b, c))
-    checks["E_mixing_in_U"] = sp.simplify(Y_rot[2, 1] - sp.sin(th) * b) == 0 and sp.sin(th) * b != 0
+    Hoff = (dag(Y_rot) * Y_rot - H).applyfunc(sp.simplify)
+    checks["E_H_blind_offdiagonal"] = _zero(Hoff)
+    checks["E_Y_offdiagonal_nonzero"] = sp.simplify(Y_rot[2, 1].subs({th: sp.pi / 3, b: 1})) != 0
 
     # ---- (F) mixing invisibility ---------------------------------------------------------------
     checks["F_H_theta_invariant"] = _zero(dag(Y_rot) * Y_rot - H)
@@ -115,9 +123,10 @@ def main():
     print("Front 3b - squared Yukawa observable and chiral polar ambiguity (exact symbolic, no sampling)")
     print("=" * 92)
     print("  Y_Pi : C^3_gen(L) -> C^3_gen(R) (generation block);   H_Pi := Y_Pi^dag Y_Pi  on the left carrier")
-    print("  (A), (B) hold under [H-Id]; (C)-(F) are linear algebra on C^3_gen, no use of [H-Id] or of L_Y")
-    print("  (A) levels a^2:b^2:c^2 = 1:(1/2+u):(1/2-u),  Spec(Y^dag Y) = lambda^2 {1, 1/2+u, 1/2-u}")
-    print("  (B) PRS: E_Pi = -M^dag M negative s.d.,  (-E_Pi|gen)^2 = E_Pi^2|gen,  pos. root = H^{1/2}")
+    print("  Reading H_Pi as E_Pi^2|gen needs [H-Res] and [H-Sq]; (A)-(F) are linear algebra on the model operator,")
+    print("  with no use of [H-Res], [H-Sq], [H-Fac] or of L_Y")
+    print("  (A) substitution a^2:b^2:c^2 = 1:(1/2+u):(1/2-u),  H = lambda^2 diag(1, 1/2+u, 1/2-u)  (an identity)")
+    print("  (B) Spec(Y^dag Y) = {1, 1/2+u, 1/2-u} at u = 7/50 for an explicit non-monomial unitary U")
     print("  (C) NO-GO: Y = U H^{1/2} gives Y^dag Y = H for ANY unitary U => H does not fix Y")
     print("  (D) H is blind to the R-side / chiral polar unitary U_Pi: (U Y)^dag (U Y) = Y^dag Y")
     print("  (E) CP-real branch U=I: Y real diagonal, NO mixing; mixing/phase live only in U_Pi != I")
@@ -129,10 +138,9 @@ def main():
         allok = allok and ok
         print(f"  [{'PASS' if ok else 'FAIL'}]  {k}")
     print("=" * 92)
-    print("RESULT: under [H-Id], E_Pi^2|gen fixes the squared Yukawa LEVELS, not the morphism. The chiral polar factor")
-    print("        U_Pi (chiral orientation + mixing phase) is free; norm lambda_Y is a separate scale of H_Pi.")
-    print("        Front 3b closes H_Pi = Y_Pi^dag Y_Pi;")
-    print("        it cannot close Y_Pi unless U_Pi is fixed (Front 3c).")
+    print("RESULT: under [H-Res] and [H-Sq], E_Pi^2|gen gives the squared Yukawa LEVELS, not the morphism. The chiral")
+    print("        polar factor U_Pi (chiral orientation + mixing phase) is free; norm lambda_Y is a separate scale of")
+    print("        H_Pi. Y_Pi is not fixed unless U_Pi is fixed (Front 3c).")
     print("ALL CHECKS PASS" if allok else "SOME CHECKS FAILED")
     return allok
 

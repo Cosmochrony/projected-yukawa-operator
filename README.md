@@ -6,17 +6,24 @@ $H_\Pi = Y_\Pi^{\dagger}Y_\Pi$ and the Undetermined Chiral Polar Map $U_\Pi$*.
 
 This note takes the second step of the mass-sector frontier of the fermionic-matter
 sub-programme, and draws a **sharp negative conclusion** at its entry. The companion line note
-fixed the determinant line $L_Y = \wedge^2(S)$ as the Yukawa coupling line and the
-generation-level assignment $E_\Pi^2|_{\mathrm{gen}} = \operatorname{diag}(1, \tfrac12+u, \tfrac12-u)$.
+types the Yukawa coupling line as the determinant line $L_Y = \wedge^2(E_{\mathrm{weak}})$ of a distinct weak
+doublet, conditionally on the hypotheses [H-Spin] and [H-Weak] of Q14, and reads the generation-level assignment
+$E_\Pi^2|_{\mathrm{gen}} = \operatorname{diag}(1, \tfrac12+u, \tfrac12-u)$.
+
+Version 2.0.
 
 ## Core Result
 
 The paper asks whether the squared projective residue determines the Yukawa morphism itself, and
 shows that **it does not**. The generation-level observable produced by the Schur-residue sector
-is the positive hermitian square $H_\Pi = Y_\Pi^{\dagger}Y_\Pi$, which fixes the singular values
-of the Yukawa map but leaves the **chiral polar factor $U_\Pi$ undetermined**. The undetermined
+is, under a named identification (the operators on the generation factor are restrictions of
+$E_\Pi^2$, not supplied), the positive hermitian square $H_\Pi = Y_\Pi^{\dagger}Y_\Pi$, which fixes the
+singular values of the Yukawa map but leaves the **chiral polar factor $U_\Pi$ undetermined**. The undetermined
 object carries the chiral orientation that later inputs must supply; the squared observable alone
-cannot resolve it.
+cannot resolve it. The polar-factor statements are algebraic consequences using only the generation factor and
+positive hermitian squares; the spinor, weak and line factors are spectators. The absence of mixing on the real
+cascade reads the diagonal split as the Lorentz-chirality (left-admissibility) imbalance on the
+orientation-compatible branch, an input, and not as $V{-}A$ selection.
 
 ## Keywords
 

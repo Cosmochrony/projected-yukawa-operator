@@ -13,10 +13,11 @@ datum eps are the same functional of the level ratio R_Pi = (1/2+u)/(1/2-u), wit
 u = eps = 1/10 holds iff the arithmetic dictionary gate R_Pi = R_ADE = 3/2 (order-five Cayley ratio) is adopted.
 
 This audit assumes the dictionary gate (u = 1/10) and tests the NAIVE level-to-generation map
-"squared level k = squared mass of generation k". The verdict is a quantitative no-go within this reading: the squared levels are O(1)
-ratios, whereas the observed charged-fermion mass spectrum is strongly hierarchical. Hence the diagonal datum u is a
-generation-LEVEL WEIGHT inside H_Pi, not a direct mass-ratio predictor; the hierarchy must be carried by a separate
-amplification channel (spectral cascade exponent, sector-dependent lambda_Y, or a downstream operator).
+"squared level k = squared mass of generation k". The verdict is a quantitative no-go within this reading:
+the squared levels are O(1) ratios, whereas the observed charged-fermion mass spectrum is strongly
+hierarchical. Hence the diagonal datum u is a generation-LEVEL WEIGHT inside H_Pi, not a direct mass-ratio
+predictor; the hierarchy must be carried by a separate amplification channel
+(spectral cascade exponent, sector-dependent lambda_Y, or a downstream operator).
 
 No floating-point fitting: the level structure is exact; observed masses enter only as reference data for the
 order-of-magnitude gap, not as a target to be matched.

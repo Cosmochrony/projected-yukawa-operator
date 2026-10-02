@@ -16,8 +16,8 @@ Checks.
      in K is required, in the sesquilinear convention.
   5  Linear convention (control): Hom_{U(2)}(E (x) det^k (x) K, det^m) is non-zero for K = E (x) det^a iff
      a = m - k - 1, so a doublet in K is required in both conventions (the twist is convention dependent).
-  6  Multiplicity: for K = (E (x) det^(k-m)) + (E (x) det^(k-m)) the dimension is 2 (F1 holds, F2 fails); for K = 0 it is 0
-     (F2 holds, F1 fails): the two premises are independent.
+  6  Multiplicity: for K = (E (x) det^(k-m)) + (E (x) det^(k-m)) the dimension is 2 (F1 holds, F2 fails);
+     for K = 0 it is 0 (F2 holds, F1 fails): the two premises are independent.
 Exit status 0 iff every check passes.
 """
 
@@ -47,8 +47,8 @@ haar = (1 / np.pi) * np.sin(tt / 2) ** 2   # SU(2) Haar density in the class ang
 dt = tt[1] - tt[0]
 mult_scalar = np.sum(chi_half * chi_half * haar) * dt
 mult_vector = np.sum(chi_half * chi_half * (1 + 2 * np.cos(tt)) * haar) * dt   # chi_1 = 1 + 2 cos t
-checks["1_lorentz_scalar_multiplicity_one"] = abs(mult_scalar - 1) < 1e-9
-checks["1_lorentz_spin_one_multiplicity_one"] = abs(mult_vector - 1) < 1e-9
+checks["1_lorentz_scalar_once"] = abs(mult_scalar - 1) < 1e-9
+checks["1_lorentz_spin_one_once"] = abs(mult_vector - 1) < 1e-9
 
 # 2 inequivalence of (1/2,0) and (0,1/2) for SL(2,C)
 a = 1 + 1j
@@ -93,7 +93,8 @@ for k, v in checks.items():
     print(f"  [{'PASS' if ok else 'FAIL'}]  {k}")
 print(f"  {sum(bool(v) for v in checks.values())}/{len(checks)} checks pass")
 print("=" * 96)
-print("RESULT: the Lorentz factor of the sesquilinear pairing carries one invariant; the weak factor requires a doublet")
+print("RESULT: the Lorentz factor of the sesquilinear pairing carries one invariant; "
+      "the weak factor requires a doublet")
 print("        component E (x) det^(k-m) in the linking carrier K (a character gives zero); (F1) existence and (F2)")
 print("        multiplicity at most one are independent premises. No source supplies K.")
 print("ALL CHECKS PASS" if allok else "SOME CHECKS FAILED")

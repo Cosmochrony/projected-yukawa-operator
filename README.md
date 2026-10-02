@@ -34,12 +34,18 @@ alone cannot resolve it.
 Under [H-Grad] the polar factor is a rephasing class for the unitaries commuting with the Cartan generator $J_3$ of
 each carrier, non-trivial exactly when its generator has a transverse part.
 For the $J_\Pi$-odd anti-hermitian part $A_\Pi$ of the $\mathfrak{sl}_2$ lift, defined in the paper, the transverse
-part vanishes identically for every complex coefficient, because with Q14's antilinear $J_\Pi$ the $J_\Pi$-odd part
-of the lift is its Hermitian part; this is a statement about $A_\Pi$ as defined.
+part vanishes identically for every complex coefficient, because with the internal antilinear parity $J_\Pi$ of the
+generation copy (Q14 Section 6) the $J_\Pi$-odd part of the lift is its Hermitian part; this is a statement about
+$A_\Pi$ as defined.
+$A_\Pi$ is the generator defined in the paper; it is not the anomaly density of Q14.
 The $J_\Pi$-even anti-Hermitian part of the lift has a non-zero internal entry $\tfrac{\sqrt2}{2}(q - \bar p)$, non-zero
 for real $p \neq q$, so the image of $\mathfrak{sl}_2$ does reach the internal block $e_0 \leftrightarrow e_\pm$
 through that part, while the external block $R_{\mathrm{mix}}$ is not reached by the image of $\mathfrak{sl}_2$
-(Q14 Remark 6.4).
+(Q14 Remark 6.4); Q14 Proposition 6.3 (i)-(ii) excludes the internal block only by hypothesis, for the oriented
+odd lift it considers.
+For the cascade step $g = \exp(tE)\exp(sF)$ with real $t$, $s$, the $J_\Pi$-even internal entry is
+$\tfrac{\sqrt2}{2}\,c\,(s - t)$ with $c = \theta/\sinh\theta$: it vanishes at $t = s$, where the whole
+anti-Hermitian part of the lift is zero.
 No physical exclusion of the internal block is claimed: whether $A_\Pi$, rather than the $J_\Pi$-even part, is the
 right object is a modelling choice of the paper that no source justifies; the vanishing of $A_\Pi$ is
 representation-theoretic (the $J_\Pi$-odd anti-Hermitian operators are spin 0 and spin 2, the $\mathfrak{sl}_2$
@@ -77,7 +83,8 @@ python code/front_depths_ng_reconciliation.py
 ```
 
 The scripts are exact (sympy); the rephasing script also computes one rank in 60-digit arithmetic with a fixed seed,
-and the multiplicity script uses numerical Weyl integration.
+the multiplicity script uses numerical Weyl integration, and the level-assignment script converts levels with
+`float()`.
 Their printed outputs are committed beside them in `code/`.
 The depth-bracketing audits recorded in the paper are not reproduced in this repository.
 

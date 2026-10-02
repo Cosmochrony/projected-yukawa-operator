@@ -1,7 +1,7 @@
 [H-Fac]: representation theory of the weak linking carrier (Weyl integration on U(2), SU(2) characters)
 ================================================================================================
-  [PASS]  1_lorentz_scalar_multiplicity_one
-  [PASS]  1_lorentz_spin_one_multiplicity_one
+  [PASS]  1_lorentz_scalar_once
+  [PASS]  1_lorentz_spin_one_once
   [PASS]  2_characters_differ
   [PASS]  3_doublet_K_multiplicity_formula_125_cases
   [PASS]  4_character_K_gives_zero_125_cases

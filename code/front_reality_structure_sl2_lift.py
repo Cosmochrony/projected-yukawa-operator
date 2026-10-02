@@ -4,22 +4,26 @@ Objects. M = pE + qF + rH in sl_2(C), p, q, r complex symbols. L(M) is its lift 
 weight basis e_0 = (v+v- + v-v+)/sqrt2, e_+ = v+v+, e_- = v-v-. J_Pi z = S conj(z), S = Sym^2(eps), eps = [[0,1],[-1,0]]
 (the internal antilinear parity of Q14 Section 6, J_Pi^2 = -1 on V_gen, so S real, S^2 = +1 on Sym^2).
 J_Pi-odd projection: Pi_odd(X) = (X - S conj(X) S^-1)/2. The chiral generator of the paper is
-A_Pi := antiherm(Pi_odd(L(M))), a DEFINITION of the paper (no source selects the J_Pi-odd part for the generator of U_Pi).
+A_Pi := antiherm(Pi_odd(L(M))), a DEFINITION of the paper (no source selects the J_Pi-odd part for the
+generator of U_Pi). A_Pi is the generator defined here; it is not the anomaly density of Q14.
 
 Checks (exact, sympy).
   1  derived lift: L(H) = 2 J_3 and L(M) has the printed entries; S = Sym^2(eps) is real with S^2 = 1.
   2  Proposition (reality structure) (i)  : S conj(L(M)) S^-1 = -L(M)^dagger for symbolic complex p, q, r.
   3  (ii) : Pi_odd(L) = (L + L^dagger)/2 and Pi_even(L) = (L - L^dagger)/2.
   4  (iii): A_Pi = antiherm(Pi_odd(L)) = 0 identically, for all complex p, q, r.
-  5  the J_Pi-even anti-hermitian part antiherm(L) has the internal entry sqrt2 (q - conj p)/2, non-zero for real p != q:
+  5  the J_Pi-even anti-hermitian part antiherm(L) has the internal entry sqrt2 (q - conj p)/2,
+     non-zero for real p != q:
      it is NOT part of A_Pi (the question of the paper's definition, flagged in the paper).
-  6  (iv): the J_Pi-odd anti-hermitian subspace of u(3) has real dimension 6 and is Hilbert-Schmidt orthogonal to
-     L(E), L(F), L(H), hence to the complex span L(sl_2(C)) (the spin-one component of End(Sym^2 V) = 1 + 3 + 5).
+  6  (iv): the J_Pi-odd anti-hermitian subspace of u(3) has real dimension 6 and is Hilbert-Schmidt
+     orthogonal to L(E), L(F), L(H), hence to the complex span L(sl_2(C)) (the spin-one component of
+     End(Sym^2 V) = 1 + 3 + 5).
   7  NEGATIVE CONTROL: the LINEAR involution X -> S X S^-1 (not the antilinear parity of the paper) gives
-     antiherm(Pi_lin_odd(L)) with internal entries (sqrt2/4)(p + q - conj p - conj q) = i (sqrt2/2) Im(p + q): non-zero
-     iff Im(p + q) != 0 (so not "Im p or Im q": Im p = -Im q gives zero); the two parities agree on real L.
-  8  detectors of the polar non-triviality proposition: for U(g) = exp(g A), A anti-hermitian with generic entries,
-     |U_12|^2 = g^2 |A_12|^2 + O(g^3) and the quartet phase is -g^3 Im(A_12 A_23 A_31) + O(g^4) (exact series, to order 3).
+     antiherm(Pi_lin_odd(L)) with internal entries (sqrt2/4)(p + q - conj p - conj q) = i (sqrt2/2) Im(p + q):
+     non-zero iff Im(p + q) != 0 (so not "Im p or Im q": Im p = -Im q gives zero); the two parities agree on real L.
+  8  detectors of the polar non-triviality proposition: for U(g) = exp(g A), A anti-hermitian with generic
+     entries, |U_12|^2 = g^2 |A_12|^2 + O(g^3) and the quartet phase is -g^3 Im(A_12 A_23 A_31) + O(g^4)
+     (exact series, to order 3).
 Exit status 0 iff every check passes.
 """
 
@@ -112,7 +116,8 @@ checks["7_linear_control_internal_is_Im_p_plus_q"] = (sp.simplify(A_lin[0, 1] - 
 pq_anti = {p: sp.I, q: -sp.I}
 checks["7_linear_control_vanishes_for_Im_p_eq_minus_Im_q"] = sp.simplify(A_lin[0, 1].subs(pq_anti)) == 0
 checks["7_linear_control_nonzero_for_Im_p_only"] = sp.simplify(A_lin[0, 1].subs({p: sp.I, q: 0})) != 0
-checks["7_linear_antilinear_agree_on_real_L"] = zero((lin - odd).subs({p: sp.Rational(2), q: sp.Rational(5), r: sp.Rational(7)}))
+checks["7_linear_antilinear_agree_on_real_L"] = zero(
+    (lin - odd).subs({p: sp.Rational(2), q: sp.Rational(5), r: sp.Rational(7)}))
 
 # 8 detectors of the polar non-triviality proposition (exact, to order 3 in g)
 g = sp.symbols("g", real=True)
@@ -147,7 +152,8 @@ print(f"  {sum(bool(v) for v in checks.values())}/{len(checks)} checks pass")
 print("=" * 92)
 print("RESULT: A_Pi, the anti-hermitian part of the J_Pi-odd part of the sl_2 lift of the step generator, vanishes")
 print("        identically for all complex (p, q, r), because with the antilinear J_Pi the J_Pi-odd part of the lift")
-print("        is its hermitian part. This is a statement about A_Pi as defined. The J_Pi-even anti-hermitian part of the")
+print("        is its hermitian part. This is a statement about A_Pi as defined. "
+      "The J_Pi-even anti-hermitian part of the")
 print("        lift has the non-zero internal entry (sqrt2/2)(q - conj p), non-zero for real p != q, so the image of")
 print("        sl_2 does reach the internal block e_0 <-> e_pm through that part; the external block R_mix is not")
 print("        reached by the image of sl_2 (Q14 Rem. 6.4). No physical exclusion of the internal block is")

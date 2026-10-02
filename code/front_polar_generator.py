@@ -85,8 +85,9 @@ checks["3_P_symmetric_det1"] = zero(Pm - Pm.T) and sp.simplify(Pm.det() - 1) == 
 n_sym = sp.sqrt((2 + t * s) ** 2 + (t - s) ** 2)
 checks["3_P_trace_equals_n"] = sp.simplify(Pm.trace() - n_sym) == 0
 checks["3_n_squared_is_sum_of_squares_plus_4"] = sp.expand(n_sym ** 2 - (t ** 2 * s ** 2 + (t + s) ** 2 + 4)) == 0
-checks["3_P_symbolic_positivity_trace_and_det"] = (sp.simplify(Pm.trace() - n_sym) == 0 and sp.simplify(Pm.det() - 1) == 0
-                                                   and sp.expand(n_sym ** 2 - 4 - (t * s) ** 2 - (t + s) ** 2) == 0)
+checks["3_P_symbolic_positivity_trace_and_det"] = (
+    sp.simplify(Pm.trace() - n_sym) == 0 and sp.simplify(Pm.det() - 1) == 0
+    and sp.expand(n_sym ** 2 - 4 - (t * s) ** 2 - (t + s) ** 2) == 0)
 for (t0, s0) in ((1, 0), (2, 1)):
     P0 = Pm.subs({t: t0, s: s0})
     checks[f"3_P_positive_definite_at_t{t0}_s{s0}"] = sp.simplify(P0[0, 0]) > 0 and sp.simplify(P0.det() - 1) == 0

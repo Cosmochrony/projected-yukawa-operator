@@ -20,7 +20,7 @@ shows that **it does not**. Four premises are named, none supplied by a source:
 $E_\Pi^2|_{\mathbb{C}^3_{\mathrm{gen}}}$;
 [H-Sq], the dictionary $H_\Pi = (Y^{\mathrm{gen}}_\Pi)^{\dagger}Y^{\mathrm{gen}}_\Pi
 = \lambda_Y^2 E_\Pi^2|_{\mathbb{C}^3_{\mathrm{gen}}}$;
-[H-Fac], made of two separate premises, the existence of a weak linking carrier and the multiplicity one of the
+[H-Fac], made of two separate premises, the existence of a weak linking carrier and the multiplicity at most one of the
 invariant couplings, under which the full coupling $Y_\Pi$ factorises through its generation block;
 and [H-Grad], the $J_3$ grading of each generation carrier.
 The results are stated for the generation block

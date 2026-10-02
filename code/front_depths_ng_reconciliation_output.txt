@@ -1,0 +1,33 @@
+
+=== Step 1 : reconciliation (PYO w_g  vs  stratigraphy c_i/dim rho_i) ===
+[PASS] w_g at u=1/10 equals {1, 3/5, 2/5}  --  [Fraction(1, 1), Fraction(3, 5), Fraction(2, 5)]
+[PASS] stratigraphic ratio-set != PYO ratio-set  --  w [Fraction(1, 1), Fraction(3, 2), Fraction(5, 2)]  vs  strat [Fraction(1, 1), Fraction(6, 5), Fraction(3, 2)]
+[PASS] objects are functionally independent  --  w_g=f(u) [Sym^2 vertical]  ;  c_i/dim rho_i=F_KM(lambda_i)/dim rho_i [2I/KM]
+
+=== Step 2 : level-crossing cancellation (exponential trajectory-branching) ===
+[PASS] depth gap n_i-n_j = (1/beta) ln(lam_i/lam_j)  --  (log(lambda_i) - log(lambda_j))/beta
+[PASS] A(n_i)/A(n_j) = lam_i/lam_j  (beta cancels)  --  lambda_i/lambda_j
+[PASS] stratigraphic level-crossing mass ratio is O(1)  --  max lam_i/lam_j = 1.500
+
+=== Step 2 : required Delta n_g (observed hierarchy) vs reachable static depths ===
+    tau:e  ratio=     3477  beta*=0.090  ->  Delta n_req =   90.6 steps
+    tau:e  ratio=     3477  beta*=0.127  ->  Delta n_req =   64.2 steps
+    tau:e  ratio=     3477  beta*=0.213  ->  Delta n_req =   38.3 steps
+    mu:e   ratio=      207  beta*=0.090  ->  Delta n_req =   59.3 steps
+    mu:e   ratio=      207  beta*=0.127  ->  Delta n_req =   42.0 steps
+    mu:e   ratio=      207  beta*=0.213  ->  Delta n_req =   25.0 steps
+    t:u    ratio=    75000  beta*=0.090  ->  Delta n_req =  124.7 steps
+    t:u    ratio=    75000  beta*=0.127  ->  Delta n_req =   88.4 steps
+    t:u    ratio=    75000  beta*=0.213  ->  Delta n_req =   52.7 steps
+[PASS] static inputs give only O(1) depth gaps  --  ln(1.5)=0.405, ln(6/4)=0.405
+[PASS] required Delta n_g (>=25) unreachable from static data  --  min required ~ 25.0 steps >> O(1)
+
+=== VERDICT ===
+Step 1 : generation label is stratigraphic; w_g is a transported Schur-residue
+         weight on the same rank-three carrier. Two readings, not one object.
+Step 2 : level-crossing depths give beta-independent O(1) ratios (no-go reappears).
+         A hierarchy needs intrinsic branching depths n_g decoupled from {lambda_g};
+         m_g/lamY = sqrt(w_g) S_g A(n_g), n_g intrinsic stabilisation depths of Lambda_proj(n).
+         The published base does NOT fix n_g -> honest reduction, not a derivation.
+
+8/8 checks pass.

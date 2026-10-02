@@ -1,6 +1,6 @@
 Front 3b - squared Yukawa observable and chiral polar ambiguity (exact symbolic, no sampling)
 ============================================================================================
-  Y_Pi : C^3_gen(L) -> C^3_gen(R) (generation block);   H_Pi := Y_Pi^dag Y_Pi  on the left carrier
+  Ygen : C^3_gen(L) -> C^3_gen(R) (generation block);   H_Pi := Ygen^dag Ygen  on the left carrier
   Reading H_Pi as E_Pi^2|gen needs [H-Res] and [H-Sq]; (A)-(F) are linear algebra on the model operator,
   with no use of [H-Res], [H-Sq], [H-Fac] or of L_Y
   (A) substitution a^2:b^2:c^2 = 1:(1/2+u):(1/2-u),  H = lambda^2 diag(1, 1/2+u, 1/2-u)  (an identity)
@@ -30,5 +30,5 @@ Front 3b - squared Yukawa observable and chiral polar ambiguity (exact symbolic,
 ============================================================================================
 RESULT: under [H-Res] and [H-Sq], E_Pi^2|gen gives the squared Yukawa LEVELS, not the morphism. The chiral
         polar factor U_Pi (chiral orientation + mixing phase) is free; norm lambda_Y is a separate scale of
-        H_Pi. Y_Pi is not fixed unless U_Pi is fixed (Front 3c).
+        H_Pi. Ygen is not fixed unless U_Pi is fixed (Front 3c).
 ALL CHECKS PASS

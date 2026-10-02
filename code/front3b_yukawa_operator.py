@@ -1,4 +1,4 @@
-"""Front 3b: the squared Yukawa observable H_Pi = Y_Pi^dag Y_Pi and the chiral polar ambiguity.
+"""Front 3b: the squared Yukawa observable H_Pi = Ygen^dag Ygen and the chiral polar ambiguity.
 
 Bias-independent, exact symbolic verification (no sampling) of the partial no-go that opens Front 3b: the
 squared projective residue E_Pi^2|gen determines the HERMITIAN SQUARE of the Yukawa morphism, not the
@@ -7,11 +7,11 @@ orientation, the relative generation phases, and the mixing; the overall norm la
 positive scale of H_Pi (a unitary cannot carry it). The sign of u is seen by the level operator once an
 oriented J3-labelled basis is chosen; what is open is the physical orientation branch (e_+ <-> e_-).
 
-Setup. Only the generation block of the projected Yukawa morphism is used: Y_Pi : C^3_gen(L) -> C^3_gen(R),
-the component on the generation factor of the coupling between the left and right fermion sectors (the full
-coupling only under the factorisation premise [H-Fac]). The spinor,
+Setup. Only the generation block Ygen = Y_Pi^gen of the full projected Yukawa morphism Y_Pi is used:
+Ygen : C^3_gen(L) -> C^3_gen(R), the component on the generation factor of the coupling between the left and right
+fermion sectors (Ygen is the full coupling only under the premise [H-Fac]). The spinor,
 weak and line factors (the typing of PYL, Beau2026pyl, under the hypotheses [H-Spin] and [H-Weak] of Q14) are
-spectators: nothing below uses L_Y. Its left hermitian square H_Pi := Y_Pi^dag Y_Pi acts on the LEFT
+spectators: nothing below uses L_Y. Its left hermitian square H_Pi := Ygen^dag Ygen acts on the LEFT
 generation carrier. Under the premises [H-Res] (the model operator diag(1, 1/2+u, 1/2-u) on C^3_gen is the
 restriction of E_Pi^2; not supplied, Q14 Section 6) and [H-Sq] (the dictionary H_Pi = lambda_Y^2 E_Pi^2|gen),
 the dimensionless spectral part on the gauge-singlet triplet C^3_gen is
@@ -39,7 +39,7 @@ Results (all exact symbolic).
 
 Conclusion (printed): under [H-Res] and [H-Sq], E_Pi^2|gen gives the squared Yukawa levels, but the chiral polar factor
 U_Pi -- the chiral orientation and the mixing phase -- is free (the norm lambda_Y is a separate scale of H_Pi).
-Y_Pi is not fixed unless U_Pi is fixed (Front 3c). No mass value is produced. No figures. English.
+Ygen is not fixed unless U_Pi is fixed (Front 3c). No mass value is produced. No figures. English.
 """
 
 import sympy as sp
@@ -122,7 +122,7 @@ def main():
     # ---------------------------------------------------------------------------------------------
     print("Front 3b - squared Yukawa observable and chiral polar ambiguity (exact symbolic, no sampling)")
     print("=" * 92)
-    print("  Y_Pi : C^3_gen(L) -> C^3_gen(R) (generation block);   H_Pi := Y_Pi^dag Y_Pi  on the left carrier")
+    print("  Ygen : C^3_gen(L) -> C^3_gen(R) (generation block);   H_Pi := Ygen^dag Ygen  on the left carrier")
     print("  Reading H_Pi as E_Pi^2|gen needs [H-Res] and [H-Sq]; (A)-(F) are linear algebra on the model operator,")
     print("  with no use of [H-Res], [H-Sq], [H-Fac] or of L_Y")
     print("  (A) substitution a^2:b^2:c^2 = 1:(1/2+u):(1/2-u),  H = lambda^2 diag(1, 1/2+u, 1/2-u)  (an identity)")
@@ -140,7 +140,7 @@ def main():
     print("=" * 92)
     print("RESULT: under [H-Res] and [H-Sq], E_Pi^2|gen gives the squared Yukawa LEVELS, not the morphism. The chiral")
     print("        polar factor U_Pi (chiral orientation + mixing phase) is free; norm lambda_Y is a separate scale of")
-    print("        H_Pi. Y_Pi is not fixed unless U_Pi is fixed (Front 3c).")
+    print("        H_Pi. Ygen is not fixed unless U_Pi is fixed (Front 3c).")
     print("ALL CHECKS PASS" if allok else "SOME CHECKS FAILED")
     return allok
 

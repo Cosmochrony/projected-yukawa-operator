@@ -4,7 +4,7 @@ Bias-independent, exact symbolic (SymPy / exact rationals), no fit. Reconnaissan
 front, opened after Front 3 (arithmetic gate eps <-> u).
 
 Context (PYO Beau2026pyo, prop:squared-yukawa): the generation-level observable of the Schur-residue sector is the
-positive hermitian square H_Pi = Y_Pi^dag Y_Pi, with
+positive hermitian square H_Pi = Ygen^dag Ygen under the premises [H-Res] and [H-Sq] of the paper, with
 
     Spec(H_Pi)|gen = lambda_Y^2 * diag(1, 1/2 + u, 1/2 - u),
 
@@ -13,7 +13,7 @@ datum eps are the same functional of the level ratio R_Pi = (1/2+u)/(1/2-u), wit
 u = eps = 1/10 holds iff the arithmetic dictionary gate R_Pi = R_ADE = 3/2 (order-five Cayley ratio) is adopted.
 
 This audit assumes the dictionary gate (u = 1/10) and tests the NAIVE level-to-generation map
-"squared level k = squared mass of generation k". The verdict is a quantitative no-go: the squared levels are O(1)
+"squared level k = squared mass of generation k". The verdict is a quantitative no-go within this reading: the squared levels are O(1)
 ratios, whereas the observed charged-fermion mass spectrum is strongly hierarchical. Hence the diagonal datum u is a
 generation-LEVEL WEIGHT inside H_Pi, not a direct mass-ratio predictor; the hierarchy must be carried by a separate
 amplification channel (spectral cascade exponent, sector-dependent lambda_Y, or a downstream operator).
@@ -62,7 +62,7 @@ def main():
     # predicted spread of mass levels (largest/smallest) vs the smallest observed inter-generation step
     predicted_spread = max_root_ratio                         # ~1.581
     gap_factor = obs_min_step / predicted_spread              # how far off the direct map is
-    checks["4_direct_map_excluded_gap_over_100x"] = gap_factor > 100.0
+    checks["4_direct_map_gap_over_100x"] = gap_factor > 100.0
 
     # ---- report -------------------------------------------------------------------------------
     print("Front level-assignment: no direct mass assignment from the squared Yukawa levels")
@@ -77,7 +77,7 @@ def main():
     print(f"  observed lepton mass ratio  tau:e   = {obs_mass_ratio:.0f}")
     print(f"  observed lepton mass^2 ratio tau:e  = {obs_mass2_ratio:.3e}")
     print(f"  smallest observed step      mu:e    = {obs_min_step:.0f}")
-    print(f"  gap factor (mu:e / predicted spread) = {gap_factor:.0f}x  -> direct map excluded")
+    print(f"  gap factor (mu:e / predicted spread) = {gap_factor:.0f}x  -> direct map not supported")
     print()
     print("  VERDICT: the squared Yukawa levels fix an O(1) internal generation-level split, NOT the")
     print("  charged-fermion mass hierarchy. The diagonal datum u is a level weight inside H_Pi; the")

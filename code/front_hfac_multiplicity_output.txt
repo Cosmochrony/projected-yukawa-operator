@@ -1,0 +1,16 @@
+[H-Fac]: representation theory of the weak linking carrier (Weyl integration on U(2), SU(2) characters)
+================================================================================================
+  [PASS]  1_lorentz_scalar_multiplicity_one
+  [PASS]  1_lorentz_spin_one_multiplicity_one
+  [PASS]  2_characters_differ
+  [PASS]  3_doublet_K_multiplicity_formula_125_cases
+  [PASS]  4_character_K_gives_zero_125_cases
+  [PASS]  5_linear_convention_twist_is_m_minus_k_minus_1
+  [PASS]  6_two_copies_dimension_two
+  [PASS]  6_zero_carrier_dimension_zero
+  8/8 checks pass
+================================================================================================
+RESULT: the Lorentz factor of the sesquilinear pairing carries one invariant; the weak factor requires a doublet
+        component E (x) det^(k-m) in the linking carrier K (a character gives zero); (F1) existence and (F2)
+        multiplicity at most one are independent premises. No source supplies K.
+ALL CHECKS PASS

@@ -10,7 +10,7 @@
 \hypersetup{
   unicode,
   pdftitle={Projected Yukawa Operator and Chiral Polar Factor:
-            The Squared Observable HΠ = YΠ†YΠ and the Undetermined Chiral Polar Map UΠ},
+            The Squared Observable HΠ = (YΠgen)†YΠgen and the Undetermined Chiral Polar Map UΠ},
   pdfauthor={Jérôme Beau},
 }
 \usepackage{doi}
@@ -38,6 +38,8 @@
 \newcommand{\GR}{{\Cgen}^{(R)}}
 \newcommand{\LY}{L_{Y}}
 \newcommand{\Ypi}{Y_{\Pi}}
+\newcommand{\Ygen}{{Y^{\mathrm{gen}}_{\Pi}}}
+\newcommand{\JCP}{\mathcal{J}_{\mathrm{CP}}}
 \newcommand{\Hpi}{H_{\Pi}}
 \newcommand{\Upi}{U_{\Pi}}
 \newcommand{\lamY}{\lambda_{Y}}
@@ -51,7 +53,7 @@
 \title{
   Projected Yukawa Operator and Chiral Polar Factor
   \\[1ex]
-  \large The Squared Observable $\Hpi = \Ypi^{\dagger}\Ypi$ and the Undetermined Chiral Polar Map $\Upi$
+  \large The Squared Observable $\Hpi = \Ygen^{\dagger}\Ygen$ and the Undetermined Chiral Polar Map $\Upi$
 }
 
 \author{J. Beau\\
@@ -68,20 +70,20 @@ Independent Researcher, France\\
     This note takes the second step of the fermionic-matter mass-sector frontier.
     The companion line note types the Yukawa line as $\LY = \wedge^{2}(\Eweak)$ under [H-Spin] and [H-Weak] of Q14, and
     reads generation levels on the model operator $\diag(1, \tfrac12 + u, \tfrac12 - u)$ of $\Cgen$.
-    Three premises, none supplied by a source, are named:
+    Four premises, none supplied by a source, are named:
     [H-Res], the model operator is $\Epi^{2}|_{\Cgen}$;
-    [H-Sq], $\Hpi = \Ypi^{\dagger}\Ypi = \lamY^{2}\,\Epi^{2}|_{\Cgen}$;
-    [H-Fac], the full coupling factorises through its generation block.
-    The results concern the generation block $\Ypi$ and transfer to the full operator only under [H-Fac].
-    The polar decomposition $\Ypi = \Upi\,\Hpi^{1/2}$ is linear algebra; under [H-Res] and [H-Sq],
+    [H-Sq], $\Hpi = \Ygen^{\dagger}\Ygen = \lamY^{2}\,\Epi^{2}|_{\Cgen}$;
+    [H-Fac], the existence of a weak linking carrier and the multiplicity one of the invariant couplings, under which
+    the full coupling $\Ypi$ factorises through its generation block $\Ygen$;
+    [H-Grad], the $\Jthree$ grading of each generation carrier.
+    The results concern $\Ygen$ and transfer to $\Ypi$ only under [H-Fac].
+    The polar decomposition $\Ygen = \Upi\,\Hpi^{1/2}$ is linear algebra; under [H-Res] and [H-Sq],
     $\Spec(\Hpi) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$, and the unitary $\Upi$, which carries the chiral
     orientation and the mixing, is invisible to the squared residue.
-    Its class $[\Upi]$ for the $\Jthree$-commutants of the carriers is non-trivial exactly when its generator has a
-    transverse part, absent on the real cascade: no mixing.
+    Under [H-Grad] its class $[\Upi]$ is non-trivial exactly when its generator has a transverse part, which vanishes
+    identically for the $\JPi$-odd anti-hermitian part $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, defined here.
     On the orientation-compatible branch of Q14, an input, the real diagonal split is a Lorentz-chirality
     imbalance, not the $V{-}A$ structure of [H-Weak].
-    Q14 excludes a complex metaplectic phase as a source of the external block $R_{\mathrm{mix}}$ within its model;
-    the internal block $e_{0} \leftrightarrow e_{\pm}$ is neither excluded by Q14 nor constructed here.
     The static spectrum fixes an order-one level split, not the charged-fermion hierarchy.
   \end{abstract}
 
@@ -107,23 +109,24 @@ Independent Researcher, France\\
     The factor $\Eweak$ and the Lorentz reading of the spinor factor $\Sbundle$ are two hypotheses
     of~\cite{Beau2026q14}, [H-Weak] and [H-Spin], supplied by no source; under them the left fermions lie in
     $P_{L}\Sbundle \otimes \Eweak \otimes \LY^{k}$ and the right fermions in $P_{R}\Sbundle \otimes \LY^{m}$.
-    The mass matrix is a distinct object: the projected Yukawa morphism between these sectors, whose norm, the
+    The mass matrix is a distinct object: the projected Yukawa morphism $\Ypi$ between these sectors, whose norm, the
     sign of $u$, and the mixing phase remain open.
 
     This note analyses that morphism, and the analysis begins with a negative result.
-    The squared projective residue is a hermitian object on a single Lorentz chirality, while $\Ypi$ ties the two
+    The squared projective residue is a hermitian object on a single Lorentz chirality, while $\Ygen$ ties the two
     chiralities; the chiral connecting datum is therefore not visible to $\Epi^{2}$.
     Concretely, under [H-Res] and [H-Sq] (Hypotheses~\ref{hyp:identification} and~\ref{hyp:square}),
-    $\Epi^{2}|_{\Cgen}$ determines the hermitian square $\Hpi = \Ypi^{\dagger}\Ypi$, hence the squared Yukawa levels,
-    but leaves $\Ypi$ free up to a unitary chiral polar factor.
+    $\Epi^{2}|_{\Cgen}$ determines the hermitian square $\Hpi = \Ygen^{\dagger}\Ygen$, hence the squared Yukawa levels,
+    but leaves $\Ygen$ free up to a unitary chiral polar factor.
     The purpose of the note is to make this precise, to extract exactly what is nonetheless fixed --- the
-    spectrum of $\Ypi^{\dagger}\Ypi$ --- and to delimit what is not.
+    spectrum of $\Ygen^{\dagger}\Ygen$ --- and to delimit what is not.
     Two kinds of statements are kept apart.
-    The algebraic results use only the generation block $\Ypi : \GL \to \GR$, positive hermitian squares and the
-    $\Jthree$ grading of the two generation carriers; the spinor, weak and line factors are spectators of the block.
-    The premises that are not algebraic are named: [H-Res] and [H-Sq] for the reading of the model operator as the
-    Yukawa square, [H-Fac] (Hypothesis~\ref{hyp:factorisation}) for the transfer from the block to the full coupling,
-    and the branch input of the Lorentz chirality (Section~\ref{sec:morphism}).
+    The algebraic results use only the generation block $\Ygen : \GL \to \GR$ of the full morphism $\Ypi$, positive
+    hermitian squares and, for the class results, the $\Jthree$ grading of the two generation carriers, taken as the
+    premise [H-Grad] (Hypothesis~\ref{hyp:grading}); the spinor, weak and line factors are spectators of the block.
+    The other premises are named: [H-Res] and [H-Sq] for the reading of the model operator as the
+    Yukawa square, [H-Fac] (Hypothesis~\ref{hyp:factorisation}), made of two separate premises, for the transfer from
+    the block to the full coupling, and the branch input of the Lorentz chirality (Section~\ref{sec:morphism}).
     Each statement is tagged below by the premises it uses.
     The discipline of the projective-residue reduction is kept throughout: $\Epi = -\Pi_{S} D (1 - P) D
     \Pi_{S}^{*} = -M^{\dagger} M$ is negative semi-definite, with the split $u$ carried by the transported
@@ -144,24 +147,34 @@ Independent Researcher, France\\
     \]
     each tensored with the generation factor $\Cgen$, on which the gauge group acts trivially (Theorem~5.2
     of~\cite{Beau2026q14}).
-    The projected Yukawa coupling is a morphism between these sectors.
-    Write $G$ for the structure group of the bundles: the spin group $\mathrm{Spin}(3,1)$ of [H-Spin] acting on the
-    spinor factors, and $\UU(2)$ of [H-Weak] acting on $\Eweak$ and, through the determinant, on $\LY$ (colour factors
-    omitted).
-    The full coupling lies in $\mathrm{Hom}_{G}(\mathcal{F}_{L} \otimes \Cgen, \mathcal{F}_{R} \otimes \Cgen)$.
-    Its component on the generation factor, the generation block, is
+    The projected Yukawa morphism $\Ypi$ is the coupling between these sectors.
+    The Lorentz-invariant pairing of a left and a right Weyl sector is sesquilinear: it pairs the conjugate of the
+    $(\tfrac12, 0)$ module $P_{L}\Sbundle$, a $(0, \tfrac12)$ module, with the $(0, \tfrac12)$ module $P_{R}\Sbundle$,
+    and the
+    product $(0, \tfrac12) \otimes (0, \tfrac12) = (0, 0) \oplus (0, 1)$ contains the Lorentz scalar once.
+    The Lorentz factor is therefore not an obstruction to the coupling; the weak factor is, as set out under
+    [H-Fac] below.
+    Write $G = \mathrm{Spin}(3,1) \times \UU(2)$ for the structure group of the bundles: the spin group of [H-Spin]
+    acting on the spinor factors and $\UU(2)$ of [H-Weak] acting on $\Eweak$ and, through the determinant, on $\LY$
+    (colour factors omitted).
+    The group $G$ acts trivially on the generation factor.
+    The full coupling is a $G$-invariant element of $\overline{\mathcal{F}_{L} \otimes \Cgen} \otimes
+    (\mathcal{F}_{R} \otimes \Cgen) \otimes K$, with $K$ the weak linking carrier of [H-Fac] below.
+    Its component on the generation factor, the generation block, is a sesquilinear form on $\GL \times \GR$,
+    identified with the linear map
     \begin{equation}
       \label{eq:yukawa-morphism}
-      \Ypi : \GL \longrightarrow \GR ,
+      \Ygen : \GL \longrightarrow \GR
     \end{equation}
-    from the left generation carrier $\GL$ to the right generation carrier $\GR$.
-    Both are copies of $\Cgen = \Sym^{2}(V_{\mathrm{gen}})$, each with its own Cartan generator
-    $\Jthree = \diag(0, 1, -1)$ on the weight basis $(e_{0}, e_{+}, e_{-})$.
-    The block is the full coupling only under the premise [H-Fac] below.
+    by $B(c_{L}, c_{R}) = \langle \Ygen c_{L}, c_{R} \rangle$, from the left generation carrier $\GL$ to the right
+    generation
+    carrier $\GR$.
+    Both are copies of $\Cgen = \Sym^{2}(V_{\mathrm{gen}})$, and their gradings are the premise [H-Grad] below.
+    The block $\Ygen$ is the full coupling $\Ypi$ only under the premise [H-Fac] below.
 
-    The mass matrix is the value of $\Ypi$ on the locked configuration, and the two physically invariant
-    hermitian objects are the left and right squares $\Ypi^{\dagger}\Ypi$ on $\GL$ and
-    $\Ypi\,\Ypi^{\dagger}$ on $\GR$.
+    The mass matrix is the value of $\Ygen$ on the locked configuration, and the two physically invariant
+    hermitian objects are the left and right squares $\Ygen^{\dagger}\Ygen$ on $\GL$ and
+    $\Ygen\,\Ygen^{\dagger}$ on $\GR$.
     The squared projective residue $\Epi^{2}$ is a hermitian operator on a single chirality.
     Under [H-Res] and [H-Sq] it is read as the left square up to the norm, and it cannot by itself carry
     the chiral connecting map between the two squares.
@@ -183,8 +196,9 @@ Independent Researcher, France\\
     \end{hypothesis}
 
     In~\cite{Beau2026q14} (Section~6) these operators are model operators on $\Cgen$, and their reading as
-    restrictions of $\Epi^{2}$ is an identification that is not supplied; the Schur reduction~\cite{Beau2026prs}
-    leaves it as an open front.
+    restrictions of $\Epi^{2}$ is an identification that is not supplied.
+    The Schur reduction~\cite{Beau2026prs} states the model operator as its normal form on $\Cgen$ and does not
+    supply the identification either.
     [H-Res] is a missing identification, not a refutation.
     It concerns the identity of the model operator and nothing else.
     Every statement that reads the model operator as $\Epi^{2}|_{\Cgen}$ is tagged [H-Res].
@@ -192,7 +206,7 @@ Independent Researcher, France\\
     \begin{hypothesis}[{[H-Sq]}: the Yukawa square is the residue square; not supplied]
       \label{hyp:square}
       With $\lamY > 0$ a normalisation, the left Yukawa square of the generation block is
-      $\Hpi := \Ypi^{\dagger}\Ypi = \lamY^{2}\,\Epi^{2}|_{\Cgen}$.
+      $\Hpi := \Ygen^{\dagger}\Ygen = \lamY^{2}\,\Epi^{2}|_{\Cgen}$.
     \end{hypothesis}
 
     [H-Sq] is a dictionary between the Yukawa square and the residue square.
@@ -202,31 +216,69 @@ Independent Researcher, France\\
     The level operator itself, $\diag(1, \tfrac12 + u, \tfrac12 - u)$, and the linear algebra built on it do not
     depend on them.
 
-    \begin{hypothesis}[{[H-Fac]}: the full coupling factorises through the generation block; not supplied]
+    \begin{hypothesis}[{[H-Fac]}: a weak linking carrier and multiplicity one; not supplied]
       \label{hyp:factorisation}
-      Let $A = \mathcal{F}_{L}$, $B = \mathcal{F}_{R}$, and let $G$ act trivially on $\Cgen$.
-      Then $\mathrm{Hom}_{G}(A \otimes \Cgen, B \otimes \Cgen) = \mathrm{Hom}_{G}(A, B) \otimes \mathrm{End}(\Cgen)$.
-      [H-Fac] requires that $\mathrm{Hom}_{G}(A, B)$ be spanned by one fixed intertwiner $\Phi$: it is non-zero
-      (existence) and one-dimensional (uniqueness up to scale).
-      The full coupling is then $\Phi \otimes \Ypi$, with $\Ypi \in \mathrm{Hom}(\GL, \GR)$ the generation block.
+      Let $K$ be a finite-dimensional complex $\UU(2)$-module with trivial Lorentz action, the weak linking carrier,
+      and let $I_{K} = (\overline{\mathcal{F}_{L}} \otimes \mathcal{F}_{R} \otimes K)^{G}$ be the space of
+      $G$-invariant couplings of the two sectors, the generation factor omitted.
+      [H-Fac] consists of two separate premises.
+      \begin{enumerate}
+        \item[\emph{(F1)}] \emph{Existence.} There is such a $K$ with $I_{K} \neq 0$.
+        \item[\emph{(F2)}] \emph{Multiplicity one.} $\dim I_{K} \leq 1$.
+      \end{enumerate}
+      Under (F1) and (F2), $I_{K} = \mathbb{C}\,\Phi$ for one fixed invariant $\Phi$, and the full coupling is
+      $\Phi \otimes \Ygen$ with $\Ygen \in \mathrm{Hom}(\GL, \GR)$ the generation block.
+      I write [H-Fac1] for (F1) and [H-Fac2] for (F2), and [H-Fac] for their conjunction.
     \end{hypothesis}
 
-    Equivalently, the multiplicity space of the pairing of the $G$-isotypic components of $A$ and $B$ is
-    one-dimensional: $\sum_{\rho} m_{A}(\rho)\,m_{B}(\rho) = 1$, the sum running over the irreducible $G$-types $\rho$,
-    with $m_{A}(\rho)$, $m_{B}(\rho)$ the multiplicities of $\rho$ in $A$ and $B$.
-    Existence needs a common irreducible $G$-type of $A$ and $B$.
-    As typed, $A$ is built on the $\UU(2)$-doublet $\Eweak \otimes \LY^{k}$ and $B$ on the $\UU(2)$-character
-    $\LY^{m}$, which share no irreducible type, and $P_{L}\Sbundle$ and $P_{R}\Sbundle$ are inequivalent modules of the
-    spin group.
-    So $\mathrm{Hom}_{G}(A, B) = 0$ until a carrier linking the weak doublet to the weak singlet, with the matching
-    Lorentz pairing, is supplied.
-    Uniqueness is a further condition on the multiplicities of that supplied datum.
-    The corpus constructs neither: $\Eweak$ is not constructed (Hypothesis~2.3 of~\cite{Beau2026q14}), nor is the
-    linking carrier, nor an intertwiner $\Phi$.
-    This is a missing element, not a refutation: nothing proves that the carrier cannot be supplied.
+    The two premises are independent: a carrier $K$ containing the required doublet twice satisfies (F1) and not (F2),
+    and $K = 0$ satisfies (F2) and not (F1).
+    Supplying one does not prove the other.
+    The following representation theory, derived here and not stated by any source, fixes their content.
+    Since $G$ acts trivially on $\Cgen$, the invariants of $\overline{\mathcal{F}_{L} \otimes \GL} \otimes
+    (\mathcal{F}_{R} \otimes \GR) \otimes K$ are $I_{K} \otimes (\overline{\GL} \otimes \GR) = I_{K} \otimes
+    \mathrm{Hom}(\GL, \GR)$ with no hypothesis, so a coupling is a sum $\sum_{i} \Phi_{i} \otimes Y_{i}$ over a basis
+    $(\Phi_{i})$ of $I_{K}$.
+    The Lorentz factor of $\overline{\mathcal{F}_{L}} \otimes \mathcal{F}_{R}$ is $(0, 0) \oplus (0, 1)$, and for a
+    Lorentz-trivial $K$ only the scalar contributes.
+    The weak factor of $\overline{\mathcal{F}_{L}} \otimes \mathcal{F}_{R}$ is
+    $\overline{\Eweak \otimes \LY^{k}} \otimes \LY^{m} \cong \Eweak \otimes \LY^{m-k-1}$, since
+    $\overline{\Eweak} \cong \Eweak \otimes \LY^{-1}$ for $\UU(2)$.
+    It is an irreducible doublet, and the invariants of an irreducible module $W$ tensored with $K$ number the
+    multiplicity of $W^{*}$ in $K$.
+    Hence
+    \[
+      \dim I_{K} = \text{multiplicity of } \Eweak \otimes \LY^{\,k-m} \text{ in } K .
+    \]
+    So (F1) requires $K$ to contain the doublet $\Eweak \otimes \LY^{k-m}$, and (F2) requires it to occur at most
+    once.
+    A $\UU(2)$-character $K$ gives $I_{K} = 0$ for every $k$, $m$.
+    In a convention where the coupling is a linear intertwiner $\mathcal{F}_{L} \otimes K \to \mathcal{F}_{R}$, the
+    Lorentz part of $K$ must contain the vector $(\tfrac12, \tfrac12)$ and the weak twist becomes
+    $\Eweak \otimes \LY^{m-k-1}$; both conventions require a $\UU(2)$-doublet component in $K$.
+    The convention-independent element is therefore on the weak side: a carrier $K$ with a doublet component, the
+    Higgs-type role, linking the weak doublet of $\mathcal{F}_{L}$ to the weak character of $\mathcal{F}_{R}$.
+    The corpus supplies none of the three objects involved: $\Eweak$ is not constructed (Hypothesis~2.3
+    of~\cite{Beau2026q14}), nor is $K$, nor the invariant $\Phi$.
+    These are missing elements of the corpus.
+    The conditions of the premise are the doublet component of $K$ for (F1) and its multiplicity one for (F2).
+    Nothing proves that $K$ cannot be supplied, so this is a missing element, not a refutation.
+    Without (F2) and with (F1), the full coupling is a sum of several generation blocks and the polar data of the
+    full operator are not those of a single block.
     The results below are stated for the generation block.
     They transfer to the full operator only under [H-Fac]; without it, the polar decomposition, the rephasing class
     and the transverse criterion are statements about the block.
+
+    \begin{hypothesis}[{[H-Grad]}: each generation carrier has its own $\Jthree$ grading; not supplied]
+      \label{hyp:grading}
+      Each of $\GL$ and $\GR$ is a copy of $\Cgen = \Sym^{2}(V_{\mathrm{gen}})$ carrying its own Cartan generator
+      $\Jthree = \diag(0, 1, -1)$ on its weight basis $(e_{0}, e_{+}, e_{-})$.
+    \end{hypothesis}
+
+    Theorem~5.2 of~\cite{Beau2026q14} supplies one generation factor, and its weight basis is a supplied identification
+    (Section~6 of~\cite{Beau2026q14}); a second copy with its own grading, as the right carrier, is a datum of this
+    note.
+    The statements about rephasing classes (Section~\ref{sec:polar-class}) use [H-Grad] and are tagged with it.
 
     Branch input.
     Left-admissibility, $P_{R}\Epi P_{R} = 0$, equivalent for a faithful Weyl symbol to $\pi_{LL} = 0$ for the
@@ -244,12 +296,12 @@ Independent Researcher, France\\
 
     \begin{proposition}[Squared Yukawa observable]
       \label{prop:squared-yukawa}
-      Let $\Ypi : \GL \to \GR$ be the generation block of the projected Yukawa morphism, and assume [H-Res] and [H-Sq]
+      Let $\Ygen : \GL \to \GR$ be the generation block of the projected Yukawa morphism, and assume [H-Res] and [H-Sq]
       (Hypotheses~\ref{hyp:identification} and~\ref{hyp:square}).
       Then the generation-level observable determined by the Schur-residue sector is the positive hermitian
       operator
       \[
-        \Hpi := \Ypi^{\dagger}\Ypi
+        \Hpi := \Ygen^{\dagger}\Ygen
       \]
       on the left generation carrier.
       On the gauge-singlet triplet $\Cgen$, its dimensionless spectral part is fixed, up to the overall
@@ -257,7 +309,7 @@ Independent Researcher, France\\
       \[
         \Hpi\big|_{\Cgen} = \lamY^{2}\,\diag\!\left(1,\ \tfrac12 + u,\ \tfrac12 - u\right) ,
       \]
-      so that $\Spec\big(\Ypi^{\dagger}\Ypi\big) = \lamY^{2}\,\{1,\ \tfrac12 + u,\ \tfrac12 - u\}$.
+      so that $\Spec\big(\Ygen^{\dagger}\Ygen\big) = \lamY^{2}\,\{1,\ \tfrac12 + u,\ \tfrac12 - u\}$.
       Thus $\Epi^{2}|_{\Cgen}$ determines the squared Yukawa levels, not the Yukawa morphism itself.
     \end{proposition}
 
@@ -267,7 +319,8 @@ Independent Researcher, France\\
       By [H-Res], the model operator $\diag(1, \tfrac12 + u, \tfrac12 - u)$, the normal form of~\cite{Beau2026prs} with
       $v = 0$ whose even part $(C_{2} - \Jthree^{2})/C_{2} = \diag(1, \tfrac12, \tfrac12)$ is algebraic, is
       $\Epi^{2}|_{\Cgen}$.
-      By [H-Sq], $\Hpi = \Ypi^{\dagger}\Ypi = \lamY^{2}\,\Epi^{2}|_{\Cgen}$ with $\lamY$ the undetermined overall norm,
+      By [H-Sq], $\Hpi = \Ygen^{\dagger}\Ygen = \lamY^{2}\,\Epi^{2}|_{\Cgen}$ with $\lamY$ the undetermined overall
+      norm,
       which gives $\Hpi|_{\Cgen} = \lamY^{2}\,\diag(1, \tfrac12 + u, \tfrac12 - u)$.
       The eigenvalues are the diagonal entries, so the spectrum is as stated, and a hermitian square fixes a
       hermitian operator, not the underlying morphism, which is the content of Section~\ref{sec:polar}.
@@ -287,9 +340,9 @@ Independent Researcher, France\\
 
     \begin{proposition}[Chiral polar ambiguity]
       \label{prop:polar-ambiguity}
-      The operator $\Hpi = \Ypi^{\dagger}\Ypi$ determines $\Ypi$ only up to a polar factor:
+      The operator $\Hpi = \Ygen^{\dagger}\Ygen$ determines $\Ygen$ only up to a polar factor:
       \[
-        \Ypi = \Upi\,\Hpi^{1/2} ,
+        \Ygen = \Upi\,\Hpi^{1/2} ,
       \]
       where
       \[
@@ -301,17 +354,17 @@ Independent Researcher, France\\
     \end{proposition}
 
     \begin{proof}
-      For a positive hermitian $\Hpi$ with $\Hpi^{1/2}$ its positive square root, any $\Ypi$ with
-      $\Ypi^{\dagger}\Ypi = \Hpi$ satisfies $\Ypi = \Upi\,\Hpi^{1/2}$ with $\Upi := \Ypi\,\Hpi^{-1/2}$ a
+      For a positive hermitian $\Hpi$ with $\Hpi^{1/2}$ its positive square root, any $\Ygen$ with
+      $\Ygen^{\dagger}\Ygen = \Hpi$ satisfies $\Ygen = \Upi\,\Hpi^{1/2}$ with $\Upi := \Ygen\,\Hpi^{-1/2}$ a
       partial isometry, unitary on the support of $\Hpi$, since $\Upi^{\dagger}\Upi = \Hpi^{-1/2}
-      \Ypi^{\dagger}\Ypi\,\Hpi^{-1/2} = \Hpi^{-1/2}\Hpi\,\Hpi^{-1/2} = \mathbf{1}$ on that support.
+      \Ygen^{\dagger}\Ygen\,\Hpi^{-1/2} = \Hpi^{-1/2}\Hpi\,\Hpi^{-1/2} = \mathbf{1}$ on that support.
       Conversely, for any such $\Upi$ the product $\Upi\,\Hpi^{1/2}$ has square $\Hpi^{1/2}\Upi^{\dagger}
       \Upi\,\Hpi^{1/2} = \Hpi$, so the solution set is exactly $\{\Upi\,\Hpi^{1/2}\}$.
-      The map $\Upi$ acts into the right carrier $\GR$, and $\Hpi$ is invariant under $\Ypi \mapsto V\,\Ypi$
-      for every unitary $V$ on $\GR$, $(V\Ypi)^{\dagger}(V\Ypi) = \Ypi^{\dagger} V^{\dagger} V\,\Ypi =
-      \Ypi^{\dagger}\Ypi$, so distinct $\Upi$ give distinct $\Ypi$ with identical $\Hpi$.
+      The map $\Upi$ acts into the right carrier $\GR$, and $\Hpi$ is invariant under $\Ygen \mapsto V\,\Ygen$
+      for every unitary $V$ on $\GR$, $(V\Ygen)^{\dagger}(V\Ygen) = \Ygen^{\dagger} V^{\dagger} V\,\Ygen =
+      \Ygen^{\dagger}\Ygen$, so distinct $\Upi$ give distinct $\Ygen$ with identical $\Hpi$.
       Hence $\Hpi$, equivalently (under [H-Res] and [H-Sq]) $\Epi^{2}|_{\Cgen}$, does not
-      determine $\Ypi$: the generation-mixing
+      determine $\Ygen$: the generation-mixing
       content and the relative phases reside in $\Upi$, on which $\Epi^{2}$ has no hold.
     \end{proof}
 
@@ -323,9 +376,9 @@ Independent Researcher, France\\
     \begin{remark}[The partial no-go, sharply]
       \label{rem:no-go}
       Proposition~\ref{prop:polar-ambiguity} is a partial no-go: $\Epi^{2}$, read as $\Hpi$ under
-      [H-Res] and [H-Sq], does not fix $\Ypi$.
+      [H-Res] and [H-Sq], does not fix $\Ygen$.
       What survives is exactly the spectral datum of Proposition~\ref{prop:squared-yukawa},
-      $\Spec(\Ypi^{\dagger}\Ypi) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$.
+      $\Spec(\Ygen^{\dagger}\Ygen) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$.
       The undetermined factor is not a numerical residue but a unitary chiral map, the carrier of the chiral
       orientation, the relative generation phases, and the mixing.
       The positive scale $\lamY$ is a separate normalisation of the hermitian square $\Hpi$, invisible to the
@@ -355,19 +408,21 @@ Independent Researcher, France\\
     There the Yukawa block is, under [H-Res] and [H-Sq], the positive root itself,
     \begin{equation}
       \label{eq:cp-real}
-      \Ypi^{\mathrm{CP}} = \Hpi^{1/2} = \lamY\,\diag\!\left(1,\ \sqrt{\tfrac12 + u},\ \sqrt{\tfrac12 - u}\right),
+      \Ygen^{\mathrm{CP}} = \Hpi^{1/2} = \lamY\,\diag\!\left(1,\ \sqrt{\tfrac12 + u},\ \sqrt{\tfrac12 - u}\right),
     \end{equation}
     real, diagonal in the generation basis, with no mixing.
     This is a choice of branch, not a derived fact: a non-trivial $\Upi$ --- a generation rotation or a
     relative phase --- leaves $\Hpi$ and the levels untouched while injecting off-diagonal and complex
     structure that $\Epi^{2}$ cannot register.
-    The mixing and the CP phase therefore live entirely in $\Upi$, and two routes to them are left open, with
-    different statuses.
-    The internal block $e_{0} \leftrightarrow e_{\pm}$ is sourced by a non-central $\mathfrak{sl}_{2}$ coefficient with
-    $\Im p \neq 0$ or $\Im q \neq 0$ (Proposition~\ref{prop:reality-structure}); Remark~6.4 of~\cite{Beau2026q14}
-    concerns the direction $R_{\mathrm{mix}}$, so Q14 does not exclude this route, and none of it is supplied here.
+    The mixing and the CP phase therefore live entirely in $\Upi$, and the transverse part of its generator has two
+    blocks.
     The external block $e_{+} \leftrightarrow e_{-}$, that is $R_{\mathrm{mix}}$, is excluded as a source within the
     step model of~\cite{Beau2026q14} and needs a generator outside the image of $\mathfrak{sl}_{2}(\mathbb{C})$.
+    For the internal block $e_{0} \leftrightarrow e_{\pm}$, Remark~6.4 of~\cite{Beau2026q14} is silent; the
+    $\JPi$-odd anti-hermitian part $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, defined in
+    Remark~\ref{rem:two-transverse-blocks}, does not source it for any complex coefficient
+    (Proposition~\ref{prop:reality-structure}).
+    A source of either block needs a generator outside that image, in its spin-two sector, and none is supplied here.
 
   \section{Polar class of the projected Yukawa operator}
     \label{sec:polar-class}
@@ -375,13 +430,15 @@ Independent Researcher, France\\
     The polar factor $\Upi$ of Section~\ref{sec:polar} is not a canonical observable before one quotients by
     the admissible chiral rephasings.
     The admissible rephasings of a carrier are the unitaries that preserve its $\Jthree$ grading, that is, the unitaries
-    commuting with $\Jthree = \diag(0, 1, -1)$.
+    commuting with $\Jthree = \diag(0, 1, -1)$; the grading of each carrier is the premise [H-Grad]
+    (Hypothesis~\ref{hyp:grading}).
     The weights $0, +1, -1$ are distinct, so these are the diagonal unitaries.
-    They are defined by the carrier, a copy of $\Cgen$ with its own grading, and not by $\Ypi$.
+    They are defined by the carrier, a copy of $\Cgen$ with its own grading, and not by $\Ygen$.
     The level operator $\Hpi$ is positive and commutes with $\Jthree$; for $0 < u < \tfrac12$ its spectrum
     $\lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$ (under [H-Res] and [H-Sq]) is distinct, so on the left carrier its
     eigenbasis is the weight basis.
-    The right carrier carries the level operator $\Ypi\,\Ypi^{\dagger} = \Upi\,\Hpi\,\Upi^{\dagger}$, which has the same
+    The right carrier carries the level operator $\Ygen\,\Ygen^{\dagger} = \Upi\,\Hpi\,\Upi^{\dagger}$, which has the
+    same
     spectrum as $\Hpi$ as for any square matrix, and whose eigenbasis is the right weight basis rotated by $\Upi$.
     The class of $\Upi$ measures this misalignment of the right level eigenbasis with the right $\Jthree$ grading.
     The antiunitary exchange of the two carriers of~\cite{Beau2026prs} gives the same spectral reading and is not
@@ -389,11 +446,12 @@ Independent Researcher, France\\
 
     \begin{proposition}[Polar class]
       \label{prop:polar-class}
-      Let $\Hpi = \Ypi^{\dagger}\Ypi$ be positive, commuting with $\Jthree$, with distinct eigenvalues, as
+      Assume [H-Grad].
+      Let $\Hpi = \Ygen^{\dagger}\Ygen$ be positive, commuting with $\Jthree$, with distinct eigenvalues, as
       $\lamY^{2}\,\diag(1, \tfrac12 + u, \tfrac12 - u)$ with $0 < u < \tfrac12$ is under [H-Res] and [H-Sq].
       Let $V_{L} \in \UU(1)^{3}$ act on $\GL$ and $V_{R} \in \UU(1)^{3}$ on $\GR$ as the diagonal rephasings of the
       weight bases, that is the unitaries commuting with $\Jthree$ on each carrier.
-      Then $\Ypi \mapsto V_{R}\,\Ypi\,V_{L}^{-1}$, $\Hpi \mapsto V_{L}\,\Hpi\,V_{L}^{-1} = \Hpi$, and
+      Then $\Ygen \mapsto V_{R}\,\Ygen\,V_{L}^{-1}$, $\Hpi \mapsto V_{L}\,\Hpi\,V_{L}^{-1} = \Hpi$, and
       \[
         \Upi \longmapsto V_{R}\,\Upi\,V_{L}^{-1} ,
       \]
@@ -403,40 +461,42 @@ Independent Researcher, France\\
         [\Upi] \in \UU(1)^{3}_{R} \,\backslash\, \UU(3) \,/\, \UU(1)^{3}_{L} .
       \]
       The class $[I]$ is the set of diagonal unitaries.
-      Its rephasing invariants are the moduli $|(\Upi)_{ij}|$ together with the Jarlskog-type phase
+      Its rephasing invariants are the moduli $|(\Upi)_{ij}|$ together with the Jarlskog phase, written $\JCP$ to
+      keep it distinct from the antilinear parity $\JPi$:
       \[
-        J_{\Pi} = \Im\!\big( (\Upi)_{11}(\Upi)_{22}\,\overline{(\Upi)_{12}}\,\overline{(\Upi)_{21}} \big) .
+        \JCP = \Im\!\big( (\Upi)_{11}(\Upi)_{22}\,\overline{(\Upi)_{12}}\,\overline{(\Upi)_{21}} \big) .
       \]
       The common diagonal phase acts trivially on the double action, so the class space has dimension
       $9 - (2\cdot 3 - 1) = 4$, namely three mixing angles and one CP phase, and the differential of the moduli and
-      $J_{\Pi}$ has rank four at generic points.
+      $\JCP$ has rank four at generic points.
     \end{proposition}
 
     \begin{proof}
       The commutant of $\Jthree$, a diagonal matrix with the distinct entries $0, 1, -1$, consists of diagonal
       matrices, since $(W\Jthree - \Jthree W)_{ij} = W_{ij}({\Jthree}_{jj} - {\Jthree}_{ii})$.
       The groups $\UU(1)^{3}_{L}$ and $\UU(1)^{3}_{R}$ are therefore fixed by the gradings of the two carriers, with
-      no reference to $\Ypi$ or to the eigenbasis of $\Ypi\,\Ypi^{\dagger}$.
+      no reference to $\Ygen$ or to the eigenbasis of $\Ygen\,\Ygen^{\dagger}$.
       The positive operator $\Hpi$ commutes with $\Jthree$ and has distinct eigenvalues, so it is diagonal in the weight
       basis and commutes with $V_{L}$ and with $\Hpi^{-1/2}$.
-      Hence $\Hpi' = V_{L}\,\Ypi^{\dagger}\Ypi\,V_{L}^{-1} = \Hpi$ and
-      $\Upi' = V_{R}\,\Ypi\,V_{L}^{-1}\Hpi^{-1/2} = V_{R}\,\Upi\,V_{L}^{-1}$.
-      The choice $V_{R} = \Upi$ would give $V_{R}^{-1}\,\Ypi = \Hpi^{1/2}$ and remove $\Upi$ entirely.
+      Hence $\Hpi' = V_{L}\,\Ygen^{\dagger}\Ygen\,V_{L}^{-1} = \Hpi$ and
+      $\Upi' = V_{R}\,\Ygen\,V_{L}^{-1}\Hpi^{-1/2} = V_{R}\,\Upi\,V_{L}^{-1}$.
+      The choice $V_{R} = \Upi$ would give $V_{R}^{-1}\,\Ygen = \Hpi^{1/2}$ and remove $\Upi$ entirely.
       But $\Upi$ commutes with $\Jthree$ only if it is diagonal, so it is not an admissible rephasing.
-      Pinning $\GR$ by the eigenbasis of $\Ypi\,\Ypi^{\dagger}$ would be this choice, and the right group is not
+      Pinning $\GR$ by the eigenbasis of $\Ygen\,\Ygen^{\dagger}$ would be this choice, and the right group is not
       defined that way.
       Under rephasings $(\Upi)_{ij} \mapsto e^{i(a_{i} - b_{j})}(\Upi)_{ij}$, so the moduli are invariant and the
-      quartet phase of $J_{\Pi}$ changes by $(a_{1} - b_{1}) + (a_{2} - b_{2}) - (a_{1} - b_{2}) - (a_{2} - b_{1}) = 0$.
+      quartet phase of $\JCP$ changes by $(a_{1} - b_{1}) + (a_{2} - b_{2}) - (a_{1} - b_{2}) - (a_{2} - b_{1}) = 0$.
       The orbit of $I$ is $\{V_{R}V_{L}^{-1}\}$, the diagonal unitaries.
       A rephasing fixing $\Upi$ satisfies $(\Upi)_{ij}(e^{ia_{i}} - e^{ib_{j}}) = 0$, so for a $\Upi$ with no vanishing
       entry, an open dense set, all $e^{ia_{i}}$ and $e^{ib_{j}}$ coincide: the stabiliser is the common phase.
       Orbits there have dimension $2\cdot 3 - 1 = 5$, and the dimension of $\UU(3)$ being nine, four physical parameters
       survive, three angles and one phase.
-      The rank of the differential of the moduli and $J_{\Pi}$ is checked in \texttt{front\_polar\_class\_rephasing.py}.
+      The rank of the differential of the moduli and $\JCP$ is checked in \texttt{front\_polar\_class\_rephasing.py}.
     \end{proof}
 
-    Premises: the generation block, the $\Jthree$ grading of the two carriers (each a copy of $\Cgen$), and a positive
-    $\Hpi$ commuting with $\Jthree$ with distinct spectrum; [H-Res] and [H-Sq] enter only through the reading of that
+    Premises: the generation block, [H-Grad] for the $\Jthree$ grading of the two carriers, in particular of the right
+    carrier, and a positive $\Hpi$ commuting with $\Jthree$ with distinct spectrum; [H-Res] and [H-Sq] enter only
+    through the reading of that
     $\Hpi$ as $\lamY^{2}\diag(1, \tfrac12 + u, \tfrac12 - u)$, and [H-Fac] through the transfer to the full operator.
     The spinor, weak and line factors are spectators of the block.
     The distinctness of the spectrum makes the left group $\UU(1)^{3}_{L}$ equal to the commutant of $\Hpi$.
@@ -477,7 +537,7 @@ Independent Researcher, France\\
       dependence on the diagonal phases.
     \end{proof}
 
-    Premises: the generation block only.
+    Premises: the generation block, and [H-Grad] for the diagonal-rephasing orbit tangent.
     The statement holds for every smooth curve $\Upi(\gamma) = \exp(\gamma A)$ of unitaries with anti-hermitian $A$; its
     reading in terms of a metaplectic phase is a modelling step of~\cite{Beau2026q14} (Section~6), not a premise of
     the algebra, and [H-Fac] is needed to read the block class as that of the full operator.
@@ -497,26 +557,30 @@ Independent Researcher, France\\
       first-order coefficient of the external component $R_{\mathrm{mix}}$ of $\Epi^{2}$ vanishes by antiunitary
       parity, and so does every odd-order coefficient; mixing at even orders is not excluded, and the internal entries
       $e_{0} \leftrightarrow e_{\pm}$ are not constrained by that parity argument~\cite{Beau2026ebj}.
-      On the real cascade data the generator $A_{\Pi}$ vanishes (Remark~\ref{rem:two-transverse-blocks},
-      Proposition~\ref{prop:reality-structure}), so $A$ is diagonal, $\Upi(\gamma)$ stays diagonal, and
-      $[\Upi] = [I]$, with $|(\Upi)_{ij}| = \delta_{ij}$ and $J_{\Pi} = 0$.
-      No physical mixing is produced at this stratum.
-      A non-trivial class $[\Upi] \neq [I]$, hence CKM/PMNS-type mixing, requires a transverse metaplectic
-      component.
-      In the present real cascade of the model this transverse component is absent.
-      The internal block is not excluded by~\cite{Beau2026q14} and is not constructed here; its source would need a
-      complex non-central $\mathfrak{sl}_{2}$ coefficient (Remark~\ref{rem:two-transverse-blocks}), which is
-      conditional on a phase and an ordering that are not prescribed~\cite{Beau2026bim}.
-      The external block is excluded as a source within the step model of~\cite{Beau2026q14}.
+      For the generator $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, defined as the $\JPi$-odd anti-hermitian part in
+      Remark~\ref{rem:two-transverse-blocks}, the vanishing holds for every complex coefficient, the real cascade data
+      included (Proposition~\ref{prop:reality-structure}).
+      With $A = A_{\Pi} = 0$, $\Upi(\gamma)$ stays equal to the identity and $[\Upi] = [I]$, with
+      $|(\Upi)_{ij}| = \delta_{ij}$ and $\JCP = 0$.
+      No physical mixing is produced by $A_{\Pi}$ at this stratum.
+      A non-trivial class $[\Upi] \neq [I]$, hence CKM/PMNS-type mixing, requires a transverse component of the
+      generator, and $A_{\Pi}$ has none.
+      Either transverse block, internal or external, needs a generator outside the image of
+      $\mathfrak{sl}_{2}(\mathbb{C})$
+      in $\mathrm{End}(\Cgen)$, in its spin-two sector, and none is supplied (Remark~\ref{rem:two-transverse-blocks}).
+      The external block is moreover excluded as a source within the step model of~\cite{Beau2026q14}.
       The resulting mixing matrix is physical only as a relative polar class between two fermionic sectors
       sharing a generation carrier.
     \end{corollary}
 
-    Premises: the generation block and the algebra of Proposition~\ref{prop:polar-nontriviality}, together with the
-    real cascade data of~\cite{Beau2026prs}; the branch input for the reading of the diagonal split as a
+    Premises: the generation block, [H-Grad], and the algebra of Proposition~\ref{prop:polar-nontriviality}, together
+    with
+    the definition of $A_{\Pi}$ and Proposition~\ref{prop:reality-structure}; the real cascade data
+    of~\cite{Beau2026prs}; the branch input for the reading of the diagonal split as a
     Lorentz-chirality imbalance, and [H-Res] where the real data are stated as data on $\Epi^{2}|_{\Cgen}$.
     The statement of~\cite{Beau2026ebj} is used under its own hypotheses, and [H-Fac] is needed to read the block class
     as that of the full operator.
+    The conclusion $[\Upi] = [I]$ is a statement about $A_{\Pi}$ as defined, not about every generator of $\Upi$.
 
     \begin{remark}[Two transverse blocks]
       \label{rem:two-transverse-blocks}
@@ -524,55 +588,99 @@ Independent Researcher, France\\
       On the generation triplet $\Cgen = \langle e_{0}, e_{+}, e_{-}\rangle$ the polar tangent transverse to the
       diagonal-rephasing orbit decomposes into the internal block $e_{0} \leftrightarrow e_{\pm}$ and the
       external block $e_{+} \leftrightarrow e_{-}$, the latter denoted $R_{\mathrm{mix}}$.
-      For a single metaplectic $\mathfrak{sl}_{2}$ cascade lifted to $\Sym^{2}$, the correct unitary chiral
-      generator is the anti-hermitian part of the $\JPi$-odd component,
+      For a single metaplectic $\mathfrak{sl}_{2}$ cascade lifted to $\Sym^{2}$, let $L(M)$ be the lift of
+      $M = pE + qF + rH \in \mathfrak{sl}_{2}(\mathbb{C})$ to $\Cgen$ and let $\JPi z = S\,\overline{z}$, with
+      $S = \Sym^{2}(\varepsilon)$, be the antilinear internal parity of Section~6 of~\cite{Beau2026q14}.
+      Then $\Pi_{\JPi\text{-odd}}(X) = \tfrac12\,(X - S\,\overline{X}\,S^{-1})$ and the chiral generator of this note is
+      defined by
       \[
-        A_{\Pi} = \Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-odd}}\big(\dot{\Upi}\big) .
+        A_{\Pi} = \Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-odd}}\big(L(M)\big) .
       \]
-      On real cascade data this generator vanishes, recovering Corollary~\ref{cor:real-cascade-collapse}.
-      The internal block is sourced by the $\Sym^{2}(\mathfrak{sl}_{2})$ lift if the $\mathfrak{sl}_{2}$ coefficients
-      have a genuinely complex non-central part.
-      Q14 does not exclude this (its Remark~6.4 concerns $R_{\mathrm{mix}}$), and the corpus does not construct such a
-      part: it is a condition, not a result.
-      By contrast the external block $e_{+} \leftrightarrow e_{-}$ is never sourced by the
-      $\Sym^{2}(\mathfrak{sl}_{2})$ lift alone; it lies outside the single-cascade metaplectic image and would
-      require an additional tower datum, and a complex metaplectic phase is excluded as a source of it within the
-      metaplectic step model of~\cite{Beau2026q14} (Section~6).
-      The chiral-frontier normalisation channel and the polar-mixing channel therefore separate: the oriented
+      This is a definition of this note.
+      The selection of the $\JPi$-odd part is that of the oriented sector of Section~6 of~\cite{Beau2026q14}, where the
+      $\Jthree$ coefficient of the step generator is the $\JPi$-odd projection, and that of the transported split $u$
+      of~\cite{Beau2026prs}, the $\Jthree$ component of $\Pi_{\JPi\text{-odd}}(\Epi^{2})$; both concern real or
+      hermitian operators.
+      No source selects the $\JPi$-odd part for the anti-hermitian generator of $\Upi$, so $A_{\Pi}$ holds by
+      definition.
+      The $\JPi$-even anti-hermitian part $\Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-even}}(L(M)) =
+      L\big(\tfrac12(M - M^{\dagger})\big)$ is not part of $A_{\Pi}$; its internal entries are
+      $\tfrac{\sqrt2}{2}(q - \overline{p})$, which do not vanish for real $p \neq q$.
+      The statements below concern $A_{\Pi}$ as defined, and are not statements about that even part.
+      For every $M \in \mathfrak{sl}_{2}(\mathbb{C})$, real or complex, the $\JPi$-odd part of $L(M)$ is hermitian, so
+      $A_{\Pi} = 0$ (Proposition~\ref{prop:reality-structure}).
+      Neither transverse block is therefore sourced by the $\mathfrak{sl}_{2}$ lift through $A_{\Pi}$: the external
+      block $e_{+} \leftrightarrow e_{-}$ has no matrix element in the image of $\mathfrak{sl}_{2}(\mathbb{C})$
+      (Remark~6.4 of~\cite{Beau2026q14}), and the internal block $e_{0} \leftrightarrow e_{\pm}$ is absent from the
+      $\JPi$-odd anti-hermitian part of that image.
+      A source of either block needs a generator outside the image of $\mathfrak{sl}_{2}(\mathbb{C})$, in the spin-two
+      sector of $\mathrm{End}(\Sym^{2} V_{\mathrm{gen}})$.
+      A spin-two extension of the step model, with a generator having a $\JPi$-odd anti-hermitian component, is a
+      distinct model: in it the internal block is an allowed element of $\mathfrak{u}(3)$
+      (Proposition~\ref{prop:reality-structure}), neither excluded nor constructed, since no source supplies the
+      generator.
+      The chiral-frontier normalisation channel and the polar-mixing channel separate: the oriented
       area $N_{A}$ belongs to the real Cartan / $\Jthree$ channel~\cite{Beau2026aar} and can normalise the
       diagonal split without predicting a CKM/PMNS polar class.
-      A non-trivial polar class in the present carrier first requires a complex non-central metaplectic
-      component, and the external $R_{\mathrm{mix}}$ block requires still more: a generator beyond the single
+      A non-trivial polar class from the present carrier needs a generator in the spin-two sector, outside the single
       $\mathfrak{sl}_{2}$ metaplectic cascade.
     \end{remark}
 
-    \begin{proposition}[Reality structure of the polar generator]
+    \begin{proposition}[Reality structure of the $\mathfrak{sl}_{2}$ lift]
       \label{prop:reality-structure}
-      Write the non-central metaplectic step as $M = p\,E + q\,F + r\,H$ in the real $\mathfrak{sl}_{2}$ basis,
-      and let $\sigma(M) = \overline{M}$ be the entrywise conjugation whose fixed real form is
-      $\mathfrak{sl}_{2}(\mathbb{R}) = \mathrm{span}_{\mathbb{R}}\{E, F, H\}$, so $\sigma(M) = M$ iff
-      $p, q, r \in \mathbb{R}$.
-      The chiral polar generator $A_{\Pi} = \Pi_{\mathrm{antiherm}}\Pi_{\JPi\text{-odd}}(\dot{\Upi})$ depends only
-      on the $\sigma$-anti-real part $\tfrac12(M - \sigma M) = i\,(\Im p\,E + \Im q\,F + \Im r\,H)$, and splits as
-      the polar class does.
-      Its transverse (off-diagonal) part is non-zero iff $\Im p \neq 0$ or $\Im q \neq 0$, while its diagonal part
-      is the pure $\Jthree$ rephasing $i\,\Im r\,\diag(0, 2, -2)$, which lies in the $\UU(1)^{3}$ double-coset
-      quotient defining $[\Upi]$ and is therefore class-trivial.
-      Hence
-      \[
-        [\Upi] = [I] \quad\Longleftrightarrow\quad \Im p = \Im q = 0 ,
-      \]
-      independently of $\Im r$.
-      In particular a complex representation matrix obtained from a complex spinorial frame $W$ leaves the class
-      unchanged, $A_{\Pi} \mapsto W A_{\Pi} W^{\dagger}$, so the mixing is controlled by the reality of the
-      \emph{coefficients} $p, q$, not by that of the matrix entries.
+      Let $M = p\,E + q\,F + r\,H \in \mathfrak{sl}_{2}(\mathbb{C})$ with $p, q, r \in \mathbb{C}$, $L(M)$ its lift to
+      $\Cgen = \Sym^{2}(V_{\mathrm{gen}})$ in the weight basis $(e_{0}, e_{+}, e_{-})$, $\JPi z = S\,\overline{z}$ the
+      antilinear parity with $S = \Sym^{2}(\varepsilon)$, and $\Pi_{\JPi\text{-odd}}(X) =
+      \tfrac12(X - S\,\overline{X}\,S^{-1})$, $\Pi_{\JPi\text{-even}}(X) = \tfrac12(X + S\,\overline{X}\,S^{-1})$.
+      Then
+      \begin{enumerate}
+        \item[\emph{(i)}] $S\,\overline{L(M)}\,S^{-1} = -\,L(M)^{\dagger}$;
+        \item[\emph{(ii)}] $\Pi_{\JPi\text{-odd}}\big(L(M)\big) = \tfrac12\big(L(M) + L(M)^{\dagger}\big)$ and
+          $\Pi_{\JPi\text{-even}}\big(L(M)\big) = \tfrac12\big(L(M) - L(M)^{\dagger}\big)$;
+        \item[\emph{(iii)}] $A_{\Pi} = \Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-odd}}\big(L(M)\big) = 0$ for all
+          $(p, q, r) \in \mathbb{C}^{3}$;
+        \item[\emph{(iv)}] the $\JPi$-odd anti-hermitian operators on $\Cgen$ form a real subspace of $\mathfrak{u}(3)$
+        of
+          dimension six, the matrices $\bigl(\begin{smallmatrix} i d_{0} & a & \overline{a} \\ -\overline{a} & i d_{1} &
+          b \\
+          -a & -\overline{b} & i d_{1} \end{smallmatrix}\bigr)$ with $a, b \in \mathbb{C}$ and $d_{0}, d_{1} \in
+          \mathbb{R}$,
+          which is Hilbert--Schmidt orthogonal to $L(\mathfrak{sl}_{2}(\mathbb{C}))$ and so lies in the spin-zero and
+          spin-two components of $\mathrm{End}(\Sym^{2} V_{\mathrm{gen}}) = 1 \oplus 3 \oplus 5$.
+      \end{enumerate}
+      Consequently $A_{\Pi} = 0$, $[\Upi] = [I]$ at first order for the generator $A_{\Pi}$, whatever the reality of the
+      coefficients, which therefore play no role.
+      The diagonal part $i\,\Im r\,\diag(0, 2, -2)$ and the internal entry $\tfrac{\sqrt2}{2}(q - \overline{p})$ of the
+      anti-hermitian part of $L(M)$ belong to the $\JPi$-even part.
     \end{proposition}
 
-    Premises: the generation block and the $\Sym^{2}(\mathfrak{sl}_{2})$ lift on $V_{\mathrm{gen}}$ of the metaplectic
-    step model; the $\JPi$-odd projection uses the internal parity of the generation copy, not [H-Spin].
+    \begin{proof}
+      In the weight basis
+      $L(M) = \bigl(\begin{smallmatrix} 0 & \sqrt2 q & \sqrt2 p \\ \sqrt2 p & 2r & 0 \\ \sqrt2 q & 0 & -2r
+      \end{smallmatrix}\bigr)$
+      and $S = \bigl(\begin{smallmatrix} -1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{smallmatrix}\bigr)$, $S^{-1} = S$.
+      Entrywise $(S\,\overline{L}\,S)_{ij} = s_{i}s_{j}\,\overline{L}_{\pi(i)\pi(j)}$ with $s_{0} = -1$, $s_{\pm} = 1$
+      and $\pi$ exchanging $+$ and $-$.
+      This gives $\bigl(\begin{smallmatrix} 0 & -\sqrt2\overline{p} & -\sqrt2\overline{q} \\ -\sqrt2\overline{q} &
+      -2\overline{r} & 0
+      \\ -\sqrt2\overline{p} & 0 & 2\overline{r} \end{smallmatrix}\bigr) = -L(M)^{\dagger}$, which is (i).
+      Then (ii) follows from the definition of $\Pi_{\JPi\text{-odd}}$ and $\Pi_{\JPi\text{-even}}$, and (iii) from the
+      fact that the anti-hermitian part of a hermitian operator vanishes.
+      For (iv), writing a general anti-hermitian $X$ with nine real parameters, the condition
+      $X = -S\,\overline{X}\,S^{-1}$ leaves six, the stated family; the Hilbert--Schmidt products
+      $\mathrm{tr}\big(L(G)^{\dagger}X\big)$ for $G \in \{E, F, H\}$ vanish on it, and
+      $L(\mathfrak{sl}_{2}(\mathbb{C}))$
+      is the spin-one component of $\mathrm{End}(\Sym^{2} V_{\mathrm{gen}})$ under the adjoint action.
+    \end{proof}
+
+    Premises: the $\mathfrak{sl}_{2}$ lift on $V_{\mathrm{gen}}$ of the metaplectic step model and the antilinear
+    internal
+    parity $\JPi$, which uses the supplied Born--Infeld datum and not [H-Spin]; the definition of $A_{\Pi}$ in
+    Remark~\ref{rem:two-transverse-blocks}.
+    The proposition is a statement about $A_{\Pi}$ as defined.
     [H-Fac] is needed to read the block statement as one on the full operator.
 
-    \begin{corollary}[Vanishing mixing generator at the present stratum]
+    \begin{corollary}[The generator $A_{\Pi}$ vanishes at the present stratum]
       \label{cor:negative-closure-present-stratum}
       At the present full-tower stratum the data of~\cite{Beau2026prs, Beau2026aar, Beau2026cho} give a non-central
       step with real coefficients.
@@ -581,20 +689,22 @@ Independent Researcher, France\\
       carries only the central cyclotomic phase $\zeta_{q}^{\Delta A_{c}}$, with no Fourier or Weyl generator and
       hence no metaplectic Gauss phase~\cite{Beau2026cho}, a central datum that is projectively trivial for the
       polar factor.
-      Thus $\Im p = \Im q = 0$ at this stratum and, by Proposition~\ref{prop:reality-structure}, $A_{\Pi} = 0$ and
-      $[\Upi] = [I]$.
+      By Proposition~\ref{prop:reality-structure}, $A_{\Pi} = 0$ and $[\Upi] = [I]$ at this stratum, whatever the
+      reality
+      of the coefficients, so the reality data are not needed for this conclusion.
       The diagonal split stands as stratum data: $N_{A} \neq 0$~\cite{Beau2026cho} and $u \neq 0$~\cite{Beau2026prs},
       read as a coefficient of $\Epi^{2}|_{\Cgen}$ under [H-Res].
-      The stratum data therefore give a diagonal generation split but no mixing.
-      A non-trivial internal block requires a genuinely complex non-central metaplectic phase, a Weil generator
-      absent from the present pipeline and available only in a new tower stratum, gated by the same full-tower
-      type-rigidity~\cite{Beau2026aog} as the capacity normalisation.
+      The stratum data therefore give a diagonal generation split and no mixing from $A_{\Pi}$.
+      A non-trivial internal or external block needs a generator in the spin-two sector of
+      $\mathrm{End}(\Sym^{2} V_{\mathrm{gen}})$, not a complex phase of an $\mathfrak{sl}_{2}$ coefficient; whether the
+      Weil or Fourier generator of a new tower stratum has a component there is not known.
     \end{corollary}
 
     Premises: the generation block and Proposition~\ref{prop:reality-structure}, together with the real cascade
     and central-phase data of~\cite{Beau2026prs, Beau2026aar, Beau2026cho}, and [H-Res] for the reading of $u$;
     neither the line $\LY$ nor the Lorentz or weak typing enters, and [H-Fac] is needed to read the block statement as
     one on the full operator.
+    The conclusion concerns $A_{\Pi}$ as defined.
 
     \begin{remark}[Two delimitations]
       \label{rem:precautions}
@@ -603,7 +713,7 @@ Independent Researcher, France\\
       central phase, but it does not bear on the non-triviality of $[\Upi]$: chiral orientation and polar class are
       distinct data.
       Second, the generation split $u \neq 0$~\cite{Beau2026prs, Beau2026bim} is a diagonal-channel datum and
-      produces no mixing; it contributes nothing to the off-diagonal moduli or to $J_{\Pi}$.
+      produces no mixing; it contributes nothing to the off-diagonal moduli or to $\JCP$.
       Mixing is the transverse polar datum, not the diagonal split.
     \end{remark}
 
@@ -611,53 +721,67 @@ Independent Researcher, France\\
     \label{sec:status}
 
     \paragraph{Derived (this note), for the generation block.}
-      The Yukawa block is determined by its hermitian square $\Hpi = \Ypi^{\dagger}\Ypi$ only up to a unitary chiral
-      polar factor, $\Ypi = \Upi\,\Hpi^{1/2}$ (Proposition~\ref{prop:polar-ambiguity}), without any of [H-Res], [H-Sq],
-      [H-Fac].
-      The polar factor is moreover not canonical but a rephasing class for the $\Jthree$-commutants of the two carriers,
-      the double quotient $[\Upi] \in \UU(1)^{3}_{R} \backslash \UU(3) / \UU(1)^{3}_{L}$, with invariants the moduli
-      $|(\Upi)_{ij}|$ and the Jarlskog phase $J_{\Pi}$, four physical parameters in all
+      The Yukawa block is determined by its hermitian square $\Hpi = \Ygen^{\dagger}\Ygen$ only up to a unitary chiral
+      polar factor, $\Ygen = \Upi\,\Hpi^{1/2}$ (Proposition~\ref{prop:polar-ambiguity}), without any of [H-Res], [H-Sq],
+      [H-Fac], [H-Grad].
+      Under the grading premise [H-Grad], the polar factor is moreover not canonical but a rephasing class for the
+      $\Jthree$-commutants of the two carriers, the double quotient
+      $[\Upi] \in \UU(1)^{3}_{R} \backslash \UU(3) / \UU(1)^{3}_{L}$, with invariants the moduli
+      $|(\Upi)_{ij}|$ and the Jarlskog phase $\JCP$, four physical parameters in all
       (Proposition~\ref{prop:polar-class}).
-      Its non-triviality is controlled by the transverse component of the metaplectic generator: $[\Upi] \neq
+      Its non-triviality is controlled by the transverse component of the generator: $[\Upi] \neq
       [I]$ iff that generator has a non-zero off-diagonal component (Proposition~\ref{prop:polar-nontriviality}).
-      These propositions are algebraic consequences: they use only the generation block, positive hermitian squares and
-      the $\Jthree$ gradings, and hold whatever the typing of the spinor, weak and line factors, with no use of the
-      line $\LY$.
+      For the generator $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, defined as the $\JPi$-odd anti-hermitian part,
+      the transverse component vanishes for every complex coefficient (Proposition~\ref{prop:reality-structure}).
+      These propositions are algebraic consequences: they use only the generation block, positive hermitian squares, the
+      $\Jthree$ gradings under [H-Grad] and, for the last, the $\mathfrak{sl}_{2}$ lift and the antilinear parity, and
+      hold whatever the typing of the spinor, weak and line factors, with no use of the line $\LY$.
       The typing of the fermion sectors, $\LY = \wedge^{2}(\Eweak)$ with the left and right sectors above, is the
       conditional typing of the line note~\cite{Beau2026pyl} under [H-Spin] and [H-Weak] and is carried here only as
       the setting of the spectator factors.
 
     \paragraph{Conditional.}
       Under [H-Res] and [H-Sq], supplied by no source~\cite{Beau2026q14}, the generation-level observable of the
-      Schur-residue sector is the positive hermitian square $\Hpi = \Ypi^{\dagger}\Ypi$, with
+      Schur-residue sector is the positive hermitian square $\Hpi = \Ygen^{\dagger}\Ygen$, with
       $\Spec(\Hpi)|_{\Cgen} = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$
       (Proposition~\ref{prop:squared-yukawa}).
-      The transfer of every block statement to the full coupling holds only under [H-Fac], whose existence and
-      uniqueness conditions are not met by any constructed object of the corpus (Section~\ref{sec:morphism}).
-      On the real cascade of the model the off-diagonal channel is absent, $v = 0$, so $[\Upi] = [I]$ and no
+      The transfer of every block statement to the full coupling holds only under [H-Fac], that is under both
+      (F1), a weak linking carrier $K$ with a doublet component, and (F2), its multiplicity one; no constructed object
+      of the corpus meets either (Section~\ref{sec:morphism}).
+      On the real cascade of the model the off-diagonal channel is absent, $v = 0$, so $[\Upi] = [I]$ for $A_{\Pi}$ and
+      no
       physical mixing is produced at this stratum (Corollary~\ref{cor:real-cascade-collapse}); the diagonal split is
       read as the Lorentz-chirality imbalance on the branch input, which is an input and not derived, and not as
       $V{-}A$ selection.
-      The transverse datum further splits into two blocks (Remark~\ref{rem:two-transverse-blocks}): the internal
-      block $e_{0} \leftrightarrow e_{\pm}$ is sourced by a genuinely complex non-central $\mathfrak{sl}_{2}$
-      coefficient, a condition that Q14 does not exclude and the corpus does not construct, while the external block
-      $e_{+} \leftrightarrow e_{-}$ is not in the image of the single-cascade $\Sym^{2}(\mathfrak{sl}_{2})$ lift and
-      is excluded as a source within the step model of~\cite{Beau2026q14}.
       Consequently $N_{A}$ may fix the diagonal oriented-area normalisation without fixing the polar mixing
       class.
-      At the present full-tower stratum these non-central coefficients are real by the stratum data --- the cascade
-      step is real~\cite{Beau2026prs, Beau2026aar} and the inherited lift carries only the central
-      phase~\cite{Beau2026cho} --- so $\Im p = \Im q = 0$, $A_{\Pi} = 0$ and $[\Upi] = [I]$: the stratum data give
-      the diagonal split but not the mixing (Proposition~\ref{prop:reality-structure},
+      At the present full-tower stratum the cascade step is real~\cite{Beau2026prs, Beau2026aar} and the inherited lift
+      carries only the central phase~\cite{Beau2026cho}: the stratum data give the diagonal split and, through
+      $A_{\Pi} = 0$, no mixing (Proposition~\ref{prop:reality-structure},
       Corollary~\ref{cor:negative-closure-present-stratum}).
+
+    \paragraph{Ruled out (within the stated models).}
+      The external block $e_{+} \leftrightarrow e_{-}$ is excluded as a source within the step model
+      of~\cite{Beau2026q14}: the image of $\mathfrak{sl}_{2}(\mathbb{C})$ has no matrix element between the weights
+      $+1$ and $-1$.
+      For $A_{\Pi}$ as defined, the internal block $e_{0} \leftrightarrow e_{\pm}$ is not sourced by the
+      $\mathfrak{sl}_{2}$ lift for any complex coefficient (Proposition~\ref{prop:reality-structure}); this does not
+      concern the $\JPi$-even anti-hermitian part (Remark~\ref{rem:two-transverse-blocks}) nor a spin-two extension.
+      The direct reading of the three levels as the charged-fermion mass hierarchy is excluded at the order-one
+      level split below.
+      The level-crossing depths, the depths of the linear growth law, the quantised resolution-density route through the
+      valency and the renewed-floor multi-cycle route are excluded within the families tested below, not for every
+      route.
 
     \paragraph{Open.}
       The positive Yukawa norm $\lamY$ and a non-trivial polar class $[\Upi] \neq [I]$ are not fixed here, and the
-      premises [H-Res], [H-Sq], [H-Fac] and the construction of $\Eweak$ and of the linking carrier are open.
-      The norm $\lamY$ scales $\Hpi$, whereas a non-trivial internal block of $[\Upi]$ requires a genuinely complex
-      non-central metaplectic phase, absent from the present pipeline and available only through a new tower
-      stratum~\cite{Beau2026aog}, and the external block requires a generator outside the step model.
-      It is observable as a mixing matrix only relative to a second fermionic sector.
+      premises [H-Res], [H-Sq], [H-Fac] (the weak linking carrier $K$ and the multiplicity one of its invariant
+      couplings) and [H-Grad], together with the construction of $\Eweak$, are open.
+      The norm $\lamY$ scales $\Hpi$, whereas a non-trivial block of $[\Upi]$ needs a generator in the spin-two
+      sector of $\mathrm{End}(\Cgen)$, outside the $\mathfrak{sl}_{2}$ metaplectic image, and none is supplied; whether
+      the
+      Weil generator of a new tower stratum has such a component is not known.
+      The mixing matrix is observable only relative to a second fermionic sector.
       Hence the absolute masses, the generation mixing, and the CP structure remain downstream open data, in
       agreement with~\cite{Beau2026fmnote}.
 
@@ -693,7 +817,7 @@ Independent Researcher, France\\
         R_\Pi = R_{\mathrm{ADE}}=\frac32,
       \]
       where \(R_{\mathrm{ADE}}\) is the order-\(5\) Cayley-spectral ratio~\cite{Beau2026aog}.
-      This gate is compatible with the closed angular datum, but it is not produced by the
+      This gate is compatible with the angular datum \(\varepsilon\), but it is not produced by the
       carrier-preserving recursion.
       In particular, the recursion may fix the vertical parity type and the field
       \(\mathbb{Q}(\sqrt5)\) in which the obstruction is visible, but it does not generate the
@@ -724,7 +848,7 @@ Independent Researcher, France\\
 
     \paragraph{Separation of level split and hierarchy.}
       The diagonal datum \(u\) should consequently be read, under [H-Res] and [H-Sq], as a generation-level weight
-      inside the positive hermitian square \(\Hpi=\Ypi^{\dagger}\Ypi\), not as a direct mass-ratio predictor.
+      inside the positive hermitian square \(\Hpi=\Ygen^{\dagger}\Ygen\), not as a direct mass-ratio predictor.
       The observed hierarchy must be carried by generation-dependent stabilisation depths in the projective
       amplification law, or by a later operator stratum not analysed here.
       It is not carried by a sector-dependent normalisation of \(\lamY\): the Yukawa norm \(\lamY\) remains a single
@@ -755,11 +879,13 @@ Independent Researcher, France\\
       Write the mass-channel factorisation in the form
       \begin{equation}
         \label{eq:mass-factorisation}
-        m_g \;=\; \lamY\, w_g\, S_g\, A(n_g),
+        m_g \;=\; \lamY\, \sqrt{w_g}\, S_g\, A(n_g),
         \qquad A(n_g) = \exp(\beta^{\ast} n_g),
       \end{equation}
       where \(g\in\{1,2,3\}\) is the generation label, \(w_g\) is the Schur-residue weight of the squared
-      residue (under [H-Res]), \(S_g\) is the stratigraphic order-one factor, and \(A(n_g)\) is the depth amplification
+      residue (under [H-Res]), a level of \(\Hpi/\lamY^{2}\) whose square root enters the Yukawa block as in
+      Equation~\eqref{eq:cp-real}, \(S_g\) is the stratigraphic order-one factor, and \(A(n_g)\) is the depth
+      amplification
       generated along the projective cascade at the exponent \(\beta^{\ast}=1/(\delta+\tfrac12)\)~\cite{Beau2026a20}.
 
       \begin{lemma}[Separation of the generation label and the Schur-residue weight]
@@ -826,7 +952,8 @@ Independent Researcher, France\\
 
     \paragraph{Linear-growth depths do not supply the generation stabilisation scale.}
       We record the negative resolution of the depth front, established by exact computation on the corpus
-      growth law with no fit and no mass input (Section~\ref{sec:repro}).
+      growth law with no fit and no mass input, in programme scripts that are not reproduced in this repository
+      (Section~\ref{sec:repro}).
       The required inter-generation depth gap of the exponential law,
       \(\Delta n_{\mathrm{req}} = \log(m_\tau/m_e)/\beta^{\ast} \simeq 64\) at \(\beta^{\ast}\simeq 0.127\),
       is bracketed on both sides by the two natural depths of the linear growth law
@@ -859,7 +986,7 @@ Independent Researcher, France\\
       count.
       This is an honest reduction, not a derivation:
       the depth triplet remains the open carrier (Remark~\ref{rem:depths-scope}), now with the linear-law
-      route closed.
+      route excluded within the families tested.
 
     \paragraph{Quantised resolution-density frontier.}
       A distinct modelling route is to quantise the per-level resolution density itself, rather than the
@@ -872,19 +999,19 @@ Independent Researcher, France\\
         n_g=\frac{\Delta I_g}{c_g(p)} ,
       \]
       since the resulting depth gap is flat in \(p\) rather than driven by \(c_1(p)\to 0\).
-      This gain does not close the generation-scale problem.
+      This gain does not settle the generation-scale problem.
       The quantisation acts on the normalised \(F_{\mathrm{KM}}\)-level, so the forced \(O(1)\) quanta fall in
       the crossing regime rather than in the required stabilisation window.
       The window \(\Delta n\in[50,80]\) is reached only by reintroducing the raw Cayley valency \(|S|=24\), or
       by using a quantum ratio of the same order as the target hierarchy itself.
-      The resolution-density route therefore converts the previous obstruction into a sharper question, which
+      The resolution-density route therefore converts the obstruction into a sharper question, which
       an exact audit of the transport then settles:
       the \(\mathrm{Sym}^2\) Schur-residue transport is scale-free (homogeneous of degree one), carrying only
       order-one residue ratios and never an absolute magnitude, while \(|S|\) enters solely as the Laplacian
       normalisation \(L=I-A/|S|\) that defines \(F_{\mathrm{KM}}\).
       Re-inserting \(|S|\) thus undoes the normalisation defining the density and quantises the un-normalised
       count, the route already locked by \(n_g=\Delta I_g/c_g(p)\); the valency is not forced, so this short
-      static lever closes.
+      static lever is excluded.
 
     \paragraph{Decision point.}
       The remaining mass-hierarchy question has been reduced to whether the stabilisation depths \(n_g\) are
@@ -897,8 +1024,8 @@ Independent Researcher, France\\
       fixing generation structure and order-one level splitting, but not the charged-fermion hierarchy.
 
     \paragraph{Dynamic stabilisation status.}
-      The remaining dynamic reading of the projective mass cascade does not alter the closure
-      of the static sector.
+      The remaining dynamic reading of the projective mass cascade does not alter the exclusion
+      of the static routes above.
       If the three generation depths are read as parallel thresholds on the same admissibility
       flow, with threshold fractions fixed by the \(J_3=\mathrm{diag}(0,1,-1)\) carrier on
       \(\mathbb{C}^3_{\mathrm{gen}}\simeq\mathrm{Sym}^2(\mathbb{C}^2)\), the resulting depth
@@ -913,12 +1040,12 @@ Independent Researcher, France\\
       However, every forced dynamic range supplied by the admissibility data remains too small:
       the normalised Heisenberg band, the Alon--Boppana adjacency band, and the generation-level
       span all give cumulative depths far below the charged-fermion hierarchy scale.
-      A range large enough to close the hierarchy would have to be introduced either through
+      A range large enough to reach the hierarchy would have to be introduced either through
       the cascade amplification itself, which makes the cycle count tautological, or through an
       unpinned ceiling-to-floor scale such as \(\beta_{\mathrm{BI}}/A_{\min}\).
       Both routes reintroduce a free normalisation under another name.
 
-      The renewed-floor multi-cycle escape is therefore also closed at this stratum.
+      The renewed-floor multi-cycle escape is therefore also excluded within the family tested at this stratum.
       A transfer law
       \[
         \mathrm{floor}_{g+1}=\mathcal{R}(\mathrm{ceiling}_g)
@@ -946,75 +1073,56 @@ Independent Researcher, France\\
       Front~3b yields the squared Yukawa levels under [H-Res] and [H-Sq], not a mixing result, and Front~3c
       characterises the chiral polar factor of the generation block as a rephasing class whose non-triviality is the
       transverse metaplectic datum.
-      Under [H-Res] and [H-Sq], the squared residue $\Epi^{2}|_{\Cgen}$ fixes $\Hpi = \Ypi^{\dagger}\Ypi$; it does not
-      fix $\Ypi$ unless the class $[\Upi]$ is fixed, and that class is the identity on the real cascade of the model.
+      Under [H-Res] and [H-Sq], the squared residue $\Epi^{2}|_{\Cgen}$ fixes $\Hpi = \Ygen^{\dagger}\Ygen$; it does not
+      fix $\Ygen$ unless the class $[\Upi]$ is fixed, and that class is the identity on the real cascade of the model
+      for the generator $A_{\Pi}$.
 
   \section{Reproducibility}
     \label{sec:repro}
 
-    All operator identities are verified by exact symbolic computation, with no floating-point sampling; the one
-    numerical computation, a rank computation in 60-digit arithmetic, is stated where it is used.
-    The squared-observable results of Sections~\ref{sec:squared}--\ref{sec:cp-real} ---
-    the level substitution and spectrum of Proposition~\ref{prop:squared-yukawa} (the spectrum of $\Ypi^{\dagger}\Ypi$
-    for explicit non-trivial unitaries $\Upi$), the polar non-uniqueness of
-    Proposition~\ref{prop:polar-ambiguity} (for a generic positive $\Hpi$ and an arbitrary unitary, both a
-    generation rotation and a diagonal phase leave $\Ypi^{\dagger}\Ypi$ invariant while changing $\Ypi$),
-    the invariance of $\Hpi$ under right-carrier unitaries, and the diagonal no-mixing CP-real branch ---
-    are checked in \texttt{simulation/fermionic-matter/front3b\_yukawa\_operator.py}.
-    The rephasing class of Proposition~\ref{prop:polar-class} ---
-    the $\Jthree$ commutant, the class transformation, the invariance of the moduli and of $J_{\Pi}$ ---
-    is checked in exact arithmetic over $\mathbb{Q}(i)$, on a generic and on degenerate $\Hpi$, in
-    \texttt{code/front\_polar\_class\_rephasing.py}, whose output is committed beside it.
-    The same script computes the rank (four) of the differential of the moduli and $J_{\Pi}$ at random points of
-    $\UU(3)$ in 60-digit arithmetic with a fixed seed.
-    The remaining polar-class results of Section~\ref{sec:polar-class} ---
-    the orbit tangent at the identity, the modulus and Jarlskog
-    detectors of the transverse part (Proposition~\ref{prop:polar-nontriviality}), and the diagonal
-    real-cascade collapse (Corollary~\ref{cor:real-cascade-collapse}) ---
-    are checked in \texttt{front3c\_polar\_class\_audit.py} and
-    \texttt{front3c\_polar\_class\_nontriviality.py}.
-    The two-block decomposition of Remark~\ref{rem:two-transverse-blocks} ---
-    the vanishing of the chiral generator $A_{\Pi}$ on real cascade data, the sourcing of the internal block
-    $e_{0} \leftrightarrow e_{\pm}$ by a complex non-central coefficient, the identical vanishing of the
-    external block $R_{\mathrm{mix}}$ in the $\Sym^{2}(\mathfrak{sl}_{2})$ lift, and the independence of the
-    mixing datum from the real oriented area $N_{A}$ ---
-    is checked in \texttt{front3d\_transverse\_route.py}.
-    The reality-structure results of Section~\ref{sec:polar-class} ---
-    the dependence of $A_{\Pi}$ on the $\sigma$-anti-real part alone, the equivalence
-    $[\Upi] = [I] \Leftrightarrow \Im p = \Im q = 0$, the class-triviality of the imaginary $\Jthree$ rephasing,
-    the projective triviality of the central scalar, and the spinorial-frame covariance distinguishing matrix
-    complexity from coefficient complexity (Proposition~\ref{prop:reality-structure},
-    Corollary~\ref{cor:negative-closure-present-stratum}) ---
-    are checked in \texttt{front3e\_reality\_structure.py}.
-    The separation and level-crossing results of Section~\ref{sec:status} ---
-    the distinctness of the Schur-residue weight and the stratigraphic factor on the common rank-three carrier
-    (Lemma~\ref{lem:separation-label-weight}), the \(\beta^{\ast}\)-independent cancellation
-    \(A(n_i)/A(n_j)=\lambda_i/\lambda_j\) of the level-crossing depths
-    (Lemma~\ref{lem:level-crossing-cancellation}), and the unreachability of the required depth gaps from the
-    static data (Corollary~\ref{cor:intrinsic-branching-depths}) ---
-    are checked in \texttt{front\_depths\_ng\_reconciliation.py}.
-    The bracketing of the required depth gap and the closure of the linear-growth route of
-    Section~\ref{sec:status} ---
-    the over-amplification and band-edge divergence of the saturation rank in the exponential reading, the
-    intrinsic but \(\le 10\) and non-splitting cumulative-capacity cell depth on the admissibility-cascade
-    profiles, and the \(q\)-instability of both the inter-level gap and the \(n_2,n_3\) order ---
-    are checked in \texttt{front\_saturation\_rank\_amplification.py},
-    \texttt{front\_capacity\_cell\_depth.py}, and \texttt{front\_interlevel\_cell\_depth.py}.
-    The hard-exit valency test closing the quantised resolution-density route is checked in
-    \texttt{front\_valency\_forced\_hardexit.py}.
-    It verifies that the \(\mathrm{Sym}^2\) Schur-residue transport is scale-free, that the
-    \(F_{\mathrm{KM}}\) density is defined on the normalised Laplacian \(L=I-A/|S|\), and that the
-    factor \(|S|\) enters only as the count normalisation.
-    Consequently re-inserting \(|S|\) quantises the un-normalised count rather than the
-    resolution density, returning to the already closed depth law
-    \(n_g=\Delta I_g/c_g(p)\).
-    The dynamic stabilisation status of Section~\ref{sec:status} ---
-    the band-edge independence of the parallel-threshold depth gap and its order-one magnitude, the
-    insufficiency of every forced sequential Born--Infeld dynamic range, and the closure of the
-    renewed-floor multi-cycle escape under the requirement that the transfer law be forced by the
-    Born--Infeld, ADE, Heisenberg, or Schur structure ---
-    is checked in \texttt{front\_intrinsic\_stabilisation\_depths.py} and
-    \texttt{front\_renewed\_floor\_multicycle.py}.
+    The scripts of the directory \texttt{code/} of this repository are exact symbolic computations (sympy), with no
+    floating-point sampling except where stated; their printed outputs are committed beside them.
+    \begin{itemize}
+      \item \texttt{front3b\_yukawa\_operator.py} checks the level substitution and spectrum of
+        Proposition~\ref{prop:squared-yukawa} (the spectrum of $\Hpi$ for an explicit non-monomial unitary $\Upi$), the
+        polar
+        non-uniqueness of Proposition~\ref{prop:polar-ambiguity} (for a generic positive $\Hpi$, a generation rotation
+        and
+        a diagonal phase leave $\Hpi$ invariant while changing $\Ygen$), the invariance of $\Hpi$ under right-carrier
+        unitaries, and the diagonal no-mixing CP-real branch.
+        It does not test [H-Res], [H-Sq] or [H-Fac].
+      \item \texttt{front\_polar\_class\_rephasing.py} checks Proposition~\ref{prop:polar-class} in exact arithmetic
+        over $\mathbb{Q}(i)$ on a generic and on degenerate $\Hpi$: the $\Jthree$ commutant, the class transformation,
+        the
+        invariance of the moduli and of $\JCP$, and, in 60-digit arithmetic with a fixed seed, the rank four of the
+        differential of the moduli and $\JCP$ at random points of $\UU(3)$.
+      \item \texttt{front\_reality\_structure\_sl2\_lift.py} checks Proposition~\ref{prop:reality-structure}: the
+      identity
+        $S\,\overline{L(M)}\,S^{-1} = -L(M)^{\dagger}$, the vanishing of $A_{\Pi}$ for symbolic complex $(p, q, r)$, the
+        six-dimensional $\JPi$-odd anti-hermitian subspace and its orthogonality to $L(\mathfrak{sl}_{2}(\mathbb{C}))$,
+        the
+        $\JPi$-even internal entry, a negative control with the linear involution $X \mapsto S X S^{-1}$ (which gives
+        the condition $\Im(p+q) \neq 0$ and is not the parity of this note), and the leading orders of the detectors of
+        Proposition~\ref{prop:polar-nontriviality}.
+      \item \texttt{front\_hfac\_multiplicity.py} checks the representation theory of Section~\ref{sec:morphism} under
+        [H-Fac]: the Lorentz decomposition $(0, \tfrac12) \otimes (0, \tfrac12) = (0, 0) \oplus (0, 1)$, the
+        inequivalence
+        of $(\tfrac12, 0)$ and $(0, \tfrac12)$, and the multiplicity formula
+        $\dim I_{K} = $ multiplicity of $\Eweak \otimes \LY^{k-m}$ in $K$, by Weyl integration on $\UU(2)$ for
+        $k, m, a \in \{-2, \dots, 2\}$ and $K = \Eweak \otimes \LY^{a}$, with the $\UU(2)$-characters giving zero.
+      \item \texttt{front\_level\_assignment\_nogo.py} checks the arithmetic of the direct level assignment no-go
+        (the order-one spread of the squared levels and of their roots at the dictionary gate).
+      \item \texttt{front\_depths\_ng\_reconciliation.py} checks the separation of the Schur-residue weight and the
+        stratigraphic factor (Lemma~\ref{lem:separation-label-weight}), the $\beta^{\ast}$-independent cancellation
+        $A(n_i)/A(n_j) = \lambda_i/\lambda_j$ (Lemma~\ref{lem:level-crossing-cancellation}), and the unreachability of
+        the
+        required depth gaps from the static data (Corollary~\ref{cor:intrinsic-branching-depths}).
+    \end{itemize}
+    The bracketing of the required depth gap by the linear growth law (the saturation rank, the cumulative-capacity cell
+    depth and the interlevel cell depth), the hard-exit valency test of the quantised resolution-density route, and the
+    tests of the dynamic stabilisation status and of the renewed-floor multi-cycle route are statements of
+    programme scripts that are not reproduced in this repository.
+    They are recorded in Section~\ref{sec:status} as results of those audits and are not reproduction material here.
 
   \newpage
 

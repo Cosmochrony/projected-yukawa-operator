@@ -117,7 +117,7 @@ print("Step 1 : generation label is stratigraphic; w_g is a transported Schur-re
 print("         weight on the same rank-three carrier. Two readings, not one object.")
 print("Step 2 : level-crossing depths give beta-independent O(1) ratios (no-go reappears).")
 print("         A hierarchy needs intrinsic branching depths n_g decoupled from {lambda_g};")
-print("         m_g/lamY = w_g S_g A(n_g), n_g intrinsic stabilisation depths of Lambda_proj(n).")
+print("         m_g/lamY = sqrt(w_g) S_g A(n_g), n_g intrinsic stabilisation depths of Lambda_proj(n).")
 print("         The published base does NOT fix n_g -> honest reduction, not a derivation.")
 
 n_pass = sum(1 for _, ok, _ in checks if ok)

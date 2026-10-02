@@ -2,8 +2,9 @@
 
 Purpose. Proposition (Polar class) of the paper quotients the polar factor U of the generation block
 Y = U H^{1/2} by the rephasing groups G_L, G_R, each the group of unitaries commuting with the Cartan generator
-J3 = diag(0, 1, -1) of its own carrier (a copy of C^3_gen = Sym^2(V_gen)). The groups are defined by the J3 grading of
-the carriers and not by the eigenbasis of Y Y^dag. This script checks, with exact arithmetic over Q(i) (sympy) and one
+J3 = diag(0, 1, -1) of its own carrier (a copy of C^3_gen = Sym^2(V_gen); the grading of each carrier is the premise
+[H-Grad] of the paper). The groups are defined by the J3 grading of the carriers and not by the eigenbasis of Y Y^dag.
+Here Y is the generation block Ygen = Y_Pi^gen of the full morphism Y_Pi. This script checks, with exact arithmetic over Q(i) (sympy) and one
 high-precision numerical rank computation (mpmath, 60 digits), every step of the repaired argument.
 
 Setup. H = lambda^2 diag(1, 1/2 + u, 1/2 - u) is a positive operator commuting with J3 (the model operator on C^3_gen).

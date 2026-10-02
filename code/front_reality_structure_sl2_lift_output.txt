@@ -1,0 +1,31 @@
+Reality structure of the sl_2 lift under the antilinear parity J_Pi (exact symbolic)
+============================================================================================
+  L(M) = [[0, r2 q, r2 p], [r2 p, 2r, 0], [r2 q, 0, -2r]],  S = [[-1,0,0],[0,0,1],[0,1,0]],  J_Pi z = S conj(z)
+  A_Pi := antiherm(Pi_odd(L(M))), Pi_odd(X) = (X - S conj(X) S^-1)/2  (a definition of the paper)
+--------------------------------------------------------------------------------------------
+  [PASS]  1_L_H_equals_2J3
+  [PASS]  1_L_entries
+  [PASS]  1_S_real_involution
+  [PASS]  2_i_S_conjL_Sinv_equals_minus_Ldagger
+  [PASS]  3_ii_odd_is_hermitian_part
+  [PASS]  3_ii_even_is_antihermitian_part
+  [PASS]  4_iii_A_Pi_vanishes_for_all_complex_pqr
+  [PASS]  5_even_internal_entry_formula
+  [PASS]  5_even_internal_entry_nonzero_for_real_p_neq_q
+  [PASS]  6_odd_antiherm_subspace_dim_6
+  [PASS]  6_odd_antiherm_family_matches_paper
+  [PASS]  6_orthogonal_to_L_sl2
+  [PASS]  7_linear_control_internal_is_Im_p_plus_q
+  [PASS]  7_linear_control_vanishes_for_Im_p_eq_minus_Im_q
+  [PASS]  7_linear_control_nonzero_for_Im_p_only
+  [PASS]  7_linear_antilinear_agree_on_real_L
+  [PASS]  8_modulus_leading_order
+  [PASS]  8_jarlskog_orders_0_1_2_vanish
+  [PASS]  8_jarlskog_cubic_coefficient
+  19/19 checks pass
+============================================================================================
+RESULT: for every complex (p, q, r), the J_Pi-odd part of L(M) is its hermitian part, so A_Pi = 0: neither
+        transverse block is sourced by the sl_2 lift through A_Pi. The J_Pi-even anti-hermitian part is not part
+        of A_Pi and has an internal entry for real p != q (flagged). The linear involution is a different
+        operation (negative control). Both blocks need a generator in the spin-two sector.
+ALL CHECKS PASS

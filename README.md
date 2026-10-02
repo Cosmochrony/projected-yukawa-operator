@@ -85,7 +85,8 @@ python code/front_depths_ng_reconciliation.py
 The scripts combine exact arithmetic with delimited numerical checks.
 The symbolic checks use SymPy; the level-assignment script uses exact rational levels (`Fraction`), floating-point
 square roots, and a `1e-12` tolerance for its root-ratio check.
-The multiplicity script uses numerical Weyl integration with tolerance `1e-9`; the rephasing script runs random-point
+The multiplicity script uses numerical Weyl integration, with comparison thresholds `1e-9` and `1e-12`;
+the rephasing script runs random-point
 rank tests in 60-digit mpmath arithmetic with a fixed seed.
 Step 2 of `front_depths_ng_reconciliation.py` includes floating-point ratios, logarithms and depth estimates.
 `front3b_yukawa_operator.py` uses floating-point sorting keys and compares the sorted eigenvalues exactly.

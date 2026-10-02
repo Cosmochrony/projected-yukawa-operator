@@ -1177,9 +1177,11 @@ Independent Researcher, France\\
         inequivalence
         of $(\tfrac12, 0)$ and $(0, \tfrac12)$, and the multiplicity formula
         $\dim I_{K} = $ multiplicity of $\Eweak \otimes \LY^{k-m}$ in $K$, by numerical Weyl integration
-        (floating-point quadrature, tolerance $10^{-9}$) on
+        (floating-point quadrature, comparison threshold $10^{-9}$) on
         $\UU(2)$ for
         $k, m, a \in \{-2, \dots, 2\}$ and $K = \Eweak \otimes \LY^{a}$, with the $\UU(2)$-characters giving zero.
+        The zero-carrier check uses a $10^{-12}$ comparison threshold.
+        These thresholds do not bound the quadrature error.
       \item \texttt{front\_level\_assignment\_nogo.py} checks the arithmetic of the direct level assignment no-go
         (the order-one spread of the squared levels and of their roots at the dictionary gate).
         It uses exact rational levels (\texttt{Fraction}), floating-point square roots, and a $10^{-12}$

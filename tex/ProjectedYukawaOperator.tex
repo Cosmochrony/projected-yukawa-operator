@@ -1146,11 +1146,9 @@ Independent Researcher, France\\
   \section{Reproducibility}
     \label{sec:repro}
 
-    The scripts of the directory \texttt{code/} of this repository are exact symbolic computations (sympy), except
-    the floating-point quadrature of the multiplicity script \texttt{front\_hfac\_multiplicity.py}, the random-point
-    rank test of the rephasing script (60-digit mpmath, fixed seed), and the conversion of levels with
-    \texttt{float()} in the level-assignment script (all named in the items below);
-    their printed outputs are committed beside them.
+    The scripts in \texttt{code/} combine exact arithmetic with explicitly delimited numerical checks.
+    The symbolic checks use SymPy; the numerical operations and tolerances are specified below.
+    Their printed outputs are committed beside them.
     \begin{itemize}
       \item \texttt{front3b\_yukawa\_operator.py} checks the level substitution and spectrum of
         Proposition~\ref{prop:squared-yukawa} (the spectrum of $\Hpi$ for an explicit non-monomial unitary $\Upi$), the
@@ -1159,6 +1157,7 @@ Independent Researcher, France\\
         and
         a diagonal phase leave $\Hpi$ invariant while changing $\Ygen$), the invariance of $\Hpi$ under right-carrier
         unitaries, and the diagonal no-mixing CP-real branch.
+        Its spectrum check uses floating-point sorting keys and compares the sorted eigenvalues exactly.
         It does not test [H-Res], [H-Sq] or [H-Fac].
       \item \texttt{front\_polar\_class\_rephasing.py} checks Proposition~\ref{prop:polar-class} in exact arithmetic
         over $\mathbb{Q}(i)$ on a generic and on degenerate $\Hpi$: the $\Jthree$ commutant, the class transformation,
@@ -1183,11 +1182,14 @@ Independent Researcher, France\\
         $k, m, a \in \{-2, \dots, 2\}$ and $K = \Eweak \otimes \LY^{a}$, with the $\UU(2)$-characters giving zero.
       \item \texttt{front\_level\_assignment\_nogo.py} checks the arithmetic of the direct level assignment no-go
         (the order-one spread of the squared levels and of their roots at the dictionary gate).
+        It uses exact rational levels (\texttt{Fraction}), floating-point square roots, and a $10^{-12}$
+        tolerance for the root-ratio check.
       \item \texttt{front\_depths\_ng\_reconciliation.py} checks the separation of the Schur-residue weight and the
         stratigraphic factor (Lemma~\ref{lem:separation-label-weight}), the $\beta^{\ast}$-independent cancellation
         $A(n_i)/A(n_j) = \lambda_i/\lambda_j$ (Lemma~\ref{lem:level-crossing-cancellation}), and the unreachability of
         the
         required depth gaps from the static data (Corollary~\ref{cor:intrinsic-branching-depths}).
+        Step~2 includes floating-point ratios, logarithms and depth estimates.
     \end{itemize}
     The bracketing of the required depth gap by the linear growth law (the saturation rank, the cumulative-capacity cell
     depth and the interlevel cell depth), the hard-exit valency test of the quantised resolution-density route, and the

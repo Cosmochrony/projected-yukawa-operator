@@ -82,9 +82,13 @@ python code/front_level_assignment_nogo.py
 python code/front_depths_ng_reconciliation.py
 ```
 
-The scripts are exact (sympy); the rephasing script also computes one rank in 60-digit arithmetic with a fixed seed,
-the multiplicity script uses numerical Weyl integration, and the level-assignment script converts levels with
-`float()`.
+The scripts combine exact arithmetic with delimited numerical checks.
+The symbolic checks use SymPy; the level-assignment script uses exact rational levels (`Fraction`), floating-point
+square roots, and a `1e-12` tolerance for its root-ratio check.
+The multiplicity script uses numerical Weyl integration with tolerance `1e-9`; the rephasing script runs random-point
+rank tests in 60-digit mpmath arithmetic with a fixed seed.
+Step 2 of `front_depths_ng_reconciliation.py` includes floating-point ratios, logarithms and depth estimates.
+`front3b_yukawa_operator.py` uses floating-point sorting keys and compares the sorted eigenvalues exactly.
 Their printed outputs are committed beside them in `code/`.
 The depth-bracketing audits recorded in the paper are not reproduced in this repository.
 

@@ -27,6 +27,7 @@
 \newtheorem{corollary}{Corollary}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
+\newtheorem*{polargen}{Polar generator}
 \newtheorem{hypothesis}{Hypothesis}
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
@@ -45,6 +46,8 @@
 \newcommand{\JCP}{\mathcal{J}_{\mathrm{CP}}}
 \newcommand{\Hpi}{H_{\Pi}}
 \newcommand{\Upi}{U_{\Pi}}
+\newcommand{\Opol}{\Omega}
+\newcommand{\Aodd}{A_{\Pi}^{\mathrm{odd}}}
 \newcommand{\lamY}{\lambda_{Y}}
 \newcommand{\Sym}{\mathrm{Sym}}
 \newcommand{\SU}{\mathrm{SU}}
@@ -71,24 +74,25 @@ Independent Researcher, France\\
 
   \begin{abstract}
     The companion line note types the Yukawa line as $\LY = \wedge^{2}(\Eweak)$ under [H-Weak] of Q14 ([H-Spin] for the
-    fermion sectors) and reads levels on the model operator $\diag(1, \tfrac12 + u, \tfrac12 - u)$ of $\Cgen$.
-    Four premises, none supplied by a source:
+    fermion sectors) and reads levels on the model operator of $\Cgen$.
+    Four premises, supplied by no source:
     [H-Res], the model operator is $\Epi^{2}|_{\Cgen}$;
     [H-Sq], $\Hpi = \Ygen^{\dagger}\Ygen = \lamY^{2}\,\Epi^{2}|_{\Cgen}$;
-    [H-Fac], a weak linking carrier exists and the invariant couplings have multiplicity at most one, so that $\Ypi$
-    factorises through its generation block $\Ygen$;
+    [H-Fac], a weak linking carrier whose invariant couplings have multiplicity at most one, so that the results on
+    the generation block $\Ygen$ reach $\Ypi$;
     [H-Grad], the $\Jthree$ grading of each generation carrier.
-    The results concern $\Ygen$, and transfer to $\Ypi$ only under [H-Fac].
     The polar decomposition $\Ygen = \Upi\,\Hpi^{1/2}$ is linear algebra; under [H-Res] and [H-Sq],
-    $\Spec(\Hpi) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$, and the unitary $\Upi$, which carries the chiral
-    orientation and the mixing, is invisible to the squared residue.
-    Under [H-Grad] its class $[\Upi]$ is non-trivial exactly when its generator has a transverse part.
-    That part vanishes for the $\JPi$-odd anti-hermitian part $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, as defined
-    here, a modelling choice that no source justifies; this is not a physical exclusion of the internal block.
+    $\Spec(\Hpi) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$, and the unitary $\Upi$, the chiral orientation and
+    mixing, is invisible to the squared residue.
+    Under [H-Grad], $[\Upi]$ is non-trivial at first order iff its polar generator $\Opol$ has a transverse part.
+    The projection $\Aodd$ of the $\mathfrak{sl}_{2}$ lift onto its $\JPi$-odd anti-hermitian part vanishes, a
+    selection no source justifies, and is not the polar generator, which is non-zero for that lift; the real cascade has
+    a polar factor with a non-zero external entry.
+    Whether Yukawa morphisms with polar factor $\Upi$ exist is open.
     On the orientation-compatible branch of Q14, an input, the real diagonal split is a Lorentz-chirality
-    imbalance, not the $V{-}A$ structure of [H-Weak].
-    Under [H-Res], [H-Sq] and the dictionary gate $u = 1/10$, the spectrum fixes an order-one level
-    split, not the charged-fermion hierarchy.
+    imbalance, not the $V{-}A$ structure.
+    Under [H-Res], [H-Sq] and the dictionary gate $u = 1/10$, the levels split at order one, not as the
+    charged-fermion hierarchy.
   \end{abstract}
 
   \noindent\textbf{Keywords:}
@@ -408,6 +412,28 @@ Independent Researcher, France\\
       Thus the remaining datum is the physical orientation branch of the split, not an additional scalar
       visible to $\Epi^{2}$ alone.
     \end{remark}
+    \begin{polargen}
+      Let $\gamma$ be a real parameter and $\Ygen(\gamma) : \GL \to \GR$ a smooth family of invertible morphisms
+      between fixed orthonormal frames, $\Ygen = \Upi\,\Hpi^{1/2}$ with $\Hpi^{1/2} > 0$.
+      The polar generator is $\Opol = \Upi^{\dagger}\,\partial_{\gamma}\Upi$, an anti-hermitian operator.
+      With $\Xi = \Upi^{\dagger}\,\partial_{\gamma}\Ygen$ one has
+      $\Xi = \Opol\,\Hpi^{1/2} + \partial_{\gamma}\Hpi^{1/2}$, and subtracting the adjoint gives the Sylvester equation
+      \[
+        \Opol\,\Hpi^{1/2} + \Hpi^{1/2}\,\Opol = \Xi - \Xi^{\dagger}
+        = \Upi^{\dagger}\,\partial_{\gamma}\Ygen - (\partial_{\gamma}\Ygen)^{\dagger}\,\Upi .
+      \]
+    \end{polargen}
+
+    The operator $X \mapsto X\Hpi^{1/2} + \Hpi^{1/2}X$ has the eigenvalues $h_{i} + h_{j} > 0$, with $h_{i}$ the
+    eigenvalues of $\Hpi^{1/2}$, so it is invertible and $\Opol$ is determined: in an eigenbasis of $\Hpi^{1/2}$,
+    $\Opol_{ij} = (\Xi - \Xi^{\dagger})_{ij}/(h_{i} + h_{j})$.
+    At $\Ygen(0) = \mathbf{1}$ it reduces to $\Opol(0) = \tfrac12\big(\partial_{\gamma}\Ygen(0) -
+    \partial_{\gamma}\Ygen(0)^{\dagger}\big)$.
+    The formula assumes a real parameter, fixed orthonormal frames on both carriers and $\Hpi^{1/2} > 0$.
+    Singular supports ($\Hpi$ not invertible) and moving frames (frame transport, covariant derivative) need a separate
+    treatment, and the formula is not applied there.
+    The Sylvester equation, its unique solution and the identity at $\mathbf{1}$ are checked in exact arithmetic in
+    \texttt{front\_polar\_generator.py} (Section~\ref{sec:repro}).
 
   \section{Diagonal CP-real branch}
     \label{sec:cp-real}
@@ -416,7 +442,8 @@ Independent Researcher, France\\
     component $R_{\mathrm{mix}}$ of the model operator vanishes there.
     In the metaplectic step model of~\cite{Beau2026q14} (Section~6, Remark~6.4) no generator reaches $R_{\mathrm{mix}}$,
     whether real or complex.
-    In the present language the real branch is $\Upi = \mathbf{1}$.
+    The diagonal CP-real branch is defined here by $\Upi = \mathbf{1}$; it is not implied by $v = 0$, which concerns
+    $\Epi^{2}$.
     There the Yukawa block is, under [H-Res] and [H-Sq], the positive root itself,
     \begin{equation}
       \label{eq:cp-real}
@@ -426,18 +453,21 @@ Independent Researcher, France\\
     This is a choice of branch, not a derived fact: a non-trivial $\Upi$ --- a generation rotation or a
     relative phase --- leaves $\Hpi$ and the levels untouched while injecting off-diagonal and complex
     structure that $\Epi^{2}$ cannot register.
-    The mixing and the CP phase therefore live entirely in $\Upi$, and the transverse part of its generator has two
-    blocks.
-    The external block $e_{+} \leftrightarrow e_{-}$, that is $R_{\mathrm{mix}}$, is not reached by the image of
-    $\mathfrak{sl}_{2}(\mathbb{C})$ (Remark~6.4 of~\cite{Beau2026q14}).
+    The mixing and the CP phase therefore live entirely in $\Upi$, whose first-order content is the polar generator
+    $\Opol$ defined in Section~\ref{sec:polar}; its transverse part has two blocks.
+    The external block $e_{+} \leftrightarrow e_{-}$ of $\Epi^{2}$, that is $R_{\mathrm{mix}}$, is not reached by the
+    image of $\mathfrak{sl}_{2}(\mathbb{C})$ (Remark~6.4 of~\cite{Beau2026q14}); this concerns a coefficient of
+    $\Epi^{2}$, not the entries of a polar factor.
     For the internal block $e_{0} \leftrightarrow e_{\pm}$, Remark~6.4 of~\cite{Beau2026q14} is silent, and
     Proposition~6.3 (i)--(ii) of~\cite{Beau2026q14} excludes it by hypothesis, for the oriented odd lift it considers,
     which annihilates the central level and preserves the outer doublet.
-    The $\JPi$-odd anti-hermitian part $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, defined in
+    The projection $\Aodd$ of the $\mathfrak{sl}_{2}$ lift onto the $\JPi$-odd anti-hermitian part, defined in
     Remark~\ref{rem:two-transverse-blocks}, vanishes identically for every complex coefficient
-    (Proposition~\ref{prop:reality-structure}); this is a statement about $A_{\Pi}$ as defined.
-    The $\JPi$-even anti-hermitian part of the lift has a non-zero internal entry, non-zero for real $p \neq q$, so the
-    image of $\mathfrak{sl}_{2}(\mathbb{C})$ does reach the internal block through that part.
+    (Proposition~\ref{prop:reality-structure}); this is a statement about $\Aodd$ as defined, and $\Aodd$ does
+    not determine the polar factor (Section~\ref{sec:polar-class}).
+    The $\JPi$-even anti-hermitian part of the lift has a non-zero internal entry, non-zero for real $p \neq q$, and
+    it is the polar generator at the identity for a family with that tangent, so the image of
+    $\mathfrak{sl}_{2}(\mathbb{C})$ does reach the internal block through that part.
     No physical exclusion of the internal block is claimed.
 
   \section{Polar class of the projected Yukawa operator}
@@ -522,13 +552,13 @@ Independent Researcher, France\\
     $0 < u < \tfrac12$.
 
     The next obstruction is therefore not the existence of $\Upi$, but the non-triviality of its class: whether
-    the generator of the step model produces $[\Upi] \neq [I]$ or only a representative diagonal-rephasing
-    equivalent to the identity.
+    the polar generator of a morphism family has a transverse part, giving $[\Upi] \neq [I]$, or only a representative
+    diagonal-rephasing equivalent to the identity.
 
     \begin{proposition}[Polar non-triviality]
       \label{prop:polar-nontriviality}
-      Write $\Upi(\gamma) = \exp(\gamma A)$ for the chiral generator $A = \partial_{\gamma}\Upi|_{0}$ induced by
-      the complex metaplectic phase $\gamma$ of the metaplectic step model, with $A$ anti-hermitian.
+      Let $\Upi(\gamma) = \exp(\gamma A)$ with $A$ anti-hermitian: the polar factor of a family whose polar generator
+      is constant, $\Opol = A$ (for a general smooth family, $A = \Opol(0)$ is the tangent at $\gamma = 0$).
       The diagonal-rephasing orbit through the identity has tangent space the diagonal anti-hermitian
       matrices, so $[\Upi(\gamma)] \neq [I]$ at first order if and only if $A$ has a non-zero off-diagonal
       (transverse) part.
@@ -537,7 +567,7 @@ Independent Researcher, France\\
         |(\Upi)_{ij}|^{2} = \gamma^{2}|A_{ij}|^{2} + O(\gamma^{3}), \qquad i \neq j ,
       \]
       or, equivalently for a positive branch of $\gamma$, $\partial_{\gamma}^{+}|(\Upi)_{ij}|_{\gamma = 0} =
-      |A_{ij}|$, so the off-diagonal moduli detect precisely the transverse component of the metaplectic
+      |A_{ij}|$, so the off-diagonal moduli detect precisely the transverse component of the
       generator; the Jarlskog invariant has leading non-vanishing order $\gamma^{3}$ and is proportional to
       $\Im(A_{12}A_{23}A_{31})$, independent of the diagonal phases.
     \end{proposition}
@@ -555,14 +585,65 @@ Independent Researcher, France\\
     \end{proof}
 
     Premises: the generation block, and [H-Grad] for the diagonal-rephasing orbit tangent.
-    The statement holds for every smooth curve $\Upi(\gamma) = \exp(\gamma A)$ of unitaries with anti-hermitian $A$; its
-    reading in terms of a metaplectic phase is this note's own identification, not a premise of the algebra: it takes
-    the generator of $\Upi$ to be built from the $\mathfrak{sl}_{2}$ lift of the step generator and from the
-    antilinear internal parity $\JPi$ of Section~6 of~\cite{Beau2026q14}, a section that contains no $\Upi$, no
-    polar factor and no Yukawa morphism, and no source supplies the identification;
-    [H-Fac] is needed to read the block class as that of the full operator.
+    The statement holds for every curve $\Upi(\gamma) = \exp(\gamma A)$ of unitaries with anti-hermitian $A$.
+    For a morphism family the first-order content of the polar factor is $\Opol(0)$, fixed by the Sylvester equation
+    above.
+    The corpus supplies no family of Yukawa morphisms whose polar factor is $\Upi$, so the proposition is applied to no
+    physical $\Upi$ here; [H-Fac] is needed to read the block class as that of the full operator.
 
-    \begin{corollary}[Vanishing of $A_{\Pi}$ on the real cascade]
+    The criterion is first-order.
+    A vanishing tangent component does not exclude an off-diagonal entry at higher order.
+    For $\Upi(\gamma) = \exp(\gamma^{2}K)$ with $K$ anti-hermitian and off-diagonal, $\Opol(0) = 0$ and the off-diagonal
+    entries are of order $\gamma^{2}$.
+    For the polar factor of $\Sym^{2}g(\gamma)$ with $g = \exp(2\gamma E)\exp(\gamma F)$, the external entry
+    $e_{+} \leftrightarrow e_{-}$ of $\Opol(0)$ vanishes while the external entry of the finite factor is
+    $\gamma^{2}/4 + O(\gamma^{4})$.
+
+    \paragraph{The projection \texorpdfstring{$\Aodd$}{A\_Pi odd} is not the polar generator.}
+      Let $L(M)$ be the $\mathfrak{sl}_{2}(\mathbb{C})$ lift of Remark~\ref{rem:two-transverse-blocks}, and take a
+      family with $\Ygen(0) = \mathbf{1}$ and $\partial_{\gamma}\Ygen(0) = L(M)$.
+      The Sylvester equation gives $\Opol(0) = \tfrac12\big(L(M) - L(M)^{\dagger}\big)$, the $\JPi$-even
+      anti-hermitian part of $L(M)$ (Proposition~\ref{prop:reality-structure} (ii)), non-zero for instance for
+      $p = 1$, $q = r = 0$.
+      The projection $\Aodd$ is the anti-hermitian part of the $\JPi$-odd part of $L(M)$ and vanishes identically.
+      Hence $\Aodd$ is not the polar generator of a family with that tangent: they are distinct objects.
+
+      An exact real counterexample shows that a vanishing external tangent does not exclude a finite external entry.
+      For $g = \exp(tE)\exp(sF) = \bigl(\begin{smallmatrix} 1 + ts & t \\ s & 1 \end{smallmatrix}\bigr)$
+      with real $t, s$, the unitary polar factor of $g$ is
+      \[
+        u = \frac{1}{\sqrt{(2 + ts)^{2} + (t - s)^{2}}}
+        \begin{pmatrix} 2 + ts & t - s \\ s - t & 2 + ts \end{pmatrix}.
+      \]
+      The normalised symmetric-square representation preserves adjoints, unitarity and positivity, so the unitary polar
+      factor of $\Sym^{2}g$ is $\Sym^{2}u$.
+      Its entry $(e_{+}, e_{-})$ is $(t - s)^{2}/\big((2 + ts)^{2} + (t - s)^{2}\big)$: it equals $1/5$ at
+      $(t, s) = (1, 0)$ and $1/17$ at $(t, s) = (2, 1)$, an interior cascade step with $ts > 0$, where
+      $u = \bigl(\begin{smallmatrix} 4 & 1 \\ -1 & 4 \end{smallmatrix}\bigr)/\sqrt{17}$ and the entries between
+      $e_{0}$ and $e_{\pm}$ are $\pm 4\sqrt{2}/17$.
+      A zero rotation occurs for $t = s$.
+      For $(t, s) = (2\gamma, \gamma)$ the tangent at $0$ is $L\big(\tfrac12(E - F)\big)$, non-zero and $\JPi$-even,
+      while the projection of $L(E)$ vanishes.
+      The absence of an external entry in an infinitesimal generator therefore does not exclude one in the finite
+      factor.
+      The real factor has zero Jarlskog invariant: non-zero mixing moduli with real data do not establish CP violation.
+      This is a mathematical distinction, not a contradiction of the statement on the $R_{\mathrm{mix}}$ coefficient of
+      the Hermitian square, which concerns a different object.
+
+      The square does not determine the polar data.
+      For a fixed $D > 0$, $Y_{0} = D$ and $Y_{1} = VD$ have the same square $D^{2}$ for every unitary $V$, and
+      $V = \Sym^{2}u$ gives an exact countermodel.
+      This is a non-identifiability from the square, not the impossibility of an additional physical construction.
+
+      The bridge is a missing element, not a refutation.
+      The corpus supplies no family of Yukawa morphisms $\Ygen(\gamma) : \GL \to \GR$ whose polar factor is $\Upi$.
+      A metaplectic step $g$ is not a Yukawa morphism and its square is not automatically the prescribed $\Hpi$.
+      Reading the polar factor of $\Sym^{2}g$ as $\Upi$ would need an explicit bridge: normalisation, carrier
+      identification, Hermitian metrics, parameter and frame transport, and the relative data of the two sectors.
+      The $\JPi$-odd part is not replaced by the $\JPi$-even part by decree.
+      The checks are in \texttt{front\_polar\_generator.py} (Section~\ref{sec:repro}).
+
+    \begin{corollary}[Vanishing of $\Aodd$ on the real cascade]
       \label{cor:real-cascade-collapse}
       On the real cascade of the model the off-diagonal mixing channel $R_{\mathrm{mix}}$ of $\Epi^{2}$ is absent,
       $v = 0$, the transported chiral defect being the real diagonal split~\cite{Beau2026prs}; this concerns
@@ -579,31 +660,32 @@ Independent Researcher, France\\
       first-order coefficient of the external component $R_{\mathrm{mix}}$ of $\Epi^{2}$ vanishes by antiunitary
       parity, and so does every odd-order coefficient; mixing at even orders is not excluded, and the internal entries
       $e_{0} \leftrightarrow e_{\pm}$ are not constrained by that parity argument~\cite{Beau2026ebj}.
-      For the generator $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, defined as the $\JPi$-odd anti-hermitian part in
-      Remark~\ref{rem:two-transverse-blocks}, the vanishing holds for every complex coefficient, the real cascade data
-      included (Proposition~\ref{prop:reality-structure}).
-      With $A = A_{\Pi} = 0$, $\Upi(\gamma)$ stays equal to the identity and $[\Upi] = [I]$, with
-      $|(\Upi)_{ij}| = \delta_{ij}$ and $\JCP = 0$.
-      No physical mixing is produced by $A_{\Pi}$ at this stratum.
-      A non-trivial class $[\Upi] \neq [I]$, hence CKM/PMNS-type mixing, requires a transverse component of the
-      generator, and $A_{\Pi}$ has none.
-      A $\JPi$-odd anti-hermitian generator, which $A_{\Pi}$ as defined is not, would be needed for a transverse
-      component from this part, and none is supplied (Remark~\ref{rem:two-transverse-blocks}).
-      The external block $R_{\mathrm{mix}}$ is not reached by the image of $\mathfrak{sl}_{2}(\mathbb{C})$
-      (Remark~6.4 of~\cite{Beau2026q14}); the internal block is reached by the $\JPi$-even anti-hermitian part of the
-      lift, which is not part of $A_{\Pi}$.
-      The resulting mixing matrix is physical only as a relative polar class between two fermionic sectors
+      The projection $\Aodd$ of the $\mathfrak{sl}_{2}$ lift, defined in Remark~\ref{rem:two-transverse-blocks},
+      vanishes for every complex coefficient, the real cascade data included
+      (Proposition~\ref{prop:reality-structure}).
+      $\Aodd$ is not the polar generator of a family of morphisms (paragraph above): it does not determine $\Upi$,
+      and no statement on $[\Upi]$ follows from $\Aodd = 0$.
+      For the $\Sym^{2}$ lift of the real cascade step the polar generator at the identity is non-zero and
+      $\JPi$-even, and the polar factor has a non-zero external entry, $1/17$ at $(t, s) = (2, 1)$, with zero Jarlskog
+      invariant.
+      The external block $R_{\mathrm{mix}}$ of $\Epi^{2}$ is not reached by the image of $\mathfrak{sl}_{2}(\mathbb{C})$
+      (Remark~6.4 of~\cite{Beau2026q14}); this concerns a coefficient of $\Epi^{2}$, not the entries of a polar
+      factor.
+      The internal block is reached by the $\JPi$-even anti-hermitian part of the lift, which is not part of
+      $\Aodd$.
+      Whether a family of Yukawa morphisms with polar factor $\Upi$ exists, and which polar class $[\Upi]$ it has, is
+      open.
+      A resulting mixing matrix would be physical only as a relative polar class between two fermionic sectors
       sharing a generation carrier.
     \end{corollary}
 
-    Premises: the generation block, [H-Grad], and the algebra of Proposition~\ref{prop:polar-nontriviality}, together
-    with
-    the definition of $A_{\Pi}$ and Proposition~\ref{prop:reality-structure}; the real cascade data
+    Premises: the generation block, [H-Grad], and the Sylvester equation of Section~\ref{sec:polar}, together with the
+    definition of $\Aodd$ and Proposition~\ref{prop:reality-structure}; the real cascade data
     of~\cite{Beau2026prs}; the branch input for the reading of the diagonal split as a
     Lorentz-chirality imbalance, and [H-Res] where the real data are stated as data on $\Epi^{2}|_{\Cgen}$.
     The statement of~\cite{Beau2026ebj} is used under its own hypotheses, and [H-Fac] is needed to read the block class
     as that of the full operator.
-    The conclusion $[\Upi] = [I]$ is a statement about $A_{\Pi}$ as defined, not about every generator of $\Upi$.
+    No conclusion on $[\Upi]$ follows from $\Aodd = 0$.
 
     \begin{remark}[Two transverse blocks]
       \label{rem:two-transverse-blocks}
@@ -614,20 +696,21 @@ Independent Researcher, France\\
       For a single metaplectic $\mathfrak{sl}_{2}$ cascade lifted to $\Sym^{2}$, let $L(M)$ be the lift of
       $M = pE + qF + rH \in \mathfrak{sl}_{2}(\mathbb{C})$ to $\Cgen$ and let $\JPi z = S\,\overline{z}$, with
       $S = \Sym^{2}(\varepsilon)$, be the antilinear internal parity of Section~6 of~\cite{Beau2026q14}.
-      Then $\Pi_{\JPi\text{-odd}}(X) = \tfrac12\,(X - S\,\overline{X}\,S^{-1})$ and the chiral generator of this note is
+      Then $\Pi_{\JPi\text{-odd}}(X) = \tfrac12\,(X - S\,\overline{X}\,S^{-1})$ and the projection of this note is
       defined by
       \[
-        A_{\Pi} = \Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-odd}}\big(L(M)\big) .
+        \Aodd = \Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-odd}}\big(L(M)\big) .
       \]
-      This is a definition of this note; $A_{\Pi}$ is the generator defined here, not the anomaly density of
-      \cite{Beau2026q14}.
+      This is a definition of this note; $\Aodd$ is the projection defined here.
+      It is not the anomaly density of~\cite{Beau2026q14} and it is not the polar generator $\Opol$ of
+      Section~\ref{sec:polar}.
       The selection of the $\JPi$-odd part is that of the oriented sector of Section~6 of~\cite{Beau2026q14}, where the
       $\Jthree$ coefficient of the step generator is the $\JPi$-odd projection, and that of the transported split $u$
       of~\cite{Beau2026prs}, the $\Jthree$ component of $\Pi_{\JPi\text{-odd}}(\Epi^{2})$; both concern real or
       hermitian operators.
-      No source selects the $\JPi$-odd part for the anti-hermitian generator of $\Upi$, so $A_{\Pi}$ holds by
-      definition.
-      The vanishing of $A_{\Pi}$ is representation-theoretic, not a property of the step: the $\JPi$-odd anti-hermitian
+      No source selects the $\JPi$-odd part for the generator of $\Upi$, so $\Aodd$ holds by definition and is not
+      the polar generator.
+      The vanishing of $\Aodd$ is representation-theoretic, not a property of the step: the $\JPi$-odd anti-hermitian
       operators on $\Cgen$ are exactly the spin-zero and spin-two part of $\mathfrak{u}(3)$, while the image of
       $\mathfrak{sl}_{2}$ is spin one, whose anti-hermitian part $L(\mathfrak{su}(2))$ is entirely $\JPi$-even.
       For the cascade step of Corollary~\ref{cor:negative-closure-present-stratum}, whose logarithm has coefficients
@@ -635,26 +718,28 @@ Independent Researcher, France\\
       entry is $\tfrac{\sqrt2}{2}\,c\,(s - t)$: it vanishes at $t = s$, where $L(M)$ is real symmetric and its whole
       anti-hermitian part is zero, and it is non-zero otherwise.
       The $\JPi$-even anti-hermitian part $\Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-even}}(L(M)) =
-      L\big(\tfrac12(M - M^{\dagger})\big)$ is not part of $A_{\Pi}$; its internal entries are
+      L\big(\tfrac12(M - M^{\dagger})\big)$ is not part of $\Aodd$; its internal entries are
       $\tfrac{\sqrt2}{2}(q - \overline{p})$, which do not vanish for real $p \neq q$.
-      The statements below concern $A_{\Pi}$ as defined, and are not statements about that even part.
+      The statements below concern $\Aodd$ as defined, and are not statements about that even part.
       For every $M \in \mathfrak{sl}_{2}(\mathbb{C})$, real or complex, the $\JPi$-odd part of $L(M)$ is hermitian, so
-      $A_{\Pi} = 0$ (Proposition~\ref{prop:reality-structure}).
-      Neither transverse block is therefore sourced by the $\mathfrak{sl}_{2}$ lift through $A_{\Pi}$: the external
-      block $e_{+} \leftrightarrow e_{-}$ has no matrix element in the image of $\mathfrak{sl}_{2}(\mathbb{C})$
+      $\Aodd = 0$ (Proposition~\ref{prop:reality-structure}).
+      Neither transverse block is therefore present in $\Aodd$: the external block $e_{+} \leftrightarrow e_{-}$ has
+      no matrix element in the image of $\mathfrak{sl}_{2}(\mathbb{C})$
       (Remark~6.4 of~\cite{Beau2026q14}), and the internal block $e_{0} \leftrightarrow e_{\pm}$ is absent from the
       $\JPi$-odd anti-hermitian part of that image.
       The $\JPi$-even anti-hermitian part of $L(M)$ is not zero: its internal entry
       $\tfrac{\sqrt2}{2}(q - \overline{p})$
-      is non-zero for real $p \neq q$, so the image of $\mathfrak{sl}_{2}(\mathbb{C})$ does reach the internal block
-      $e_{0} \leftrightarrow e_{\pm}$ through that part, while the external block $R_{\mathrm{mix}}$ is not reached by
-      the image (Remark~6.4 of~\cite{Beau2026q14}; Proposition~6.3 (i)--(ii) of~\cite{Beau2026q14} excludes the
-      internal block by hypothesis, for the oriented odd lift it considers).
-      A $\JPi$-odd anti-hermitian generator, the object $A_{\Pi}$ as defined, lies outside the image of
-      $\mathfrak{sl}_{2}(\mathbb{C})$, in the spin-zero and spin-two components of
+      is non-zero for real $p \neq q$, and it is the polar generator $\Opol(0)$ of a family with tangent $L(M)$ at the
+      identity.
+      The image of $\mathfrak{sl}_{2}(\mathbb{C})$ therefore reaches the internal block through that part, while the
+      external block $R_{\mathrm{mix}}$ of $\Epi^{2}$ is not reached by the image (Remark~6.4 of~\cite{Beau2026q14};
+      Proposition~6.3 (i)--(ii) of~\cite{Beau2026q14} excludes the internal block by hypothesis, for the oriented odd
+      lift it considers).
+      A $\JPi$-odd anti-hermitian generator, the kind of object onto which $\Aodd$ projects, lies outside the image
+      of $\mathfrak{sl}_{2}(\mathbb{C})$, in the spin-zero and spin-two components of
       $\mathrm{End}(\Sym^{2} V_{\mathrm{gen}})$.
-      No physical exclusion of the internal block is claimed: whether $A_{\Pi}$, rather than the $\JPi$-even part, is
-      the right object is a modelling choice of this note that no source justifies.
+      No source justifies the selection of the $\JPi$-odd part, and $\Aodd$ is not the polar generator; no physical
+      exclusion of the internal block is claimed.
       A spin-two extension of the step model, with a generator having a $\JPi$-odd anti-hermitian component, is a
       distinct model: in it the internal block is an allowed element of $\mathfrak{u}(3)$
       (Proposition~\ref{prop:reality-structure}), neither excluded nor constructed, since no source supplies the
@@ -662,8 +747,6 @@ Independent Researcher, France\\
       The chiral-frontier normalisation channel and the polar-mixing channel separate: the oriented
       area $N_{A}$ belongs to the real Cartan / $\Jthree$ channel~\cite{Beau2026aar} and can normalise the
       diagonal split without predicting a CKM/PMNS polar class.
-      A non-trivial polar class from $A_{\Pi}$ needs a $\JPi$-odd anti-hermitian generator, outside the single
-      $\mathfrak{sl}_{2}$ metaplectic cascade.
     \end{remark}
 
     \begin{proposition}[Reality structure of the $\mathfrak{sl}_{2}$ lift]
@@ -677,7 +760,7 @@ Independent Researcher, France\\
         \item[\emph{(i)}] $S\,\overline{L(M)}\,S^{-1} = -\,L(M)^{\dagger}$;
         \item[\emph{(ii)}] $\Pi_{\JPi\text{-odd}}\big(L(M)\big) = \tfrac12\big(L(M) + L(M)^{\dagger}\big)$ and
           $\Pi_{\JPi\text{-even}}\big(L(M)\big) = \tfrac12\big(L(M) - L(M)^{\dagger}\big)$;
-        \item[\emph{(iii)}] $A_{\Pi} = \Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-odd}}\big(L(M)\big) = 0$ for all
+        \item[\emph{(iii)}] $\Aodd = \Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-odd}}\big(L(M)\big) = 0$ for all
           $(p, q, r) \in \mathbb{C}^{3}$;
         \item[\emph{(iv)}] the $\JPi$-odd anti-hermitian operators on $\Cgen$ form a real subspace of $\mathfrak{u}(3)$
         of
@@ -688,8 +771,7 @@ Independent Researcher, France\\
           which is Hilbert--Schmidt orthogonal to $L(\mathfrak{sl}_{2}(\mathbb{C}))$ and so lies in the spin-zero and
           spin-two components of $\mathrm{End}(\Sym^{2} V_{\mathrm{gen}}) = 1 \oplus 3 \oplus 5$.
       \end{enumerate}
-      Consequently $A_{\Pi} = 0$, $[\Upi] = [I]$ at first order for the generator $A_{\Pi}$, whatever the reality of the
-      coefficients, which therefore play no role.
+      Consequently $\Aodd = 0$ whatever the reality of the coefficients, which therefore play no role.
       The diagonal part $i\,\Im r\,\diag(0, 2, -2)$ and the internal entry $\tfrac{\sqrt2}{2}(q - \overline{p})$ of the
       anti-hermitian part of $L(M)$ belong to the $\JPi$-even part.
     \end{proposition}
@@ -715,12 +797,12 @@ Independent Researcher, France\\
 
     Premises: the $\mathfrak{sl}_{2}$ lift on $V_{\mathrm{gen}}$ of the metaplectic step model and the antilinear
     internal
-    parity $\JPi$, which uses the supplied Born--Infeld datum and not [H-Spin]; the definition of $A_{\Pi}$ in
+    parity $\JPi$, which uses the supplied Born--Infeld datum and not [H-Spin]; the definition of $\Aodd$ in
     Remark~\ref{rem:two-transverse-blocks}.
-    The proposition is a statement about $A_{\Pi}$ as defined.
+    The proposition is a statement about $\Aodd$ as defined; it is not a statement about the polar factor.
     [H-Fac] is needed to read the block statement as one on the full operator.
 
-    \begin{corollary}[The generator $A_{\Pi}$ at the present stratum]
+    \begin{corollary}[The projection $\Aodd$ at the present stratum]
       \label{cor:negative-closure-present-stratum}
       At the present full-tower stratum the data of~\cite{Beau2026prs, Beau2026aar, Beau2026cho} give a non-central
       step with real coefficients.
@@ -731,21 +813,21 @@ Independent Researcher, France\\
       and the inherited lift carries only the central cyclotomic phase $\zeta_{q}^{\Delta A_{c}}$, with no Fourier or
       Weyl generator and hence no metaplectic Gauss phase~\cite{Beau2026cho}, a central datum that is projectively
       trivial for the polar factor.
-      By Proposition~\ref{prop:reality-structure}, $A_{\Pi} = 0$ and $[\Upi] = [I]$ at this stratum, whatever the
-      reality
+      By Proposition~\ref{prop:reality-structure}, $\Aodd = 0$ at this stratum, whatever the reality
       of the coefficients, so the reality data are not needed for this conclusion.
       The diagonal split is read from the stratum and the branch: $N_{A} \neq 0$ within the inherited central-phase
       lift of~\cite{Beau2026cho}, and $u \neq 0$
       holds on the effective metric and the electric branch of~\cite{Beau2026bim} with the transported defect
       of~\cite{Beau2026prs}, so it is conditional on that datum and not a datum of the stratum alone; it is read as a
       coefficient of $\Epi^{2}|_{\Cgen}$ under [H-Res].
-      The stratum data, with that conditional split, therefore give a diagonal generation split and no mixing from
-      $A_{\Pi}$.
-      A non-trivial block from the $\JPi$-odd anti-hermitian part needs a generator outside the image of
+      The stratum data, with that conditional split, therefore give a diagonal generation split of
+      $\Epi^{2}|_{\Cgen}$ and $\Aodd = 0$; they do not determine the polar class $[\Upi]$
+      (Section~\ref{sec:polar-class}).
+      A non-zero $\JPi$-odd anti-hermitian part would need a generator outside the image of
       $\mathfrak{sl}_{2}(\mathbb{C})$, in the spin-zero or spin-two components of
       $\mathrm{End}(\Sym^{2} V_{\mathrm{gen}})$, and not a complex phase of an $\mathfrak{sl}_{2}$ coefficient; the
       $\JPi$-even anti-hermitian part of the lift has a non-zero internal entry for real $p \neq q$, which is not part
-      of $A_{\Pi}$ (Remark~\ref{rem:two-transverse-blocks}).
+      of $\Aodd$ (Remark~\ref{rem:two-transverse-blocks}).
       Whether the Weil or Fourier generator of a new tower stratum has a $\JPi$-odd anti-hermitian component is not
       known.
     \end{corollary}
@@ -754,7 +836,7 @@ Independent Researcher, France\\
     and central-phase data of~\cite{Beau2026prs, Beau2026aar, Beau2026cho}, and [H-Res] for the reading of $u$;
     neither the line $\LY$ nor the Lorentz or weak typing enters, and [H-Fac] is needed to read the block statement as
     one on the full operator.
-    The conclusion concerns $A_{\Pi}$ as defined.
+    The conclusion concerns $\Aodd$ as defined.
 
     \begin{remark}[Two delimitations]
       \label{rem:precautions}
@@ -764,8 +846,8 @@ Independent Researcher, France\\
       distinct data.
       Second, the generation split $u \neq 0$~\cite{Beau2026prs, Beau2026bim}, conditional on the effective metric and
       the
-      electric branch of~\cite{Beau2026bim}, is a diagonal-channel datum and
-      produces no mixing; it contributes nothing to the off-diagonal moduli or to $\JCP$.
+      electric branch of~\cite{Beau2026bim}, is a diagonal-channel datum of $\Hpi$;
+      in the factorisation $\Ygen = \Upi\,\Hpi^{1/2}$ it does not enter the off-diagonal moduli of $\Upi$ or $\JCP$.
       Mixing is the transverse polar datum, not the diagonal split.
     \end{remark}
 
@@ -781,12 +863,17 @@ Independent Researcher, France\\
       $[\Upi] \in \UU(1)^{3}_{R} \backslash \UU(3) / \UU(1)^{3}_{L}$, with invariants the moduli
       $|(\Upi)_{ij}|$ and the Jarlskog phase $\JCP$, four physical parameters in all
       (Proposition~\ref{prop:polar-class}).
-      Its non-triviality is controlled by the transverse component of the generator: $[\Upi] \neq
-      [I]$ iff that generator has a non-zero off-diagonal component (Proposition~\ref{prop:polar-nontriviality}).
-      For the generator $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, defined as the $\JPi$-odd anti-hermitian part,
-      the transverse component vanishes for every complex coefficient (Proposition~\ref{prop:reality-structure}); this
-      holds by the definition of $A_{\Pi}$, because with the antilinear $\JPi$ the $\JPi$-odd part of the lift is its
-      hermitian part, and is a statement about $A_{\Pi}$ as defined.
+      Its non-triviality at first order is controlled by the transverse component of its polar generator $\Opol$,
+      defined by the Sylvester equation of Section~\ref{sec:polar}: $[\Upi] \neq [I]$ at first order iff $\Opol$ has a
+      non-zero off-diagonal component (Proposition~\ref{prop:polar-nontriviality}); a vanishing tangent does not exclude
+      an exit at higher order.
+      The projection $\Aodd$ of the $\mathfrak{sl}_{2}$ lift onto the $\JPi$-odd anti-hermitian part vanishes for
+      every complex coefficient (Proposition~\ref{prop:reality-structure}), because with the antilinear $\JPi$ the
+      $\JPi$-odd part of the lift is its hermitian part; this is a statement about $\Aodd$ as defined.
+      $\Aodd$ is not the polar generator: for the $\Sym^{2}$ lift of the cascade step, $\Opol(0)$ is $\JPi$-even and
+      non-zero, the exact polar factor of $\Sym^{2}g$ has the external entry $1/17$ at $(t, s) = (2, 1)$ with zero
+      Jarlskog invariant, and the square $\Hpi$ does not determine the polar data
+      (Section~\ref{sec:polar-class}).
       These propositions are algebraic consequences: they use only the generation block, positive hermitian squares, the
       $\Jthree$ gradings under [H-Grad] and, for the last, the $\mathfrak{sl}_{2}$ lift and the antilinear parity, and
       hold whatever the typing of the spinor, weak and line factors, with no use of the line $\LY$.
@@ -805,17 +892,17 @@ Independent Researcher, France\\
       no constructed object of the corpus meets either (Section~\ref{sec:morphism}).
       On the real cascade of the model the off-diagonal channel $R_{\mathrm{mix}}$ of $\Epi^{2}$ is absent,
       $v = 0$; separately,
-      $A_{\Pi} = 0$ by Proposition~\ref{prop:reality-structure}, so $[\Upi] = [I]$ for $A_{\Pi}$ as defined and
-      no physical mixing is produced from $A_{\Pi}$ at this stratum (Corollary~\ref{cor:real-cascade-collapse});
+      $\Aodd = 0$ by Proposition~\ref{prop:reality-structure}, which does not determine $[\Upi]$
+      (Corollary~\ref{cor:real-cascade-collapse});
       the diagonal split is
       read as the Lorentz-chirality imbalance on the branch input, which is an input and not derived, and not as
       $V{-}A$ selection.
       Consequently $N_{A}$ may fix the diagonal oriented-area normalisation without fixing the polar mixing
       class.
       At the present full-tower stratum the cascade step is real~\cite{Beau2026prs, Beau2026aar} and the inherited lift
-      carries only the central phase~\cite{Beau2026cho}: the stratum data give the diagonal split and, from
-      $A_{\Pi}$, no mixing (Proposition~\ref{prop:reality-structure},
-      Corollary~\ref{cor:negative-closure-present-stratum}).
+      carries only the central phase~\cite{Beau2026cho}: the stratum data give the diagonal split and $\Aodd = 0$
+      (Proposition~\ref{prop:reality-structure}, Corollary~\ref{cor:negative-closure-present-stratum}), and do not
+      determine $[\Upi]$.
 
     \paragraph{Ruled out (within the stated models).}
       The external block $e_{+} \leftrightarrow e_{-}$ is not reached by the image of $\mathfrak{sl}_{2}(\mathbb{C})$
@@ -828,15 +915,17 @@ Independent Researcher, France\\
       route.
 
     \paragraph{Open.}
-      The positive Yukawa norm $\lamY$ and a non-trivial polar class $[\Upi] \neq [I]$ are not fixed here, and the
+      The positive Yukawa norm $\lamY$ and the polar class $[\Upi]$ are not fixed here, and the
       premises [H-Res], [H-Sq], [H-Fac] (the weak linking carrier $K$ and the multiplicity at most one of its invariant
       couplings) and [H-Grad], together with the construction of $\Eweak$, are open.
-      The norm $\lamY$ scales $\Hpi$, whereas a non-trivial block of $[\Upi]$ from $A_{\Pi}$ needs a $\JPi$-odd
-      anti-hermitian generator, outside the $\mathfrak{sl}_{2}$ metaplectic image, and none is supplied; whether
-      the Weil generator of a new tower stratum has such a component is not known.
-      Whether $A_{\Pi}$, rather than the $\JPi$-even anti-hermitian part of the lift, is the right object for the
-      generator of $\Upi$ is a modelling choice of this note that no source justifies; the internal block is
-      neither excluded nor constructed as a physical statement.
+      The norm $\lamY$ scales $\Hpi$ and does not enter $\Upi$.
+      The corpus supplies no family of Yukawa morphisms whose polar factor is $\Upi$, so the polar generator $\Opol$
+      and the bridge from a metaplectic step to a Yukawa morphism (normalisation, carrier identification, Hermitian
+      metrics, parameter and frame transport, relative data of the two sectors) are open: a missing element, not a
+      refutation.
+      Whether the Weil generator of a new tower stratum has a $\JPi$-odd anti-hermitian component is not known.
+      No source justifies the selection of the $\JPi$-odd part, and $\Aodd$ is not the polar generator; the internal
+      block is neither excluded nor constructed as a physical statement.
       The mixing matrix is observable only relative to a second fermionic sector.
       Hence the absolute masses, the generation mixing, and the CP structure remain downstream open data, in
       agreement with~\cite{Beau2026fmnote}.
@@ -1140,9 +1229,11 @@ Independent Researcher, France\\
       characterises the chiral polar factor of the generation block as a rephasing class whose non-triviality is the
       transverse metaplectic datum.
       Under [H-Res] and [H-Sq], the squared residue $\Epi^{2}|_{\Cgen}$ fixes $\Hpi = \Ygen^{\dagger}\Ygen$; it does not
-      fix $\Ygen$ unless the class $[\Upi]$ is fixed, and that class is the identity for the generator $A_{\Pi}$ as
-      defined, a modelling choice that no
-      source justifies, because $A_{\Pi}$ vanishes by representation theory for every complex coefficient.
+      fix $\Ygen$ unless the class $[\Upi]$ is fixed.
+      The projection $\Aodd$ of the $\mathfrak{sl}_{2}$ lift vanishes by representation theory for every complex
+      coefficient, a modelling choice that no source justifies, and it does not determine $[\Upi]$:
+      the polar generator of the $\Sym^{2}$ lift is non-zero, and the corpus supplies no family of Yukawa morphisms
+      whose polar factor is $\Upi$.
 
   \section{Reproducibility}
     \label{sec:repro}
@@ -1167,11 +1258,21 @@ Independent Researcher, France\\
         rephasing orbit and the rank four of the differential of the moduli and $\JCP$ at random points of $\UU(3)$.
       \item \texttt{front\_reality\_structure\_sl2\_lift.py} checks Proposition~\ref{prop:reality-structure}: the
       identity
-        $S\,\overline{L(M)}\,S^{-1} = -L(M)^{\dagger}$, the vanishing of $A_{\Pi}$ for symbolic complex $(p, q, r)$, the
+        $S\,\overline{L(M)}\,S^{-1} = -L(M)^{\dagger}$, the vanishing of $\Aodd$ for symbolic complex $(p, q, r)$, the
         six-dimensional $\JPi$-odd anti-hermitian subspace and its orthogonality to $L(\mathfrak{sl}_{2}(\mathbb{C}))$,
         the
-        $\JPi$-even internal entry, a negative control with the linear involution $X \mapsto S X S^{-1}$ (which gives
+        $\JPi$-even internal entry, a negative control with $\mathrm{antiherm}(L(E)) \neq 0$ while $\Aodd(L(E)) = 0$,
+        a negative control with the linear involution $X \mapsto S X S^{-1}$ (which gives
         the condition $\Im(p+q) \neq 0$ and is not the parity of this note), and the leading orders of the detectors of
+        Proposition~\ref{prop:polar-nontriviality}.
+      \item \texttt{front\_polar\_generator.py} checks, in exact arithmetic, the polar generator of
+        Section~\ref{sec:polar}: the Sylvester equation on the family $\Sym^{2}g(\gamma)$,
+        $g = \exp(2\gamma E)\exp(\gamma F)$, its unique solvability and its eigenbasis formula;
+        $\Opol(0) = \mathrm{antiherm}(L(M))$ for symbolic complex $(p, q, r)$, which is $\JPi$-even and non-zero while
+        $\Aodd = 0$; the exact real polar factor of
+        $g = \exp(tE)\exp(sF)$ and of $\Sym^{2}g$, with the external entry $(t - s)^{2}/((2 + ts)^{2} + (t - s)^{2})$
+        ($1/5$ at $(1, 0)$, $1/17$ at $(2, 1)$) and the zero Jarlskog invariant of the real factor; the
+        non-identifiability from the square; and the first-order versus finite behaviour of
         Proposition~\ref{prop:polar-nontriviality}.
       \item \texttt{front\_hfac\_multiplicity.py} checks the representation theory of Section~\ref{sec:morphism} under
         [H-Fac]: the Lorentz decomposition $(0, \tfrac12) \otimes (0, \tfrac12) = (0, 0) \oplus (0, 1)$, the

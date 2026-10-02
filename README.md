@@ -32,22 +32,36 @@ $\lambda_Y^2\{1, \tfrac12+u, \tfrac12-u\}$ and the **chiral polar factor $U_\Pi$
 The undetermined object carries the chiral orientation that later inputs must supply; the squared observable
 alone cannot resolve it.
 Under [H-Grad] the polar factor is a rephasing class for the unitaries commuting with the Cartan generator $J_3$ of
-each carrier, non-trivial exactly when its generator has a transverse part.
-For the $J_\Pi$-odd anti-hermitian part $A_\Pi$ of the $\mathfrak{sl}_2$ lift, defined in the paper, the transverse
-part vanishes identically for every complex coefficient, because with the internal antilinear parity $J_\Pi$ of the
-generation copy (Q14 Section 6) the $J_\Pi$-odd part of the lift is its Hermitian part; this is a statement about
-$A_\Pi$ as defined.
-$A_\Pi$ is the generator defined in the paper; it is not the anomaly density of Q14.
+each carrier, non-trivial at first order exactly when its polar generator $\Omega$ has a transverse part.
+For a smooth real-parameter family $Y(\gamma) = U(\gamma)P(\gamma)$ of invertible morphisms between fixed orthonormal
+frames, $P > 0$, the polar generator is $\Omega = U^\dagger \partial_\gamma U$ and it solves the Sylvester equation
+$\Omega P + P\Omega = U^\dagger \partial_\gamma Y - (\partial_\gamma Y)^\dagger U$, uniquely since $P > 0$
+(singular supports and moving frames need a separate treatment).
+The projection $A^{\mathrm{odd}}_\Pi$ of the $\mathfrak{sl}_2$ lift onto the $J_\Pi$-odd anti-hermitian part vanishes
+identically for every complex coefficient, because with the internal antilinear parity $J_\Pi$ of the generation copy
+(Q14 Section 6) the $J_\Pi$-odd part of the lift is its Hermitian part; this is a statement about
+$A^{\mathrm{odd}}_\Pi$ as defined, and $A^{\mathrm{odd}}_\Pi$ does not determine the polar factor.
+It is not the anomaly density of Q14, and it is not the polar generator: at the identity, for
+$\partial_\gamma Y = L(M)$, $\Omega(0) = \tfrac12(L(M) - L(M)^\dagger)$,
+the $J_\Pi$-even anti-Hermitian part of the lift, non-zero in general.
+For the real cascade step $g = \exp(tE)\exp(sF)$, the unitary polar factor of $\mathrm{Sym}^2 g$ has the external entry
+$(e_+, e_-)$ equal to $(t-s)^2/((2+ts)^2+(t-s)^2)$, that is $1/5$ at $(1, 0)$ and $1/17$ at $(2, 1)$, and the Jarlskog
+invariant of the real factor is zero.
+The absence of an external entry in an infinitesimal generator does not exclude one in the finite factor.
+For fixed $D > 0$, $Y_0 = D$ and $Y_1 = VD$ have the same square for every unitary $V$: the square does not determine
+the polar data.
+The corpus supplies no family of Yukawa morphisms whose polar factor is $U_\Pi$: whether such a family exists, and which
+polar class it has, is open (a missing element, not a refutation).
+No source justifies the selection of the $J_\Pi$-odd part.
 The $J_\Pi$-even anti-Hermitian part of the lift has a non-zero internal entry $\tfrac{\sqrt2}{2}(q - \bar p)$, non-zero
 for real $p \neq q$, so the image of $\mathfrak{sl}_2$ does reach the internal block $e_0 \leftrightarrow e_\pm$
-through that part, while the external block $R_{\mathrm{mix}}$ is not reached by the image of $\mathfrak{sl}_2$
-(Q14 Remark 6.4); Q14 Proposition 6.3 (i)-(ii) excludes the internal block only by hypothesis, for the oriented
-odd lift it considers.
+through that part, while the external block $R_{\mathrm{mix}}$ of $E_\Pi^2$ is not reached by the image of
+$\mathfrak{sl}_2$ (Q14 Remark 6.4); Q14 Proposition 6.3 (i)-(ii) excludes the internal block only by hypothesis, for the
+oriented odd lift it considers.
 For the cascade step $g = \exp(tE)\exp(sF)$ with real $t$, $s$, the $J_\Pi$-even internal entry is
 $\tfrac{\sqrt2}{2}\,c\,(s - t)$ with $c = \theta/\sinh\theta$: it vanishes at $t = s$, where the whole
 anti-Hermitian part of the lift is zero.
-No physical exclusion of the internal block is claimed: whether $A_\Pi$, rather than the $J_\Pi$-even part, is the
-right object is a modelling choice of the paper that no source justifies; the vanishing of $A_\Pi$ is
+No physical exclusion of the internal block is claimed; the vanishing of $A^{\mathrm{odd}}_\Pi$ is
 representation-theoretic (the $J_\Pi$-odd anti-Hermitian operators are spin 0 and spin 2, the $\mathfrak{sl}_2$
 image is spin 1).
 The real diagonal split is carried, on the orientation-compatible branch of Q14 (an input), by the
@@ -77,6 +91,7 @@ pip install -r code/requirements.txt
 python code/front3b_yukawa_operator.py
 python code/front_polar_class_rephasing.py
 python code/front_reality_structure_sl2_lift.py
+python code/front_polar_generator.py
 python code/front_hfac_multiplicity.py
 python code/front_level_assignment_nogo.py
 python code/front_depths_ng_reconciliation.py

@@ -1,7 +1,7 @@
 Reality structure of the sl_2 lift under the antilinear parity J_Pi (exact symbolic)
 ============================================================================================
   L(M) = [[0, r2 q, r2 p], [r2 p, 2r, 0], [r2 q, 0, -2r]],  S = [[-1,0,0],[0,0,1],[0,1,0]],  J_Pi z = S conj(z)
-  A_Pi := antiherm(Pi_odd(L(M))), Pi_odd(X) = (X - S conj(X) S^-1)/2  (a definition of the paper)
+  A_Pi^odd := antiherm(Pi_odd(L(M))), Pi_odd(X) = (X - S conj(X) S^-1)/2  (a definition of the paper)
 --------------------------------------------------------------------------------------------
   [PASS]  1_L_H_equals_2J3
   [PASS]  1_L_entries
@@ -9,9 +9,10 @@ Reality structure of the sl_2 lift under the antilinear parity J_Pi (exact symbo
   [PASS]  2_i_S_conjL_Sinv_equals_minus_Ldagger
   [PASS]  3_ii_odd_is_hermitian_part
   [PASS]  3_ii_even_is_antihermitian_part
-  [PASS]  4_iii_A_Pi_vanishes_for_all_complex_pqr
+  [PASS]  4_iii_Aodd_vanishes_for_all_complex_pqr
   [PASS]  5_even_internal_entry_formula
   [PASS]  5_even_internal_entry_nonzero_for_real_p_neq_q
+  [PASS]  5_negative_control_antiherm_L_E_nonzero_J_even_while_Aodd_zero
   [PASS]  6_odd_antiherm_subspace_dim_6
   [PASS]  6_odd_antiherm_family_matches_paper
   [PASS]  6_orthogonal_to_L_sl2
@@ -22,14 +23,16 @@ Reality structure of the sl_2 lift under the antilinear parity J_Pi (exact symbo
   [PASS]  8_modulus_leading_order
   [PASS]  8_jarlskog_orders_0_1_2_vanish
   [PASS]  8_jarlskog_cubic_coefficient
-  19/19 checks pass
+  20/20 checks pass
 ============================================================================================
-RESULT: A_Pi, the anti-hermitian part of the J_Pi-odd part of the sl_2 lift of the step generator, vanishes
+RESULT: A_Pi^odd, the anti-hermitian part of the J_Pi-odd part of the sl_2 lift of the step generator, vanishes
         identically for all complex (p, q, r), because with the antilinear J_Pi the J_Pi-odd part of the lift
-        is its hermitian part. This is a statement about A_Pi as defined. The J_Pi-even anti-hermitian part of the
-        lift has the non-zero internal entry (sqrt2/2)(q - conj p), non-zero for real p != q, so the image of
-        sl_2 does reach the internal block e_0 <-> e_pm through that part; the external block R_mix is not
-        reached by the image of sl_2 (Q14 Rem. 6.4). No physical exclusion of the internal block is
-        claimed: whether A_Pi, rather than the J_Pi-even part, is the right object is a modelling choice of the
-        paper that no source justifies. The linear involution is a different operation (negative control).
+        is its hermitian part. This is a statement about A_Pi^odd as defined; A_Pi^odd does not determine the
+        polar factor. The J_Pi-even anti-hermitian part of the lift, antiherm(L(M)), is non-zero (negative
+        control: antiherm(L(E)) != 0 while A_Pi^odd(L(E)) = 0); it has the internal entry
+        (sqrt2/2)(q - conj p),
+        non-zero for real p != q; for dY = L(M) at the identity it is the polar generator Omega(0)
+        (front_polar_generator.py).
+        The external block R_mix is not reached by the image of sl_2 (Q14 Rem. 6.4). No physical exclusion of
+        the internal block is claimed. The linear involution is a different operation (negative control).
 ALL CHECKS PASS

@@ -6,8 +6,8 @@ $H_\Pi = (Y^{\mathrm{gen}}_\Pi)^{\dagger}Y^{\mathrm{gen}}_\Pi$ and the Undetermi
 
 This note takes the second step of the mass-sector frontier of the fermionic-matter
 sub-programme, and begins with a negative result. The companion line note types the Yukawa coupling line
-as the determinant line $L_Y = \wedge^2(E_{\mathrm{weak}})$ of a distinct weak factor, conditionally on the hypotheses
-[H-Spin] and [H-Weak] of Q14, and reads generation levels on the model operator
+as the determinant line $L_Y = \wedge^2(E_{\mathrm{weak}})$ of a distinct weak factor, conditionally on the hypothesis
+[H-Weak] of Q14 (the fermion sectors need [H-Spin] as well), and reads generation levels on the model operator
 $\operatorname{diag}(1, \tfrac12+u, \tfrac12-u)$ of $\mathbb{C}^3_{\mathrm{gen}}$.
 
 Version 2.0.
@@ -34,8 +34,14 @@ alone cannot resolve it.
 Under [H-Grad] the polar factor is a rephasing class for the unitaries commuting with the Cartan generator $J_3$ of
 each carrier, non-trivial exactly when its generator has a transverse part.
 For the $J_\Pi$-odd anti-hermitian part $A_\Pi$ of the $\mathfrak{sl}_2$ lift, defined in the paper, the transverse
-part vanishes identically for every complex coefficient: neither the internal block $e_0 \leftrightarrow e_\pm$ nor
-the external block $R_{\mathrm{mix}}$ is sourced by the lift, and a source needs a generator in the spin-two sector.
+part vanishes identically for every complex coefficient, because with Q14's antilinear $J_\Pi$ the $J_\Pi$-odd part
+of the lift is its Hermitian part; this is a statement about $A_\Pi$ as defined.
+The $J_\Pi$-even anti-Hermitian part of the lift has a non-zero internal entry $\tfrac{\sqrt2}{2}(q - \bar p)$, non-zero
+for real $p \neq q$, so the image of $\mathfrak{sl}_2$ does reach the internal block $e_0 \leftrightarrow e_\pm$
+through that part, while the external block $R_{\mathrm{mix}}$ is not reached by the image of $\mathfrak{sl}_2$
+(Q14 Remark 6.4, Proposition 6.3).
+No physical exclusion of the internal block is claimed: whether $A_\Pi$, rather than the $J_\Pi$-even part, is the
+right object is a modelling choice of the paper that no source justifies.
 The real diagonal split is carried, on the orientation-compatible branch of Q14 (an input), by the
 Lorentz-chirality imbalance, not by the $V{-}A$ structure of [H-Weak].
 

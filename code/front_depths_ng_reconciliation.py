@@ -115,7 +115,7 @@ record("required Delta n_g (>=25) unreachable from static data",
 print("\n=== VERDICT ===")
 print("Step 1 : generation label is stratigraphic; w_g is a transported Schur-residue")
 print("         weight on the same rank-three carrier. Two readings, not one object.")
-print("Step 2 : level-crossing depths give beta-independent O(1) ratios (no-go reappears).")
+print("Step 2 : level-crossing depths give beta-independent O(1) ratios (the no-go holds).")
 print("         A hierarchy needs intrinsic branching depths n_g decoupled from {lambda_g};")
 print("         m_g/lamY = sqrt(w_g) S_g A(n_g), n_g intrinsic stabilisation depths of Lambda_proj(n).")
 print("         The published base does NOT fix n_g -> honest reduction, not a derivation.")

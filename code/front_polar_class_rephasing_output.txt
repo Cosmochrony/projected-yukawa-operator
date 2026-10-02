@@ -31,7 +31,10 @@ Polar class of the generation block: exact checks over Q(i) and a 60-digit rank 
   [PASS]  4_ambiguity_is_a_J3_rephasing
   [PASS]  4_class_unchanged
   [PASS]  5_rank_is_four_at_all_points
+  [PASS]  5_orbit_dimension_is_five_at_all_points
+  [PASS]  5_orbit_plus_class_dimension_is_nine
   ranks of d(moduli, J) at the random points: [4, 4, 4, 4, 4, 4]
+  dimensions of the rephasing orbit at the random points: [5, 5, 5, 5, 5, 5]
 ================================================================================================
 The rephasing groups are the J3-commutants of the two carriers, defined independently of Y Y^dag.
 Restriction flagged: distinct spectrum of H (u not in {0, +-1/2}) for the J3 class to coincide with the

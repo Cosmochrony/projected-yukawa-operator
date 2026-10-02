@@ -25,7 +25,7 @@
 === VERDICT ===
 Step 1 : generation label is stratigraphic; w_g is a transported Schur-residue
          weight on the same rank-three carrier. Two readings, not one object.
-Step 2 : level-crossing depths give beta-independent O(1) ratios (no-go reappears).
+Step 2 : level-crossing depths give beta-independent O(1) ratios (the no-go holds).
          A hierarchy needs intrinsic branching depths n_g decoupled from {lambda_g};
          m_g/lamY = sqrt(w_g) S_g A(n_g), n_g intrinsic stabilisation depths of Lambda_proj(n).
          The published base does NOT fix n_g -> honest reduction, not a derivation.

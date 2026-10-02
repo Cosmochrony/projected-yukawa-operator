@@ -5,7 +5,7 @@ Y = U H^{1/2} by the rephasing groups G_L, G_R, each the group of unitaries comm
 J3 = diag(0, 1, -1) of its own carrier (a copy of C^3_gen = Sym^2(V_gen); the grading of each carrier is the premise
 [H-Grad] of the paper). The groups are defined by the J3 grading of the carriers and not by the eigenbasis of Y Y^dag.
 Here Y is the generation block Ygen = Y_Pi^gen of the full morphism Y_Pi. This script checks, with exact arithmetic over Q(i) (sympy) and one
-high-precision numerical rank computation (mpmath, 60 digits), every step of the repaired argument.
+high-precision numerical rank computation (mpmath, 60 digits), every step of the argument.
 
 Setup. H = lambda^2 diag(1, 1/2 + u, 1/2 - u) is a positive operator commuting with J3 (the model operator on C^3_gen).
 No identification with E_Pi^2 and no Yukawa dictionary is used here: the checks concern the algebra of Y = U H^{1/2}.
@@ -28,7 +28,9 @@ Checks.
      paired with the zero singular value; that ambiguity is a J3 rephasing of the left carrier, so the class is well
      defined (the spectrum is however degenerate there, as at u = 0).
   5  Local rank: at random points of U(3) the differential of (|U_ij|^2, J) has rank 4 = 9 - 5 (60-digit arithmetic),
-     so the class space has dimension four and (moduli, J) are local coordinates on it at generic points.
+     so the class space has dimension four and (moduli, J) are local coordinates on it at generic points; the
+     rephasing orbit has dimension 5 (stabiliser the common phase), computed from the differential of the action,
+     and orbit plus class dimensions add to nine.
 Deterministic: fixed seed for the random points of check 5. Exit status 0 iff every check passes.
 """
 
@@ -173,6 +175,7 @@ def check5(npoints=6, seed=20261001):
     mp.mp.dps = 60
     rnd = random.Random(seed)
     sv_counts = []
+    orbit_dims = []
     for _ in range(npoints):
         Z = mp.matrix(3, 3)
         for i in range(3):
@@ -210,7 +213,29 @@ def check5(npoints=6, seed=20261001):
         S = mp.svd_r(D, compute_uv=False)
         sv = [S[i] for i in range(len(S))]
         sv_counts.append(sum(1 for s in sv if s > mp.mpf(10) ** -12))
-    return {"5_rank_is_four_at_all_points": all(c == 4 for c in sv_counts), "_ranks": sv_counts}
+        # orbit dimension: rank of (a, b) -> d/dt [exp(i t a) U exp(-i t b)] over the 6 real phase parameters
+        T = mp.matrix(18, 6)
+        for k in range(6):
+            a = [0, 0, 0]
+            b = [0, 0, 0]
+            if k < 3:
+                a[k] = 1
+            else:
+                b[k - 3] = 1
+            dU = mp.matrix(3, 3)
+            for i in range(3):
+                for j in range(3):
+                    dU[i, j] = 1j * (a[i] - b[j]) * U[i, j]
+            for i in range(3):
+                for j in range(3):
+                    T[2 * (3 * i + j), k] = mp.re(dU[i, j])
+                    T[2 * (3 * i + j) + 1, k] = mp.im(dU[i, j])
+        So = mp.svd_r(T, compute_uv=False)
+        orbit_dims.append(sum(1 for t in range(len(So)) if So[t] > mp.mpf(10) ** -12))
+    return {"5_rank_is_four_at_all_points": all(c == 4 for c in sv_counts),
+            "5_orbit_dimension_is_five_at_all_points": all(c == 5 for c in orbit_dims),
+            "5_orbit_plus_class_dimension_is_nine": all(c + d == 9 for c, d in zip(sv_counts, orbit_dims)),
+            "_ranks": sv_counts, "_orbits": orbit_dims}
 
 
 def main():
@@ -220,6 +245,7 @@ def main():
     results.update(check4())
     r5 = check5()
     ranks = r5.pop("_ranks")
+    orbits = r5.pop("_orbits")
     results.update(r5)
     print("Polar class of the generation block: exact checks over Q(i) and a 60-digit rank computation")
     print("=" * 96)
@@ -229,6 +255,7 @@ def main():
         allok = allok and ok
         print(f"  [{'PASS' if ok else 'FAIL'}]  {k}")
     print(f"  ranks of d(moduli, J) at the random points: {ranks}")
+    print(f"  dimensions of the rephasing orbit at the random points: {orbits}")
     print("=" * 96)
     print("The rephasing groups are the J3-commutants of the two carriers, defined independently of Y Y^dag.")
     print("Restriction flagged: distinct spectrum of H (u not in {0, +-1/2}) for the J3 class to coincide with the")

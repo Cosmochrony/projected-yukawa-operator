@@ -5,8 +5,12 @@ Polar generator of a morphism family versus the vanishing projection A_Pi^odd (e
   [PASS]  3_g_equals_exp_tE_exp_sF
   [PASS]  3_u_orthogonal
   [PASS]  3_P_symmetric_det1
+  [PASS]  3_P_trace_equals_n
+  [PASS]  3_n_squared_is_sum_of_squares_plus_4
+  [PASS]  3_P_symbolic_positivity_trace_and_det
   [PASS]  3_P_positive_definite_at_t1_s0
   [PASS]  3_P_positive_definite_at_t2_s1
+  [PASS]  3_sym2_P_charpoly_symbolic
   [PASS]  3_sym2_polar_product
   [PASS]  3_sym2_u_unitary
   [PASS]  3_sym2_P_hermitian
@@ -18,7 +22,7 @@ Polar generator of a morphism family versus the vanishing projection A_Pi^odd (e
   [PASS]  3_t2_s1_polar_factor
   [PASS]  3_t2_s1_sym2_P_positive_definite
   [PASS]  3_t2_s1_internal_entries_pm_4sqrt2_over_17
-  [PASS]  3_jarlskog_zero_for_real_factor
+  [PASS]  3_jarlskog_invariants_computed_from_entries_all_zero
   [PASS]  3_polar_factor_J_even
   [PASS]  1_Y_equals_U_P_for_all_gamma
   [PASS]  1_Omega_antihermitian
@@ -47,13 +51,14 @@ Polar generator of a morphism family versus the vanishing projection A_Pi^odd (e
   [PASS]  6_external_entry_O_gamma2
   [PASS]  6_vanishing_tangent_at_0
   [PASS]  6_finite_exit_at_second_order
-  47/47 checks pass
+  51/51 checks pass
 ============================================================================================
 RESULT: A_Pi^odd, the projection of the sl_2 lift onto the J_Pi-odd anti-hermitian part, vanishes and does not
         determine the polar factor. The polar generator Omega of a morphism family solves the Sylvester
         equation Omega P + P Omega = U^dagger dY - dY^dagger U (real parameter, fixed orthonormal frames,
-        P > 0); at the identity it is antiherm(L(M)), J_Pi-even and non-zero. For the Sym^2 lift of the real
-        cascade the finite polar factor has the non-zero external entry (t - s)^2 / ((2 + ts)^2 + (t - s)^2)
+        P > 0); for a family with Y(0) = 1 and dY(0) = L(M) it is antiherm(L(M)) at 0, J_Pi-even and non-zero.
+        For the real cascade step g (not at the identity) the unitary polar factor of Sym^2 g, not a Yukawa
+        morphism, has the non-zero external entry (t - s)^2 / ((2 + ts)^2 + (t - s)^2)
         (1/5 at (1, 0), 1/17 at (2, 1)); the Jarlskog invariant of the real factor is zero. The square
         D^2 does not determine the polar factor. Whether the physical Yukawa morphism family exists and which
         polar class it has is open: the corpus supplies no such family.

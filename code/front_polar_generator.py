@@ -18,7 +18,7 @@ Checks.
       [[2 + ts, t - s], [s - t, 2 + ts]] / sqrt((2 + ts)^2 + (t - s)^2); Sym^2 of it is the polar unitary factor of
       Sym^2 g; its (e_+, e_-) entry is (t - s)^2 / ((2 + ts)^2 + (t - s)^2): 1/5 at (1, 0), 1/17 at (2, 1), zero at
       t = s; the tangent at 0 is L((E - F)/2) (times t0 - s0), non-zero and J_Pi-even, while A_Pi^odd(L(E)) = 0;
-      the Jarlskog invariant of the real factor is zero.
+      the Jarlskog invariant of the real factor is zero (computed from the entries).
   M4  non-identifiability: Y0 = D and Y1 = V D with V = Sym^2 u have the same square D^2, and different polar factors.
   M6  first order versus finite: the (e_+, e_-) tangent component of Omega(0) is zero, the finite entry is
       O(gamma^2); a family with Omega(0) = 0 (U = exp(gamma^2 K)) has an off-diagonal entry of order gamma^2.
@@ -80,10 +80,21 @@ u = polar_u(t, s)
 Pm = sp.simplify(u.T * g)
 checks["3_u_orthogonal"] = zero(u.T * u - sp.eye(2))
 checks["3_P_symmetric_det1"] = zero(Pm - Pm.T) and sp.simplify(Pm.det() - 1) == 0
+# Positivity of P for all real (t, s): P symmetric, det P = 1, tr P = n > 0 with n^2 = t^2 s^2 + (t + s)^2 + 4,
+# so both eigenvalues are positive (trace > 0 and determinant > 0).
+n_sym = sp.sqrt((2 + t * s) ** 2 + (t - s) ** 2)
+checks["3_P_trace_equals_n"] = sp.simplify(Pm.trace() - n_sym) == 0
+checks["3_n_squared_is_sum_of_squares_plus_4"] = sp.expand(n_sym ** 2 - (t ** 2 * s ** 2 + (t + s) ** 2 + 4)) == 0
+checks["3_P_symbolic_positivity_trace_and_det"] = (sp.simplify(Pm.trace() - n_sym) == 0 and sp.simplify(Pm.det() - 1) == 0
+                                                   and sp.expand(n_sym ** 2 - 4 - (t * s) ** 2 - (t + s) ** 2) == 0)
 for (t0, s0) in ((1, 0), (2, 1)):
     P0 = Pm.subs({t: t0, s: s0})
     checks[f"3_P_positive_definite_at_t{t0}_s{s0}"] = sp.simplify(P0[0, 0]) > 0 and sp.simplify(P0.det() - 1) == 0
 Gs, Us, Ps = rho(g), rho(u), rho(Pm)
+# Sym^2 P: characteristic polynomial (x - 1)(x^2 - (n^2 - 2) x + 1): positive roots since n^2 - 2 >= 2 > 0, product 1.
+x_ = sp.symbols("x")
+checks["3_sym2_P_charpoly_symbolic"] = sp.expand(Ps.charpoly(x_).as_expr()
+                                                 - (x_ - 1) * (x_ ** 2 - (n_sym ** 2 - 2) * x_ + 1)).simplify() == 0
 checks["3_sym2_polar_product"] = zero(Us * Ps - Gs)
 checks["3_sym2_u_unitary"] = zero(Us.H * Us - sp.eye(3))
 checks["3_sym2_P_hermitian"] = zero(Ps - Ps.H)
@@ -103,8 +114,13 @@ U21 = sp.simplify(Us.subs({t: 2, s: 1}))
 checks["3_t2_s1_internal_entries_pm_4sqrt2_over_17"] = (
     sp.simplify(U21[0, 1] + 4 * sp.sqrt(2) / 17) == 0 and sp.simplify(U21[0, 2] - 4 * sp.sqrt(2) / 17) == 0
     and sp.simplify(U21[1, 0] - 4 * sp.sqrt(2) / 17) == 0 and sp.simplify(U21[2, 0] + 4 * sp.sqrt(2) / 17) == 0)
-checks["3_jarlskog_zero_for_real_factor"] = sp.simplify(
-    (U21[0, 0] * U21[1, 1] * sp.conjugate(U21[0, 1]) * sp.conjugate(U21[1, 0])).as_real_imag()[1]) == 0
+# Rephasing-invariant Im(U_ac U_bd conj(U_ad) conj(U_bc)) of the polar factor, computed from the matrix entries for
+# every choice of two rows and two columns (general real t, s); it vanishes because the entries are real.
+jar = []
+for ra, rb in ((0, 1), (0, 2), (1, 2)):
+    for ca, cb in ((0, 1), (0, 2), (1, 2)):
+        jar.append(sp.simplify(sp.im(Us[ra, ca] * Us[rb, cb] * sp.conjugate(Us[ra, cb]) * sp.conjugate(Us[rb, ca]))))
+checks["3_jarlskog_invariants_computed_from_entries_all_zero"] = len(jar) == 9 and all(j == 0 for j in jar)
 checks["3_polar_factor_J_even"] = zero(T(Us) - Us)
 
 # M1: Sylvester equation for the family g(gamma), (t, s) = (2 gamma, gamma)
@@ -200,8 +216,9 @@ print("=" * 92)
 print("RESULT: A_Pi^odd, the projection of the sl_2 lift onto the J_Pi-odd anti-hermitian part, vanishes and does not")
 print("        determine the polar factor. The polar generator Omega of a morphism family solves the Sylvester")
 print("        equation Omega P + P Omega = U^dagger dY - dY^dagger U (real parameter, fixed orthonormal frames,")
-print("        P > 0); at the identity it is antiherm(L(M)), J_Pi-even and non-zero. For the Sym^2 lift of the real")
-print("        cascade the finite polar factor has the non-zero external entry (t - s)^2 / ((2 + ts)^2 + (t - s)^2)")
+print("        P > 0); for a family with Y(0) = 1 and dY(0) = L(M) it is antiherm(L(M)) at 0, J_Pi-even and non-zero.")
+print("        For the real cascade step g (not at the identity) the unitary polar factor of Sym^2 g, not a Yukawa")
+print("        morphism, has the non-zero external entry (t - s)^2 / ((2 + ts)^2 + (t - s)^2)")
 print("        (1/5 at (1, 0), 1/17 at (2, 1)); the Jarlskog invariant of the real factor is zero. The square")
 print("        D^2 does not determine the polar factor. Whether the physical Yukawa morphism family exists and which")
 print("        polar class it has is open: the corpus supplies no such family.")

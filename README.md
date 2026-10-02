@@ -42,11 +42,12 @@ identically for every complex coefficient, because with the internal antilinear 
 (Q14 Section 6) the $J_\Pi$-odd part of the lift is its Hermitian part; this is a statement about
 $A^{\mathrm{odd}}_\Pi$ as defined, and $A^{\mathrm{odd}}_\Pi$ does not determine the polar factor.
 It is not the anomaly density of Q14, and it is not the polar generator: at the identity, for
-$\partial_\gamma Y = L(M)$, $\Omega(0) = \tfrac12(L(M) - L(M)^\dagger)$,
+$Y(0) = 1$ and $\partial_\gamma Y(0) = L(M)$, $\Omega(0) = \tfrac12(L(M) - L(M)^\dagger)$,
 the $J_\Pi$-even anti-Hermitian part of the lift, non-zero in general.
-For the real cascade step $g = \exp(tE)\exp(sF)$, the unitary polar factor of $\mathrm{Sym}^2 g$ has the external entry
-$(e_+, e_-)$ equal to $(t-s)^2/((2+ts)^2+(t-s)^2)$, that is $1/5$ at $(1, 0)$ and $1/17$ at $(2, 1)$, and the Jarlskog
-invariant of the real factor is zero.
+For the real cascade step $g = \exp(tE)\exp(sF)$, the unitary polar factor of $\mathrm{Sym}^2 g$ (not a Yukawa
+morphism; the step is not at the identity) has the external entry $(e_+, e_-)$ equal to
+$(t-s)^2/((2+ts)^2+(t-s)^2)$, that is $1/5$ at $(1, 0)$ and $1/17$ at $(2, 1)$, and the Jarlskog invariant of the real
+factor is zero.
 The absence of an external entry in an infinitesimal generator does not exclude one in the finite factor.
 For fixed $D > 0$, $Y_0 = D$ and $Y_1 = VD$ have the same square for every unitary $V$: the square does not determine
 the polar data.
@@ -55,9 +56,9 @@ polar class it has, is open (a missing element, not a refutation).
 No source justifies the selection of the $J_\Pi$-odd part.
 The $J_\Pi$-even anti-Hermitian part of the lift has a non-zero internal entry $\tfrac{\sqrt2}{2}(q - \bar p)$, non-zero
 for real $p \neq q$, so the image of $\mathfrak{sl}_2$ does reach the internal block $e_0 \leftrightarrow e_\pm$
-through that part, while the external block $R_{\mathrm{mix}}$ of $E_\Pi^2$ is not reached by the image of
-$\mathfrak{sl}_2$ (Q14 Remark 6.4); Q14 Proposition 6.3 (i)-(ii) excludes the internal block only by hypothesis, for the
-oriented odd lift it considers.
+through that part, while the external block $R_{\mathrm{mix}}$, along which PRS expands $E_\Pi^2$, has no matrix
+element in the image of $\mathfrak{sl}_2$ (Q14 Remark 6.4, a statement on matrix elements of the lift);
+Q14 Proposition 6.3 (i)-(ii) excludes the internal block only by hypothesis, for the oriented odd lift it considers.
 For the cascade step $g = \exp(tE)\exp(sF)$ with real $t$, $s$, the $J_\Pi$-even internal entry is
 $\tfrac{\sqrt2}{2}\,c\,(s - t)$ with $c = \theta/\sinh\theta$: it vanishes at $t = s$, where the whole
 anti-Hermitian part of the lift is zero.

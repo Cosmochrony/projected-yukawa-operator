@@ -33,6 +33,6 @@ RESULT: A_Pi^odd, the anti-hermitian part of the J_Pi-odd part of the sl_2 lift 
         (sqrt2/2)(q - conj p),
         non-zero for real p != q; for dY = L(M) at the identity it is the polar generator Omega(0)
         (front_polar_generator.py).
-        The external block R_mix is not reached by the image of sl_2 (Q14 Rem. 6.4). No physical exclusion of
+        The external block R_mix has no matrix element in the image of sl_2 (Q14 Rem. 6.4). No physical exclusion of
         the internal block is claimed. The linear involution is a different operation (negative control).
 ALL CHECKS PASS

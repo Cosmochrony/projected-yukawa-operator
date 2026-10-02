@@ -164,7 +164,7 @@ print("        control: antiherm(L(E)) != 0 while A_Pi^odd(L(E)) = 0); it has th
 print("        (sqrt2/2)(q - conj p),")
 print("        non-zero for real p != q; for dY = L(M) at the identity it is the polar generator Omega(0)")
 print("        (front_polar_generator.py).")
-print("        The external block R_mix is not reached by the image of sl_2 (Q14 Rem. 6.4). No physical exclusion of")
+print("        The external block R_mix has no matrix element in the image of sl_2 (Q14 Rem. 6.4). No physical exclusion of")
 print("        the internal block is claimed. The linear involution is a different operation (negative control).")
 print("ALL CHECKS PASS" if allok else "SOME CHECKS FAILED")
 raise SystemExit(0 if allok else 1)

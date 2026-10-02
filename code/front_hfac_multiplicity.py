@@ -1,4 +1,4 @@
-"""Representation theory behind the premise [H-Fac] (weak linking carrier K, multiplicity one).
+"""Representation theory behind the premise [H-Fac] (weak linking carrier K, multiplicity at most one).
 
 Setting. G = Spin(3,1) x U(2) = SL(2,C) x U(2). Left sector F_L = P_L S (x) (E (x) det^k), right sector F_R = P_R S (x)
 det^m, E the weak doublet of U(2), L_Y = det. G acts trivially on the generation factor. The coupling is a G-invariant

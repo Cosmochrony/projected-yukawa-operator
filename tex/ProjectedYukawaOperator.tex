@@ -12,6 +12,9 @@
   pdftitle={Projected Yukawa Operator and Chiral Polar Factor:
             The Squared Observable HΠ = (YΠgen)†YΠgen and the Undetermined Chiral Polar Map UΠ},
   pdfauthor={Jérôme Beau},
+  pdfkeywords={projected Yukawa operator; hermitian square; polar decomposition; chiral polar factor;
+            polar class; rephasing invariants; Jarlskog phase; generation mixing; generation levels;
+            partial no-go; Schur residue; CP-real branch; non-injective projection},
 }
 \usepackage{doi}
 
@@ -67,26 +70,25 @@ Independent Researcher, France\\
   \maketitle
 
   \begin{abstract}
-    This note takes the second step of the fermionic-matter mass-sector frontier.
-    The companion line note types the Yukawa line as $\LY = \wedge^{2}(\Eweak)$ under [H-Weak] of Q14 (the fermion
-    sectors need [H-Spin] as well), and
-    reads generation levels on the model operator $\diag(1, \tfrac12 + u, \tfrac12 - u)$ of $\Cgen$.
-    Four premises, none supplied by a source, are named:
+    The companion line note types the Yukawa line as $\LY = \wedge^{2}(\Eweak)$ under [H-Weak] of Q14 ([H-Spin] for the
+    fermion sectors) and reads levels on the model operator $\diag(1, \tfrac12 + u, \tfrac12 - u)$ of $\Cgen$.
+    Four premises, none supplied by a source:
     [H-Res], the model operator is $\Epi^{2}|_{\Cgen}$;
     [H-Sq], $\Hpi = \Ygen^{\dagger}\Ygen = \lamY^{2}\,\Epi^{2}|_{\Cgen}$;
-    [H-Fac], the existence of a weak linking carrier and the multiplicity at most one of the invariant couplings,
-    under which the full coupling $\Ypi$ factorises through its generation block $\Ygen$;
+    [H-Fac], a weak linking carrier exists and the invariant couplings have multiplicity at most one, so that $\Ypi$
+    factorises through its generation block $\Ygen$;
     [H-Grad], the $\Jthree$ grading of each generation carrier.
-    The results concern $\Ygen$ and transfer to $\Ypi$ only under [H-Fac].
+    The results concern $\Ygen$, and transfer to $\Ypi$ only under [H-Fac].
     The polar decomposition $\Ygen = \Upi\,\Hpi^{1/2}$ is linear algebra; under [H-Res] and [H-Sq],
     $\Spec(\Hpi) = \lamY^{2}\{1, \tfrac12 + u, \tfrac12 - u\}$, and the unitary $\Upi$, which carries the chiral
     orientation and the mixing, is invisible to the squared residue.
-    Under [H-Grad] its class $[\Upi]$ is non-trivial exactly when its generator has a transverse part, which vanishes
-    identically for the $\JPi$-odd anti-hermitian part $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, defined here;
-    this is a statement about $A_{\Pi}$ as defined, not a physical exclusion of the internal block.
+    Under [H-Grad] its class $[\Upi]$ is non-trivial exactly when its generator has a transverse part.
+    That part vanishes for the $\JPi$-odd anti-hermitian part $A_{\Pi}$ of the $\mathfrak{sl}_{2}$ lift, as defined
+    here, a modelling choice that no source justifies; this is not a physical exclusion of the internal block.
     On the orientation-compatible branch of Q14, an input, the real diagonal split is a Lorentz-chirality
     imbalance, not the $V{-}A$ structure of [H-Weak].
-    The static spectrum fixes an order-one level split, not the charged-fermion hierarchy.
+    Under [H-Res], [H-Sq] and the gate $u = 1/10$, the spectrum fixes an order-one level split, not the charged-fermion
+    hierarchy.
   \end{abstract}
 
   \noindent\textbf{Keywords:}
@@ -200,8 +202,8 @@ Independent Researcher, France\\
 
     In~\cite{Beau2026q14} (Section~6) these operators are model operators on $\Cgen$, and their reading as
     restrictions of $\Epi^{2}$ is an identification that is not supplied.
-    The Schur reduction~\cite{Beau2026prs} states the model operator as its normal form on $\Cgen$ and does not
-    supply the identification either.
+    The Schur reduction~\cite{Beau2026prs} takes the model operator as a normal form on $\Cgen$ without deriving the
+    identification.
     [H-Res] is a missing identification, not a refutation.
     It concerns the identity of the model operator and nothing else.
     Every statement that reads the model operator as $\Epi^{2}|_{\Cgen}$ is tagged [H-Res].
@@ -215,7 +217,7 @@ Independent Researcher, France\\
     [H-Sq] is a dictionary between the Yukawa square and the residue square.
     It is a separate premise from [H-Res] and is used together with it: [H-Res] fixes what $\Epi^{2}|_{\Cgen}$ is,
     [H-Sq] equates it with the Yukawa square.
-    No source supplies either.
+    No source derives either.
     The level operator itself, $\diag(1, \tfrac12 + u, \tfrac12 - u)$, and the linear algebra built on it do not
     depend on them.
 
@@ -547,13 +549,17 @@ Independent Researcher, France\\
 
     Premises: the generation block, and [H-Grad] for the diagonal-rephasing orbit tangent.
     The statement holds for every smooth curve $\Upi(\gamma) = \exp(\gamma A)$ of unitaries with anti-hermitian $A$; its
-    reading in terms of a metaplectic phase is a modelling step of~\cite{Beau2026q14} (Section~6), not a premise of
-    the algebra, and [H-Fac] is needed to read the block class as that of the full operator.
+    reading in terms of a metaplectic phase is this note's own identification, not a premise of the algebra: it takes
+    the generator of $\Upi$ to be built from the $\mathfrak{sl}_{2}$ lift of the step generator and from the
+    antilinear internal parity $\JPi$ of Section~6 of~\cite{Beau2026q14}, a section that contains no $\Upi$, no
+    polar factor and no Yukawa morphism, and no source supplies the identification;
+    [H-Fac] is needed to read the block class as that of the full operator.
 
-    \begin{corollary}[Real-cascade collapse]
+    \begin{corollary}[Vanishing of $A_{\Pi}$ on the real cascade]
       \label{cor:real-cascade-collapse}
-      On the real cascade of the model the off-diagonal mixing channel is absent, $v = 0$, the transported chiral
-      defect being the real diagonal split~\cite{Beau2026prs}.
+      On the real cascade of the model the off-diagonal mixing channel $R_{\mathrm{mix}}$ of $\Epi^{2}$ is absent,
+      $v = 0$, the transported chiral defect being the real diagonal split~\cite{Beau2026prs}; this concerns
+      $\Epi^{2}$ and not the class $[\Upi]$.
       On the branch input the left-admissibility condition reads $\pi_{LL} = 0$, so the split is carried by the
       imbalance $\pi_{RR}$ of the eliminated block: after restriction to $\Cgen$, under [H-Res],
       $u \propto \pi_{RR} - \pi_{LL}$ up to the Weyl transport, refined by the transported defect
@@ -612,6 +618,13 @@ Independent Researcher, France\\
       hermitian operators.
       No source selects the $\JPi$-odd part for the anti-hermitian generator of $\Upi$, so $A_{\Pi}$ holds by
       definition.
+      The vanishing of $A_{\Pi}$ is representation-theoretic, not a property of the step: the $\JPi$-odd anti-hermitian
+      operators on $\Cgen$ are exactly the spin-zero and spin-two part of $\mathfrak{u}(3)$, while the image of
+      $\mathfrak{sl}_{2}$ is spin one, whose anti-hermitian part $L(\mathfrak{su}(2))$ is entirely $\JPi$-even.
+      For the cascade step of Corollary~\ref{cor:negative-closure-present-stratum}, whose logarithm has coefficients
+      $p = c\,t$, $q = c\,s$, $r = c\,ts/2$ with $c = \theta/\sinh\theta$ and $t, s$ real, the $\JPi$-even internal
+      entry is $\tfrac{\sqrt2}{2}\,c\,(s - t)$: it vanishes at $t = s$, where $L(M)$ is real symmetric and its whole
+      anti-hermitian part is zero, and it is non-zero otherwise.
       The $\JPi$-even anti-hermitian part $\Pi_{\mathrm{antiherm}}\,\Pi_{\JPi\text{-even}}(L(M)) =
       L\big(\tfrac12(M - M^{\dagger})\big)$ is not part of $A_{\Pi}$; its internal entries are
       $\tfrac{\sqrt2}{2}(q - \overline{p})$, which do not vanish for real $p \neq q$.
@@ -712,7 +725,8 @@ Independent Researcher, France\\
       By Proposition~\ref{prop:reality-structure}, $A_{\Pi} = 0$ and $[\Upi] = [I]$ at this stratum, whatever the
       reality
       of the coefficients, so the reality data are not needed for this conclusion.
-      The diagonal split is read from the stratum and the branch: $N_{A} \neq 0$~\cite{Beau2026cho}, and $u \neq 0$
+      The diagonal split is read from the stratum and the branch: $N_{A} \neq 0$ within the inherited central-phase
+      lift of~\cite{Beau2026cho}, and $u \neq 0$
       holds on the effective metric and the electric branch of~\cite{Beau2026bim} with the transported defect
       of~\cite{Beau2026prs}, so it is conditional on that datum and not a datum of the stratum alone; it is read as a
       coefficient of $\Epi^{2}|_{\Cgen}$ under [H-Res].
@@ -780,7 +794,9 @@ Independent Researcher, France\\
       The transfer of every block statement to the full coupling holds only under [H-Fac], that is under both
       (F1), a weak linking carrier $K$ with a doublet component, and (F2), its multiplicity at most one;
       no constructed object of the corpus meets either (Section~\ref{sec:morphism}).
-      On the real cascade of the model the off-diagonal channel is absent, $v = 0$, so $[\Upi] = [I]$ for $A_{\Pi}$ and
+      On the real cascade of the model the off-diagonal channel $R_{\mathrm{mix}}$ of $\Epi^{2}$ is absent,
+      $v = 0$; separately,
+      $A_{\Pi} = 0$ by Proposition~\ref{prop:reality-structure}, so $[\Upi] = [I]$ for $A_{\Pi}$ as defined and
       no physical mixing is produced from $A_{\Pi}$ at this stratum (Corollary~\ref{cor:real-cascade-collapse});
       the diagonal split is
       read as the Lorentz-chirality imbalance on the branch input, which is an input and not derived, and not as
@@ -907,14 +923,15 @@ Independent Researcher, France\\
     \paragraph{Two lemmas: separation and level-crossing cancellation.}
       We record the two structural statements that freeze the present front, both verified by exact symbolic
       computation with no fit (see Section~\ref{sec:repro}).
-      Write the mass-channel factorisation in the form
+      Write the mass-channel factorisation, which reads $w_g$ as a level of $\Hpi/\lamY^{2}$ under [H-Res] and [H-Sq]
+      (with the values below at the dictionary gate $u = 1/10$), in the form
       \begin{equation}
         \label{eq:mass-factorisation}
         m_g \;=\; \lamY\, \sqrt{w_g}\, S_g\, A(n_g),
         \qquad A(n_g) = \exp(\beta^{\ast} n_g),
       \end{equation}
       where \(g\in\{1,2,3\}\) is the generation label, \(w_g\) is the Schur-residue weight of the squared
-      residue (under [H-Res]), a level of \(\Hpi/\lamY^{2}\) whose square root enters the Yukawa block as in
+      residue (under [H-Res] and [H-Sq]), a level of \(\Hpi/\lamY^{2}\) whose square root enters the Yukawa block as in
       Equation~\eqref{eq:cp-real}, \(S_g\) is the stratigraphic order-one factor, and \(A(n_g)\) is the depth
       amplification
       generated along the projective cascade at the exponent \(\beta^{\ast}=1/(\delta+\tfrac12)\)~\cite{Beau2026a20}.
@@ -1056,7 +1073,8 @@ Independent Researcher, France\\
       unforced quantum choice.
       Thus the mass-sector programme reaches a sharp bifurcation:
       either a genuinely intrinsic depth-selection law is derived, or the present stratum must be recorded as
-      fixing generation structure and order-one level splitting, but not the charged-fermion hierarchy.
+      giving a conditional three-generation factor (on the supplied rule $\sigma_{c}(n_{3}) = 3$) and an order-one
+      level split under [H-Res] and [H-Sq], but not the charged-fermion hierarchy.
 
     \paragraph{Dynamic stabilisation status.}
       The remaining dynamic reading of the projective mass cascade does not alter the exclusion
@@ -1110,14 +1128,16 @@ Independent Researcher, France\\
       characterises the chiral polar factor of the generation block as a rephasing class whose non-triviality is the
       transverse metaplectic datum.
       Under [H-Res] and [H-Sq], the squared residue $\Epi^{2}|_{\Cgen}$ fixes $\Hpi = \Ygen^{\dagger}\Ygen$; it does not
-      fix $\Ygen$ unless the class $[\Upi]$ is fixed, and that class is the identity on the real cascade of the model
-      for the generator $A_{\Pi}$.
+      fix $\Ygen$ unless the class $[\Upi]$ is fixed, and that class is the identity for the generator $A_{\Pi}$ as
+      defined, a modelling choice that no
+      source justifies, because $A_{\Pi}$ vanishes by representation theory for every complex coefficient.
 
   \section{Reproducibility}
     \label{sec:repro}
 
     The scripts of the directory \texttt{code/} of this repository are exact symbolic computations (sympy), with no
-    floating-point sampling except where stated; their printed outputs are committed beside them.
+    floating-point sampling except where stated; the one numerical script, \texttt{front\_hfac\_multiplicity.py},
+    uses floating-point grid quadrature; their printed outputs are committed beside them.
     \begin{itemize}
       \item \texttt{front3b\_yukawa\_operator.py} checks the level substitution and spectrum of
         Proposition~\ref{prop:squared-yukawa} (the spectrum of $\Hpi$ for an explicit non-monomial unitary $\Upi$), the
@@ -1144,7 +1164,9 @@ Independent Researcher, France\\
         [H-Fac]: the Lorentz decomposition $(0, \tfrac12) \otimes (0, \tfrac12) = (0, 0) \oplus (0, 1)$, the
         inequivalence
         of $(\tfrac12, 0)$ and $(0, \tfrac12)$, and the multiplicity formula
-        $\dim I_{K} = $ multiplicity of $\Eweak \otimes \LY^{k-m}$ in $K$, by Weyl integration on $\UU(2)$ for
+        $\dim I_{K} = $ multiplicity of $\Eweak \otimes \LY^{k-m}$ in $K$, by numerical Weyl integration
+        (floating-point quadrature, tolerance $10^{-9}$) on
+        $\UU(2)$ for
         $k, m, a \in \{-2, \dots, 2\}$ and $K = \Eweak \otimes \LY^{a}$, with the $\UU(2)$-characters giving zero.
       \item \texttt{front\_level\_assignment\_nogo.py} checks the arithmetic of the direct level assignment no-go
         (the order-one spread of the squared levels and of their roots at the dictionary gate).

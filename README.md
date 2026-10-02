@@ -39,16 +39,19 @@ of the lift is its Hermitian part; this is a statement about $A_\Pi$ as defined.
 The $J_\Pi$-even anti-Hermitian part of the lift has a non-zero internal entry $\tfrac{\sqrt2}{2}(q - \bar p)$, non-zero
 for real $p \neq q$, so the image of $\mathfrak{sl}_2$ does reach the internal block $e_0 \leftrightarrow e_\pm$
 through that part, while the external block $R_{\mathrm{mix}}$ is not reached by the image of $\mathfrak{sl}_2$
-(Q14 Remark 6.4, Proposition 6.3).
+(Q14 Remark 6.4).
 No physical exclusion of the internal block is claimed: whether $A_\Pi$, rather than the $J_\Pi$-even part, is the
-right object is a modelling choice of the paper that no source justifies.
+right object is a modelling choice of the paper that no source justifies; the vanishing of $A_\Pi$ is
+representation-theoretic (the $J_\Pi$-odd anti-Hermitian operators are spin 0 and spin 2, the $\mathfrak{sl}_2$
+image is spin 1).
 The real diagonal split is carried, on the orientation-compatible branch of Q14 (an input), by the
 Lorentz-chirality imbalance, not by the $V{-}A$ structure of [H-Weak].
 
 ## Keywords
 
-Projected Yukawa operator, chiral polar factor, squared observable, Schur residue, mass sector,
-generation levels, hermitian square.
+projected Yukawa operator; hermitian square; polar decomposition; chiral polar factor; polar class;
+rephasing invariants; Jarlskog phase; generation mixing; generation levels; partial no-go; Schur residue;
+CP-real branch; non-injective projection.
 
 ## Repository Contents
 

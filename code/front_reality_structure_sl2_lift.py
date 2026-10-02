@@ -150,7 +150,7 @@ print("        identically for all complex (p, q, r), because with the antilinea
 print("        is its hermitian part. This is a statement about A_Pi as defined. The J_Pi-even anti-hermitian part of the")
 print("        lift has the non-zero internal entry (sqrt2/2)(q - conj p), non-zero for real p != q, so the image of")
 print("        sl_2 does reach the internal block e_0 <-> e_pm through that part; the external block R_mix is not")
-print("        reached by the image of sl_2 (Q14 Rem. 6.4, Prop. 6.3). No physical exclusion of the internal block is")
+print("        reached by the image of sl_2 (Q14 Rem. 6.4). No physical exclusion of the internal block is")
 print("        claimed: whether A_Pi, rather than the J_Pi-even part, is the right object is a modelling choice of the")
 print("        paper that no source justifies. The linear involution is a different operation (negative control).")
 print("ALL CHECKS PASS" if allok else "SOME CHECKS FAILED")

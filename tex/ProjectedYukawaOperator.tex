@@ -96,8 +96,9 @@ Independent Researcher, France\\
     The polar factor of \texorpdfstring{$\Sym^{2}g$}{Sym²g} (real cascade step \texorpdfstring{$g$}{g}, not a Yukawa
     morphism) has a non-zero external entry.
     Whether Yukawa morphisms with polar factor \texorpdfstring{$\Upi$}{U_Π} exist is open.
-    On the orientation-compatible branch of Q14, an input, a non-zero diagonal split requires a locking operator that
-    breaks \texorpdfstring{$\JPi$}{J_Π}-equivariance, and no mechanism for it is derived; the branch is not the
+    On the orientation-compatible branch of Q14, an input, in the framework of PRS (under its generation-reading hypothesis) a non-zero diagonal
+    split requires a locking operator that breaks \texorpdfstring{$\JPi$}{J_Π}-equivariance, and no mechanism for it is
+    derived; the branch is not the
     \texorpdfstring{$V{-}A$}{V−A} structure.
     Under [H-Res], [H-Sq] and the dictionary gate \texorpdfstring{$u = 1/10$}{u = 1/10}, the levels split at order one,
     not as the
@@ -145,9 +146,10 @@ Independent Researcher, France\\
     Yukawa square, [H-Fac] (Hypothesis~\ref{hyp:factorisation}), made of two separate premises, for the transfer from
     the block to the full coupling, and the branch input of the Lorentz chirality (Section~\ref{sec:morphism}).
     Each statement is tagged below by the premises it uses.
-    The discipline of the projective-residue reduction is kept throughout: the compression remainder
-    $-\Pi_{S} D (1 - P) D \Pi_{S}^{*} = -M^{\dagger} M$ of~\cite{Beau2026prs} is negative semi-definite as a quadratic
-    form, and the link of the split $u$ to the chiral defect is only a structural reading there, so a semi-definite
+    The discipline of the projective-residue reduction is kept throughout: compression remainder
+    $-\Pi_{S} D (1 - P) D \Pi_{S}^{*} = -N_{P}^{\dagger} N_{P}$ of~\cite{Beau2026prs}, with
+    $N_{P} = (1 - P)^{1/2} D \Pi_{S}^{*}$, is negative semi-definite as a quadratic form (it equals $-M^{\dagger}M$ with
+    $M = (1 - P) D \Pi_{S}^{*}$ only if $1 - P$ is a projector), and the link of the split $u$ to the chiral defect is only a structural reading there, so a semi-definite
     operator must not be promoted by hand to an oriented chiral morphism.
 
   \section{The Yukawa operator as a chiral morphism}
@@ -357,7 +359,8 @@ Independent Researcher, France\\
     the spinor, weak and line factors are spectators of the block, and [H-Fac] is needed to read $\Hpi$ as the left
     square of the full operator.
 
-    The positive root of $\Epi^{2}$ on its domain is $-\Epi$ itself, since $\Epi$ is negative semi-definite.
+    If $\Epi \preceq 0$ (an explicit hypothesis of Q14 3.1 for its endomorphism; \cite{Beau2026prs} gives the sign
+    for the compression remainder), the positive root of $\Epi^{2}$ on its domain is $-\Epi$ itself.
     [H-Res] concerns $\Epi^{2}$ only: it supplies no restriction of $\Epi$ to $\Cgen$, so $-\Epi|_{\Cgen}$ is not read
     as the positive root $\Hpi^{1/2}/\lamY$ of the model operator.
     No oriented chiral information has been used, in keeping with the reduction discipline.
@@ -500,8 +503,9 @@ Independent Researcher, France\\
     same
     spectrum as $\Hpi$ as for any square matrix, and whose eigenbasis is the right weight basis rotated by $\Upi$.
     The class of $\Upi$ measures this misalignment of the right level eigenbasis with the right $\Jthree$ grading.
-    The antiunitary exchange of the two carriers of~\cite{Beau2026prs} gives the same spectral reading and is not
-    used.
+    The antiunitary $\JPi$ of~\cite{Beau2026prs} exchanges the chiral subbundles, and its square-level companion swaps
+    $e_{+}$ and $e_{-}$ on the single triplet; transferring such an exchange to the pair of generation carriers
+    $\GL, \GR$, which are a datum of this note, would give the same spectral reading, and it is not used.
 
     \begin{proposition}[Polar class]
       \label{prop:polar-class}
@@ -662,11 +666,13 @@ Independent Researcher, France\\
       On the real cascade of the model the off-diagonal mixing channel $R_{\mathrm{mix}}$ of $\Epi^{2}$ is absent,
       $v = 0$, the real diagonal split being the form of the model operator, not a derived one~\cite{Beau2026prs}; this concerns
       $\Epi^{2}$ and not the class $[\Upi]$.
-      On the branch input, with a $\JPi$-commuting locking operator and [H-Gen](i) of~\cite{Beau2026prs}, the residue
-      vanishes on the left-admissible branch and the split $u$ is zero; a non-zero residue there requires a locking
+      In the framework of~\cite{Beau2026prs}, under its chiral splitting and [H-Gen](i), the residue $\Epi[P]$ of a
+      $\JPi$-commuting locking operator $P$ vanishes on the left-admissible branch and $u[P] = 0$; this concerns the
+      endomorphism of Q14 only when $\Pi_{S} D^{2} \Pi_{S}^{*}$ is the Lichnerowicz operator.
+      A non-zero residue there requires a locking
       operator with $\JPi P \JPi^{-1} \neq P$ (or a $\JPi$ that does not preserve $\Pi_{S}$ or $D$).
       The loss of $\JPi$-compatibility alone neither builds a split nor its reading on $\Cgen$, and no mechanism
-      for a non-zero split is derived.
+      for a non-zero split is derived; these are necessary conditions only.
       The raw proportionality $u \propto \pi_{RR} - \pi_{LL}$ of~\cite{Beau2026prs} is a structural reading there,
       not used in its stratification; it is a conditional lead here, for a locking operator breaking
       $\JPi$-equivariance, and not an established mechanism.
@@ -912,12 +918,13 @@ Independent Researcher, France\\
       $v = 0$; separately,
       $\Aodd = 0$ by Proposition~\ref{prop:reality-structure}, which does not determine $[\Upi]$
       (Corollary~\ref{cor:real-cascade-collapse});
-      on the branch input, which is an input and not derived, a non-zero diagonal split would require a
-      $\JPi$-breaking locking operator, none being derived, and it is not a $V{-}A$ selection.
+      on the branch input, which is an input and not derived, a non-zero diagonal split would require, in the
+      framework of~\cite{Beau2026prs} (under [H-Gen]), a $\JPi$-breaking locking operator, none being derived, and it is not a $V{-}A$ selection.
       Consequently $N_{A}$ may fix the diagonal oriented-area normalisation without fixing the polar mixing
       class.
       At the present full-tower stratum the cascade step is real~\cite{Beau2026prs, Beau2026aar} and the inherited lift
-      carries only the central phase~\cite{Beau2026cho}: the stratum data give the diagonal split and $\Aodd = 0$
+      carries only the central phase~\cite{Beau2026cho}: the stratum data give $N_{A} \neq 0$ and $\Aodd = 0$, and the diagonal normal form only conditionally on a
+      split, $u \neq 0$ being not established
       (Proposition~\ref{prop:reality-structure}, Corollary~\ref{cor:negative-closure-present-stratum}), and do not
       determine $[\Upi]$.
 

@@ -10,7 +10,7 @@ as the determinant line $L_Y = \wedge^2(E_{\mathrm{weak}})$ of a distinct weak f
 [H-Weak] of Q14 (the fermion sectors need [H-Spin] as well), and reads generation levels on the model operator
 $\operatorname{diag}(1, \tfrac12+u, \tfrac12-u)$ of $\mathbb{C}^3_{\mathrm{gen}}$.
 
-Version 2.0.
+Version 2.1.
 
 ## Core Result
 
@@ -65,8 +65,10 @@ anti-Hermitian part of the lift is zero.
 No physical exclusion of the internal block is claimed; the vanishing of $A^{\mathrm{odd}}_\Pi$ is
 representation-theoretic (the $J_\Pi$-odd anti-Hermitian operators are spin 0 and spin 2, the $\mathfrak{sl}_2$
 image is spin 1).
-The real diagonal split is carried, on the orientation-compatible branch of Q14 (an input), by the
-Lorentz-chirality imbalance, not by the $V{-}A$ structure of [H-Weak].
+On the orientation-compatible branch of Q14 (an input), a non-zero diagonal split requires a locking operator that
+breaks $J_\Pi$-equivariance (a $J_\Pi$-commuting locking gives $E_\Pi = 0$ on that branch); the loss of
+$J_\Pi$-compatibility alone neither builds a split nor its spectral reading, and no mechanism for it is derived.
+The branch is not the $V{-}A$ structure of [H-Weak].
 
 ## Keywords
 

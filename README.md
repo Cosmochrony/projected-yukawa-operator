@@ -10,7 +10,9 @@ as the determinant line $L_Y = \wedge^2(E_{\mathrm{weak}})$ of a distinct weak f
 [H-Weak] of Q14 (the fermion sectors need [H-Spin] as well), and reads generation levels on the model operator
 $\operatorname{diag}(1, \tfrac12+u, \tfrac12-u)$ of $\mathbb{C}^3_{\mathrm{gen}}$.
 
-Version 2.1.
+## Status
+
+Working paper, v2.1 (local candidate; last deposited version 2.0). DOI: [10.5281/zenodo.20767498](https://doi.org/10.5281/zenodo.20767498)
 
 ## Core Result
 

@@ -66,8 +66,8 @@ No physical exclusion of the internal block is claimed; the vanishing of $A^{\ma
 representation-theoretic (the $J_\Pi$-odd anti-Hermitian operators are spin 0 and spin 2, the $\mathfrak{sl}_2$
 image is spin 1).
 On the orientation-compatible branch of Q14 (an input), in the framework of PRS a non-zero diagonal split requires a locking operator that
-breaks $J_\Pi$-equivariance (in the framework of PRS, under its chiral splitting and [H-Gen](i), a $J_\Pi$-commuting locking gives $E[P] = 0$ on
-that branch, which concerns Q14's $E_\Pi$ only when $\Pi_S D^2 \Pi_S^* = \mathrm{Lich}$); the loss of
+breaks $J_\Pi$-equivariance (in the framework of PRS, a $J_\Pi$-commuting locking gives $E[P] = 0$ on that branch under its chiral splitting and
+[H-Gen](i), and $u[P] = 0$ under [H-Gen] in full and the symbol condition making $E[P]$ zero-order; this concerns Q14's $E_\Pi$ only when $\Pi_S D^2 \Pi_S^* = \mathrm{Lich}$); the loss of
 $J_\Pi$-compatibility alone neither builds a split nor its spectral reading, and no mechanism for it is derived.
 The branch is not the $V{-}A$ structure of [H-Weak].
 

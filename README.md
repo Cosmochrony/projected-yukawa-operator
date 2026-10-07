@@ -12,7 +12,7 @@ $\operatorname{diag}(1, \tfrac12+u, \tfrac12-u)$ of $\mathbb{C}^3_{\mathrm{gen}}
 
 ## Status
 
-Working paper, v2.1 (local candidate; last deposited version 2.0). DOI: [10.5281/zenodo.20767498](https://doi.org/10.5281/zenodo.20767498)
+Working paper, v2.1. DOI: [10.5281/zenodo.20767498](https://doi.org/10.5281/zenodo.20767498)
 
 ## Core Result
 
